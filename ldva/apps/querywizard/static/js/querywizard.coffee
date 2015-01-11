@@ -140,10 +140,6 @@ $ ->
     'click', '.cube_info', ui_dummy_cube_info_handler
   )
   $(document).on(
-    'hidden.bs.modal', '#screencast_modal',
-    ui_hide_screencast_modal_handler
-  )
-  $(document).on(
     'shown.bs.modal', '#date_filter_modal',
     ui_date_filter_modal_shown_handler
   )
@@ -169,10 +165,6 @@ $ ->
   )
   $(document).on(
     'show.bs.modal', '#mm_modal', ui_mm_modal_handler
-  )
-  $(document).on(
-    'show.bs.modal', '#screencast_modal',
-    ui_show_screencast_modal_handler
   )
   $(document).on(
     'show.bs.modal', '#sparql_runtime_modal',
@@ -504,7 +496,7 @@ submit_edit_datetime_filter_handler = (event) ->
 
   min = $('#datetime_filter_input_min').val()
   max = $('#datetime_filter_input_max').val()
-  
+
   # Workaround for missing seconds
   if min.length == 16
     min += ':00'
@@ -1100,11 +1092,6 @@ ui_group_by_column_handler = (event) ->
   )
 
 
-# User has closed the screencast modal
-ui_hide_screencast_modal_handler = (event) ->
-  $('#screencast_modal_body').html('')
-
-
 # User has clicked the "MindMap!" link
 ui_mm_modal_handler = (event) ->
   # Turn the results table into a MindMeister-compatible JSON structure
@@ -1185,15 +1172,6 @@ ui_mm_modal_handler = (event) ->
     "mm_modal_body",
     mm_json
   )
-
-
-# User has clicked the screencast link
-ui_show_screencast_modal_handler = (event) ->
-  $('#screencast_modal_body').html("""
-    <iframe width="853" height="480"
-      src="http://www.youtube.com/embed/0LZ87yj5jo8"
-      frameborder="0" allowfullscreen></iframe>
-    """)
 
 
 # User has clicked the aggregate dataset link
@@ -1476,14 +1454,14 @@ ui_jsonld_modal_show_handler = (event) ->
       if $(cell).find('button').length == 1
         jsonld['@graph'][row_index][predicate['uri']] = \
           {'@id': $(cell).find('button').first().attr('data-uri')}
-      
+
       # There are multiple URIs in the cell
       else if $(cell).find('button').length > 1
         uri_list = []
         for button in $(cell).find('button')
           uri_list.push({'@id': $(button).attr('data-uri')})
         jsonld['@graph'][row_index][predicate['uri']] = uri_list
-      
+
       # There's no URI and hopefully only one value in the cell
       else
         if predicate['cube_component_type'] == 'measure'

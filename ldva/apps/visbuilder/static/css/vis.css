@@ -30,15 +30,6 @@ h1 {
     position: relative;
 }
 
-#screencast_modal {
-    width: 900px;
-    margin-left: -450px;
-}
-#screencast_modal_body {
-    height: 490px;
-    max-height: 490px;
-}
-
 /*mini dropdown*/
 .btn-mini .caret {
     margin-top: 8px;
@@ -494,8 +485,8 @@ nav.configuration{
 .scatterplotmatrix .axis line {
   stroke: #ddd;
 }
-	
-	
+
+
 /*Table Chart CSS*/
 .vis-row table tbody tr{
     cursor: pointer;
@@ -575,7 +566,7 @@ nav.configuration{
 table.display {
         margin: 0 auto;
         width: 100%;
-       
+
         /* Note Firefox 3.5 and before have a bug with border-collapse
          * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 )
          * border-spacing: 0; is one possible option. Conditional-css.com is
@@ -1041,7 +1032,6 @@ body.charts-only .remove-vis { display: none; }
 }
 
 @media print {
-    header #screencast-text { display:none !important;  }
     .configuration { display:none !important; }
     button { display:none !important; }
     .vis-row { border-right:none !important; }

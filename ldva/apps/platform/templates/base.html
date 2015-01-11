@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODE {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
     {% endblock %}
     <link href="{{STATIC_URL}}css/style.css?20130817" rel="stylesheet">
@@ -58,9 +58,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         {% endblock %}
     </div>
     <div id="footer_right">
-        This is <a href="http://code-research.eu/" target="_blank">CODEresearch</a>, developed by <a href="http://know-center.at/" target="_blank">Know-Center</a>, Austria |
-        <a href="mailto:vsabol@know-center.at?subject=CODE%20Feedback">Contact</a> |
-        <a href="http://code-research.eu/imprint" target="_blank">Imprint</a>
+        <a href="https://github.com/patrickhoefler/linked-data-wizards" target="_blank">Documentation &amp; Source Code</a>
     </div>
 </footer>
 </body>

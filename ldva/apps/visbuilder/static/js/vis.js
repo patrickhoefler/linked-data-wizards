@@ -45,12 +45,6 @@ var Vis = {
         Vis.data.datasets.push(new Vis.data.Dataset());
         $.address.change(Vis.navigation.addressChanged);
         initializeVisRow(0);
-        $(document).on('show', '#screencast_modal', function() {
-            $('#screencast_modal_body').html('<iframe width="853" height="480" src="http://www.youtube.com/embed/-WqI-uu6RNw" frameborder="0" allowfullscreen></iframe>');
-        });
-        $(document).on('hidden', '#screencast_modal', function() {
-            $('#screencast_modal_body').html('');
-        });
         $('#add-vis').on('click', function(){addNewVisualisation(0)});
         $('#add-vis-aggregate').on('click', function(){showAggregateModal(0)});
         $('#add-vis-dataset').on('click', function(){addNewDataset(0)});
@@ -1221,7 +1215,7 @@ function getPossibleChannelsForDimension(chartRowIndex, dimension){
             if (Vis.view.chartRows[chartRowIndex].selectedChart.possibleMappings[j][k].dimension == dimension){
                 if ($.inArray(Vis.view.chartRows[chartRowIndex].selectedChart.possibleMappings[j][k].channel, possibleChannels) == -1){
                     possibleChannels.push(Vis.view.chartRows[chartRowIndex].selectedChart.possibleMappings[j][k].channel);
-                    
+
                 }
             }
         }

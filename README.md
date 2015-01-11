@@ -22,3 +22,7 @@ All changes to the source code should be immediately visible after you reload th
 You can stop the virtual machine at any time by running `vagrant halt` and bring it back up again with `vagrant up`.
 
 Finally you can remove the virtual machine by running `vagrant destroy`.
+
+## Credits
+
+The Linked Data Wizards were initially developed at the [Know-Center](http://know-center.at/) in Graz, Austria as part of the EU-funded [CODE project](http://code-research.eu/).

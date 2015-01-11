@@ -158,10 +158,6 @@ p {
     display: none;
 }
 
-#screencast_modal .modal-dialog {
-    width: 915px;
-}
-
 #mm_modal .modal-dialog,
 #sparql_runtime_modal .modal-dialog,
 #jsonld_modal .modal-dialog {
