@@ -1,0 +1,14 @@
+*.pyc
+settings.py
+.project
+.pydevproject
+.settings
+code.sqlite
+_ReSharper.code/*
+VisualStudio/*
+/.idea
+kill.sh
+
+/phantomjs.exe
+Output.txt
+.vagrant

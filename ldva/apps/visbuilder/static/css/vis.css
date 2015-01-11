@@ -1,0 +1,1050 @@
+/*
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+body{
+    background-color: inherit !important;
+}
+h1 {
+    padding: 10px;
+}
+
+#content {
+    margin: 10px 10px 70px 10px;
+    overflow: visible; /*default value*/
+    position: relative;
+}
+
+#screencast_modal {
+    width: 900px;
+    margin-left: -450px;
+}
+#screencast_modal_body {
+    height: 490px;
+    max-height: 490px;
+}
+
+/*mini dropdown*/
+.btn-mini .caret {
+    margin-top: 8px;
+    margin-left: 3px;
+}
+
+.vis-row{
+    position:relative;
+    display: inline-block;
+    float:left;
+    /*min-height:700px;*/
+    min-height:600px;
+    border:0 solid lightgray;
+    border-width: 0 1px 1px 0;
+    padding:20px;
+}
+    nav{
+        width:200px;
+        float:left;
+    }
+    .vis-container{
+        position: relative;
+        margin-left:350px;
+        /*padding-bottom:40px; --> necessary for zoomIn and zoomOut? */
+        top:0;
+    }
+        .vis{
+            position: relative;
+            width: 850px;
+            height: 600px;
+        }
+        .vis-container .zoomIn{
+            position:absolute;
+            right:0;
+        }
+        .vis-container .zoomOut{
+            position:absolute;
+            right:50px;
+        }
+        .vis-row .remove-vis{
+            position:absolute;
+            right:5px;
+            top:0px;
+        }
+#lastrow{
+    height:50px;
+    margin:50px;
+    /*position: relative;*/
+    display: inline-block;
+    float:left;
+}
+    #add-vis{
+        /*position: absolute;
+        right:30px;
+        top:-30px;*/
+    }
+    #add-vis-aggregate{
+        margin-top:10px;
+    }
+    #add-vis-aggregate span,
+    #add-vis-dataset span{
+        font-size:14px;
+    }
+    .config-vis-buttons{
+        position: absolute;
+        margin-left:300px;
+    }
+        .config-vis-buttons button{
+            margin-top:2px;
+        }
+        .config-vis-buttons .add-vis{
+            margin-top:14px;
+        }
+    #add-vis-dataset{
+        margin-top:10px;
+    }
+.list .ui-selecting { background: #FECA40; }
+.list .ui-selected { background: #F39814; color: white; }
+.list { font-size: 10pt; list-style-type: none; margin: 0; padding: 0; width: 95%; }
+.list li { margin: 3px; padding: 0.2em; font-size: 1.1em; height: 18px; }
+
+.ui-tabs .ui-tabs {
+    font-size: 0.7em;
+}
+
+/* displaying filter */
+#filtering-info {
+    margin-left:20px;
+}
+    #filtering-info h4{
+        display:inline-block;
+        margin:0;
+        color: #0088cc;
+    }
+    #filtering-info ul{
+        list-style: none;
+        margin:0 0 0 5px;
+        display:inline-block;
+    }
+        #filtering-info li{
+            border-left: 1px solid black;
+            padding:0 7px;
+            display:inline-block;
+        }
+        #filtering-info li:first-child{ border-left: none; }
+            #filtering-info li label{
+                display:inline-block;
+                margin:0;
+                cursor: default;
+            }
+
+/*********************************************
+ *    Charts styling starts here...
+ */
+svg {
+    font: 10px sans-serif;
+    display: block;
+}
+.axis line, .axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+/* D3 Line & Multiline Chart */
+path.linechart {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+path.linechart-background {
+    fill: none;
+    stroke-width: 10px;
+}
+.multiline g.lineLabel text{
+    font-size:15px !important;
+    color:#333333;
+    text-shadow: none;
+}
+.multiline g.lineLabel2{
+    cursor: pointer;
+}
+
+/* Bubble Chart */
+circle.notselected{
+    fill:lightgrey !important;
+}
+
+/* Line Chart */
+.notselected .linechart{
+    stroke:lightgrey !important;
+}
+
+/*Parallel Coordinates */
+
+.brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    text-shadow: 0 1px 0 #fff;
+}
+
+/*Streamgraph */
+.axis text {
+  text-shadow: 0 1px 0 #fff;
+}
+text {
+  font: 12px sans-serif;
+}
+
+/* is not needed
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+*/
+
+
+table.main{
+	border: 1px solid #666;
+}
+tr.main td{
+	font-family: "lucida grande", verdana, sans-serif;
+	font-size: 8pt;
+	padding: 3px 8px;
+	background: #fff;
+}
+thead.main td{
+	color: #fff;
+	background-color: #C8C028;
+	font-weight: bold;
+	border-bottom: 1px solid #999;
+}
+tbody.main td{
+    border-left: 1px solid #D9D9D9;
+}
+tbody.main tr.even td{
+	background: #eee;
+}
+tbody.main tr.selected td{
+	background: #3d80df;
+	color: #ffffff;
+	font-weight: bold;
+	border-left: 1px solid #346DBE;
+	border-bottom: 1px solid #7DAAEA;
+}
+tbody.main tr.ruled td{
+	color: #000;
+	background-color: #C6E3FF;
+	font-weight: bold;
+	border-color: #3292FC;
+}
+
+
+/* Grouped Bar chart*/
+.bar {
+  fill: steelblue;
+}
+
+
+/* Barchart*/
+.barchart .bar {
+  fill: steelblue;
+}
+.barchart .bar:hover {
+  fill: brown;
+}
+.barchart .axis {
+  font: 10px sans-serif;
+}
+.barchart .axis path,
+.barchart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.barchart .x.axis path {
+  display: none;
+}
+.barchart .selecting .bar {
+    fill:lightgrey;
+}
+.barchart .selecting .bar.selected {
+  fill: steelblue;
+}
+
+
+
+
+
+
+
+
+#loadingindicator{
+    background: url(../images/ajax-loader.gif) no-repeat;
+    background-color: white;
+    background-position:center;
+    opacity: 0.5;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+}
+
+.icon-chart-parallelcoordinates{ background-image: url("../images/icons-charts/parallelcoordinates.png"); }
+.icon-chart-pie{ background-image: url("../images/icons-charts/pie.png"); }
+.icon-chart-bar{ background-image: url("../images/icons-charts/bar.png"); }
+.icon-chart-bargrouped{ background-image: url("../images/icons-charts/bargrouped.png"); }
+.icon-chart-column{ background-image: url("../images/icons-charts/column.png"); }
+.icon-chart-spider{ background-image: url("../images/icons-charts/spider.png"); }
+.icon-chart-scatter{ background-image: url("../images/icons-charts/scatter.png"); }
+.icon-chart-scattermatrix { background-image: url("../images/icons-charts/scattermatrix.png"); }
+.icon-chart-bubble { background-image: url("../images/icons-charts/bubble.png"); }
+.icon-chart-multiline{ background-image: url("../images/icons-charts/multiline.png"); }
+.icon-chart-streamgraph{ background-image: url("../images/icons-charts/streamgraph.png"); }
+.icon-chart-map{ background-image: url("../images/icons-charts/map.png"); }
+.icon-chart-table{ background-image: url("../images/icons-charts/table.png"); }
+
+[class^="icon-chart-"], [class*=" icon-chart-"] {
+    width: 64px;
+    height: 64px;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+    .possibleoptions [class^="icon-chart-"], [class*=" icon-chart-"] {
+        width: 18px;
+        height: 18px;
+        background-size: 24px 24px;
+    }
+.btn.disabled, .btn[disabled] {
+    opacity: 0.35 !important;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+}
+
+nav.configuration{
+    width:300px;
+}
+    nav.configuration h2{
+        font-size: 1.8em;
+        color:#0088cc;
+    }
+        nav.configuration .possiblecharts h2{
+            margin-top:0;
+        }
+    nav.configuration .area h2{
+        margin-bottom: 2px;
+    }
+    nav.configuration .area  > ul{
+        list-style: none;
+        margin:0;
+    }
+    nav.configuration .area  > ul > li{
+        margin: 0 0 5px 0;
+    }
+    nav.configuration .area label{
+        width:138px;
+        display: inline-block;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        overflow:hidden;
+        white-space: nowrap;
+    }
+    .possiblecharts button {
+        margin: 0 5px 5px 0;
+    }
+    .possibledimensions{
+        margin-top:30px;
+    }
+        .possibledimensions button,
+        .possiblevalues button{
+            width:114px;
+            text-align: left;
+        }
+        .possiblevalues button.slim{
+            width:24px;
+            padding:4px;
+        }
+        .possibledimensions button .caret,
+        .possiblevalues button .caret{
+            position: absolute;
+            right:10px;
+        }
+    .possibleoptions button {
+        /*margin: 0 5px 5px 0;*/
+    }
+    #helper-links{
+        font-size: 0.8em;
+        padding:0;
+        margin-top:-8px;
+    }
+    #helper-links .dropdown-menu.pull-top a{
+        cursor: pointer;
+        padding: 2px 17px;
+        font-size: 12px;
+    }
+    #helper-links .dropdown-menu.pull-top{
+        padding: 7px 0;
+    }
+
+/* jQuery Tipsy Plugin CSS*/
+.tipsy { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
+  .tipsy-inner { background-color: #000; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
+  /* Rounded corners */
+  .tipsy-inner { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+  /* Uncomment for shadow */
+  /*.tipsy-inner { box-shadow: 0 0 5px #000000; -webkit-box-shadow: 0 0 5px #000000; -moz-box-shadow: 0 0 5px #000000; }*/
+  .tipsy-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #000; }
+  /* Rules to colour arrows */
+  .tipsy-arrow-n { border-bottom-color: #000; }
+  .tipsy-arrow-s { border-top-color: #000; }
+  .tipsy-arrow-e { border-left-color: #000; }
+  .tipsy-arrow-w { border-right-color: #000; }
+	.tipsy-n .tipsy-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
+    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
+  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
+  .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
+  .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+
+/* Custom: */
+.tipsy { font-size:11px; margin-top:-10px;}
+
+
+
+/* map */
+.map {}
+.map div#chart {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+}
+
+
+.map path.country {
+  fill: #666;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.map circle.nation {
+    fill: red;
+    fill-opacity: 0.8;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
+.map path.curve {
+    fill:none;
+    stroke: #fc0;
+    /*stroke-width: 10px;*/
+}
+
+
+/* scatterpltmatrix */
+.scatterplotmatrix {}
+.scatterplotmatrix .axis path {
+  display: none;
+}
+.scatterplotmatrix .frame {
+  fill: none;
+  stroke: #aaa;
+  shape-rendering: crispEdges;
+}
+.scatterplotmatrix  circle {
+  fill-opacity: .7;
+ fill:blue;
+}
+.scatterplotmatrix  circle.hidden {
+    /*
+  fill: #ccc !important;
+  */
+ fill: orange !important;
+ fill-opacity: .2;!important;/*.7;*/
+    /*
+    stroke:#ccc!important;
+    stroke-width:1!important;
+    */
+}
+.scatterplotmatrix  .extent {
+  fill: #000;
+  fill-opacity: .125;
+  stroke: #fff;
+}
+
+.scatterplotmatrix .axis line {
+  stroke: #ddd;
+}
+	
+	
+/*Table Chart CSS*/
+.vis-row table tbody tr{
+    cursor: pointer;
+}
+
+.dataTables_wrapper {
+        position: relative;
+        min-height: 302px;
+        _height: 302px;
+        zoom: 1; /* Feeling sorry for IE */
+}
+
+.dataTables_processing {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px;
+        height: 30px;
+        margin-left: -125px;
+        margin-top: -15px;
+        padding: 14px 0 2px 0;
+        border: 1px solid #ddd;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+        background-color: white;
+}
+
+.dataTables_length {
+        width: 40%;
+        float: left;
+}
+
+.dataTables_filter {
+        width: 50%;
+        float: right;
+        text-align: right;
+}
+
+.dataTables_info {
+        width: 60%;
+        float: left;
+}
+.dataTables_paginate {
+        width: 44px;
+        * width: 50px;
+        float: right;
+        text-align: right;
+}
+/* Pagination nested */
+.paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
+        height: 19px;
+        width: 19px;
+        margin-left: 3px;
+        float: left;
+}
+
+.paginate_disabled_previous {
+        background-image: url('../images/datatables/back_disabled.jpg');
+}
+
+.paginate_enabled_previous {
+        background-image: url('../images/datatables/back_enabled.jpg');
+}
+
+.paginate_disabled_next {
+        background-image: url('../images/datatables/forward_disabled.jpg');
+}
+
+.paginate_enabled_next {
+        background-image: url('../images/datatables/forward_enabled.jpg');
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables display
+ */
+table.display {
+        margin: 0 auto;
+        width: 100%;
+       
+        /* Note Firefox 3.5 and before have a bug with border-collapse
+         * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 )
+         * border-spacing: 0; is one possible option. Conditional-css.com is
+         * useful for this kind of thing
+         *
+         * Further note IE 6/7 has problems when calculating widths with border width.
+         * It subtracts one px relative to the other browsers from the first column, and
+         * adds one to the end...
+         *
+         * If you want that effect I'd suggest setting a border-top/left on th/td's and
+         * then filling in the gaps with other borders.
+         */
+}
+
+table.display thead th {
+        padding: 3px 18px 3px 10px;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+        cursor: pointer;
+        * cursor: hand;
+}
+
+table.display tfoot th {
+        padding: 3px 18px 3px 10px;
+        border-top: 1px solid black;
+        font-weight: bold;
+}
+
+table.display tr.heading2 td {
+        border-bottom: 1px solid #aaa;
+}
+
+table.display td {
+        padding: 3px 10px;
+}
+
+table.display td.center {
+        text-align: center;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+
+.sorting_asc {
+        background: url('../images/datatables/sort_asc.png') no-repeat center right;
+}
+
+.sorting_desc {
+        background: url('../images/datatables/sort_desc.png') no-repeat center right;
+}
+
+.sorting {
+        background: url('../images/datatables/sort_both.png') no-repeat center right;
+}
+
+.sorting_asc_disabled {
+        background: url('../images/datatables/sort_asc_disabled.png') no-repeat center right;
+}
+
+.sorting_desc_disabled {
+        background: url('../images/datatables/sort_desc_disabled.png') no-repeat center right;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables row classes
+ */
+table.display tr.odd.gradeA {
+        background-color: #ddffdd;
+}
+
+table.display tr.even.gradeA {
+        background-color: #eeffee;
+}
+
+table.display tr.odd.gradeC {
+        background-color: #ddddff;
+}
+
+table.display tr.even.gradeC {
+        background-color: #eeeeff;
+}
+
+table.display tr.odd.gradeX {
+        background-color: #ffdddd;
+}
+
+table.display tr.even.gradeX {
+        background-color: #ffeeee;
+}
+
+table.display tr.odd.gradeU {
+        background-color: #ddd;
+}
+
+table.display tr.even.gradeU {
+        background-color: #eee;
+}
+
+
+tr.odd {
+        background-color: #E2E4FF;
+}
+
+tr.even {
+        background-color: white;
+}
+
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+.dataTables_scroll {
+        clear: both;
+}
+
+.dataTables_scrollBody {
+        *margin-top: -1px;
+}
+
+.top, .bottom {
+        padding: 15px;
+        background-color: #F5F5F5;
+        border: 1px solid #CCCCCC;
+}
+
+.top .dataTables_info {
+        float: none;
+}
+
+.clear {
+        clear: both;
+}
+
+.dataTables_empty {
+        text-align: center;
+}
+
+tfoot input {
+        margin: 0.5em 0;
+        width: 100%;
+        color: #444;
+}
+
+tfoot input.search_init {
+        color: #999;
+}
+
+td.group {
+        background-color: #d1cfd0;
+        border-bottom: 2px solid #A19B9E;
+        border-top: 2px solid #A19B9E;
+}
+
+td.details {
+        background-color: #d1cfd0;
+        border: 2px solid #A19B9E;
+}
+
+
+.example_alt_pagination div.dataTables_info {
+        width: 40%;
+}
+
+.paging_full_numbers {
+        width: 400px;
+        height: 22px;
+        line-height: 22px;
+}
+
+.paging_full_numbers span.paginate_button,
+        .paging_full_numbers span.paginate_active {
+        border: 1px solid #aaa;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        padding: 2px 5px;
+        margin: 0 3px;
+        cursor: pointer;
+        *cursor: hand;
+}
+
+.paging_full_numbers span.paginate_button {
+        background-color: #ddd;
+}
+
+.paging_full_numbers span.paginate_button:hover {
+        background-color: #ccc;
+}
+
+.paging_full_numbers span.paginate_active {
+        background-color: #99B3FF;
+}
+
+table.display tr.even.row_selected td {
+        background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+        background-color: #9FAFD1;
+}
+
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+tr.odd td.sorting_1 {
+        background-color: #D3D6FF;
+}
+
+tr.odd td.sorting_2 {
+        background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+        background-color: #E0E2FF;
+}
+
+tr.even td.sorting_1 {
+        background-color: #EAEBFF;
+}
+
+tr.even td.sorting_2 {
+        background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+        background-color: #F9F9FF;
+}
+
+
+/* For the Conditional-CSS grading rows */
+/*
+        Colour calculations (based off the main row colours)
+  Level 1:
+                dd > c4
+                ee > d5
+        Level 2:
+          dd > d1
+          ee > e2
+ */
+tr.odd.gradeA td.sorting_1 {
+        background-color: #c4ffc4;
+}
+
+tr.odd.gradeA td.sorting_2 {
+        background-color: #d1ffd1;
+}
+
+tr.odd.gradeA td.sorting_3 {
+        background-color: #d1ffd1;
+}
+
+tr.even.gradeA td.sorting_1 {
+        background-color: #d5ffd5;
+}
+
+tr.even.gradeA td.sorting_2 {
+        background-color: #e2ffe2;
+}
+
+tr.even.gradeA td.sorting_3 {
+        background-color: #e2ffe2;
+}
+
+tr.odd.gradeC td.sorting_1 {
+        background-color: #c4c4ff;
+}
+
+tr.odd.gradeC td.sorting_2 {
+        background-color: #d1d1ff;
+}
+
+tr.odd.gradeC td.sorting_3 {
+        background-color: #d1d1ff;
+}
+
+tr.even.gradeC td.sorting_1 {
+        background-color: #d5d5ff;
+}
+
+tr.even.gradeC td.sorting_2 {
+        background-color: #e2e2ff;
+}
+
+tr.even.gradeC td.sorting_3 {
+        background-color: #e2e2ff;
+}
+
+tr.odd.gradeX td.sorting_1 {
+        background-color: #ffc4c4;
+}
+
+tr.odd.gradeX td.sorting_2 {
+        background-color: #ffd1d1;
+}
+
+tr.odd.gradeX td.sorting_3 {
+        background-color: #ffd1d1;
+}
+
+tr.even.gradeX td.sorting_1 {
+        background-color: #ffd5d5;
+}
+
+tr.even.gradeX td.sorting_2 {
+        background-color: #ffe2e2;
+}
+
+tr.even.gradeX td.sorting_3 {
+        background-color: #ffe2e2;
+}
+
+tr.odd.gradeU td.sorting_1 {
+        background-color: #c4c4c4;
+}
+
+tr.odd.gradeU td.sorting_2 {
+        background-color: #d1d1d1;
+}
+
+tr.odd.gradeU td.sorting_3 {
+        background-color: #d1d1d1;
+}
+
+tr.even.gradeU td.sorting_1 {
+        background-color: #d5d5d5;
+}
+
+tr.even.gradeU td.sorting_2 {
+        background-color: #e2e2e2;
+}
+
+tr.even.gradeU td.sorting_3 {
+        background-color: #e2e2e2;
+}
+
+
+/*
+ * Row highlighting example
+ */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+        background-color: #ECFFB3;
+}
+
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+        background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.even:hover {
+        background-color: #ECFFB3;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_1 {
+        background-color: #DDFF75;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_2 {
+        background-color: #E7FF9E;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_3 {
+        background-color: #E2FF89;
+}
+
+.ex_highlight_row #example tr.odd:hover {
+        background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_1 {
+        background-color: #D6FF5C;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_2 {
+        background-color: #E0FF84;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_3 {
+        background-color: #DBFF70;
+}
+
+
+/*
+ * KeyTable
+ */
+table.KeyTable td {
+        border: 3px solid transparent;
+}
+
+table.KeyTable td.focus {
+        border: 3px solid #3366FF;
+}
+
+table.display tr.gradeA {
+        background-color: #eeffee;
+}
+
+table.display tr.gradeC {
+        background-color: #ddddff;
+}
+
+table.display tr.gradeX {
+        background-color: #ffdddd;
+}
+
+table.display tr.gradeU {
+        background-color: #ddd;
+}
+
+
+body.charts-only header { display:none !important;  }
+body.charts-only .configuration { display:none !important; }
+body.charts-only button { display:none !important; }
+body.charts-only footer { display:none !important; }
+body.charts-only-single #content { min-height:0 !important; margin: 0 !important;  }
+body.charts-only .vis-container { margin-left: 0 !important;  }
+body.charts-only-single .vis-row { border:none !important; min-height:0 !important; padding:0 !important; }
+body.charts-only-single .vis-row h1 { width:820px; white-space: nowrap; overflow: hidden;  text-overflow: ellipsis; }
+body.charts-only-single .vis-row .remove-vis { display: none !important; }
+body.charts-only-single #lastrow { display: none; }
+body.charts-only .remove-vis { display: none; }
+
+#mm_modal.modal{
+    left:20%;
+    width:90%;
+}
+    #mm_modal_body {
+        height:600px;
+        overflow: hidden;
+        padding:0;
+    }
+
+#aggregate_modal{
+}
+    #aggregate_modal form{
+        margin:20px;
+    }
+
+/* dataset modal */
+#dataset_list{
+    margin:0;
+}
+    #dataset_list .list-group-item {
+        display: block;
+        padding: 5px 7px;
+        border-bottom: 1px solid #ddd
+    }
+    #dataset_list .list-group-item a {
+        display: block;
+    }
+
+
+#footer_left{
+    padding-top:9px;
+    padding-bottom:8px;
+}
+
+@media print {
+    header #screencast-text { display:none !important;  }
+    .configuration { display:none !important; }
+    button { display:none !important; }
+    .vis-row { border-right:none !important; }
+    .vis-container { margin-left:0 !important; padding-bottom:0 !important; }
+    footer { display:none !important; }
+}

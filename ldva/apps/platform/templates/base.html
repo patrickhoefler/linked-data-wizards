@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE {% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+    {% endblock %}
+    <link href="{{STATIC_URL}}css/style.css?20130817" rel="stylesheet">
+
+    <script src="{{STATIC_URL}}js/jquery-1.8.3.min.js"></script>
+    <script src="{{STATIC_URL}}js/jquery.address-1.5.min.js?strict=0&amp;autoUpdate=0"></script>
+    <script src="{{STATIC_URL}}js/jquery.ajaxQueue.js"></script>
+    <script src="{{STATIC_URL}}js/utils.js"></script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="{{STATIC_URL}}js/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="{{STATIC_URL}}js/spinners.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+</head>
+
+<body>
+<header>
+    <h1>{% block header %}{% endblock %}</h1>
+</header>
+
+{% block navbar %}
+{% endblock %}
+
+<div id="content">
+    {% block content %}
+    {% endblock %}
+    <div style="clear:both;"></div>
+</div>
+
+<footer>
+    <div id="footer_left">
+        {% block footer %}
+        {% endblock %}
+    </div>
+    <div id="footer_right">
+        This is <a href="http://code-research.eu/" target="_blank">CODEresearch</a>, developed by <a href="http://know-center.at/" target="_blank">Know-Center</a>, Austria |
+        <a href="mailto:vsabol@know-center.at?subject=CODE%20Feedback">Contact</a> |
+        <a href="http://code-research.eu/imprint" target="_blank">Imprint</a>
+    </div>
+</footer>
+</body>
+</html>

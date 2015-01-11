@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY void "http://rdfs.org/ns/void#" >
+    <!ENTITY org "http://www.w3.org/ns/org#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY scovo "http://purl.org/NET/scovo#" >
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY vcard "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY qb "http://purl.org/linked-data/cube#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY sdmx "http://purl.org/linked-data/sdmx#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY dsd "http://statistics.data.wales.gov.uk/dsd/" >
+    <!ENTITY sdmx-code "http://purl.org/linked-data/sdmx/2009/code#" >
+    <!ENTITY interval "http://reference.data.gov.uk/def/intervals/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY sdmx-concept "http://purl.org/linked-data/sdmx/2009/concept#" >
+    <!ENTITY sdmx-measure "http://purl.org/linked-data/sdmx/2009/measure#" >
+    <!ENTITY sdmx-subject "http://purl.org/linked-data/sdmx/2009/subject#" >
+    <!ENTITY sdmx-metadata "http://purl.org/linked-data/sdmx/2009/metadata#" >
+    <!ENTITY sdmx-attribute "http://purl.org/linked-data/sdmx/2009/attribute#" >
+    <!ENTITY sdmx-dimension "http://purl.org/linked-data/sdmx/2009/dimension#" >
+    <!ENTITY sw-measure "http://statistics.data.wales.gov.uk/def/measure/" >
+    <!ENTITY sw-dim "http://statistics.data.wales.gov.uk/def/dimension/" >
+    <!ENTITY admingeo "http://data.ordnancesurvey.co.uk/ontology/admingeo/" >
+    <!ENTITY internal "http://www.epimorphics.com/vocabularies/cube/internal#" >
+    <!ENTITY spatial "http://data.ordnancesurvey.co.uk/ontology/spatialrelations/" >
+    <!ENTITY pca-population2 "http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008" >
+    <!ENTITY pca-population "http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:sdmx-concept="http://purl.org/linked-data/sdmx/2009/concept#"
+     xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dsd="http://statistics.data.wales.gov.uk/dsd/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sw-dim="http://statistics.data.wales.gov.uk/def/dimension/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:sdmx="http://purl.org/linked-data/sdmx#"
+     xmlns:spatial="http://data.ordnancesurvey.co.uk/ontology/spatialrelations/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#"
+     xmlns:qb="http://purl.org/linked-data/cube#"
+     xmlns:sdmx-subject="http://purl.org/linked-data/sdmx/2009/subject#"
+     xmlns:sdmx-measure="http://purl.org/linked-data/sdmx/2009/measure#"
+     xmlns:pca-population="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009"
+     xmlns:admingeo="http://data.ordnancesurvey.co.uk/ontology/admingeo/"
+     xmlns:interval="http://reference.data.gov.uk/def/intervals/"
+     xmlns:sdmx-metadata="http://purl.org/linked-data/sdmx/2009/metadata#"
+     xmlns:scovo="http://purl.org/NET/scovo#"
+     xmlns:sw-measure="http://statistics.data.wales.gov.uk/def/measure/"
+     xmlns:sdmx-code="http://purl.org/linked-data/sdmx/2009/code#"
+     xmlns:internal="http://www.epimorphics.com/vocabularies/cube/internal#"
+     xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
+     xmlns:pca-population2="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008">
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <AnnotationProperty rdf:about="&dcterms;publisher"/>
+    <AnnotationProperty rdf:about="&qb;component"/>
+    <AnnotationProperty rdf:about="&dcterms;date"/>
+    <AnnotationProperty rdf:about="&skos;prefLabel"/>
+    <AnnotationProperty rdf:about="&admingeo;gssCode"/>
+    <AnnotationProperty rdf:about="&qb;dataSet"/>
+    <AnnotationProperty rdf:about="&qb;structure"/>
+    <AnnotationProperty rdf:about="&qb;sliceKey"/>
+    <AnnotationProperty rdf:about="&sdmx-dimension;refPeriod"/>
+    <AnnotationProperty rdf:about="&sw-dim;region"/>
+    <AnnotationProperty rdf:about="&qb;dimension"/>
+    <AnnotationProperty rdf:about="&qb;measure"/>
+    <AnnotationProperty rdf:about="&sw-measure;population"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.ordnancesurvey.co.uk/ontology/admingeo/WelshAssemblyConstituency -->
+
+    <Class rdf:about="&admingeo;WelshAssemblyConstituency"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#DataSet -->
+
+    <Class rdf:about="&qb;DataSet"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#DataStructureDefinition -->
+
+    <Class rdf:about="&qb;DataStructureDefinition"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#Observation -->
+
+    <Class rdf:about="&qb;Observation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.ordnancesurvey.co.uk/id/7000000000041303 -->
+
+    <NamedIndividual rdf:about="http://data.ordnancesurvey.co.uk/id/7000000000041303">
+        <rdf:type rdf:resource="&admingeo;WelshAssemblyConstituency"/>
+        <rdfs:label>Cardiff North</rdfs:label>
+        <skos:prefLabel>Cardiff North</skos:prefLabel>
+        <admingeo:gssCode>W09000030</admingeo:gssCode>
+    </NamedIndividual>
+    
+
+
+    <!-- http://data.ordnancesurvey.co.uk/id/7000000000041405 -->
+
+    <NamedIndividual rdf:about="http://data.ordnancesurvey.co.uk/id/7000000000041405">
+        <rdf:type rdf:resource="&admingeo;WelshAssemblyConstituency"/>
+        <rdfs:label>Cardiff West</rdfs:label>
+        <skos:prefLabel>Cardiff West</skos:prefLabel>
+        <admingeo:gssCode>W09000029</admingeo:gssCode>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25 -->
+
+    <NamedIndividual rdf:about="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25">
+        <rdf:type rdf:resource="&qb;DataSet"/>
+        <rdfs:label xml:lang="en">Total population</rdfs:label>
+        <dcterms:date rdf:datatype="&xsd;date">2011-03-07</dcterms:date>
+        <rdfs:comment xml:lang="en">Total population across all age groups</rdfs:comment>
+        <qb:structure rdf:resource="&dsd;population"/>
+        <dcterms:publisher rdf:resource="http://www.wales.gov.uk/"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008NAWAC28 -->
+
+    <NamedIndividual rdf:about="&pca-population2;NAWAC28">
+        <rdf:type rdf:resource="&qb;Observation"/>
+        <sw-measure:population rdf:datatype="&xsd;long">88059</sw-measure:population>
+        <sw-dim:region rdf:resource="http://data.ordnancesurvey.co.uk/id/7000000000041303"/>
+        <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2008"/>
+        <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008NAWAC63 -->
+
+    <NamedIndividual rdf:about="&pca-population2;NAWAC63">
+        <rdf:type rdf:resource="&qb;Observation"/>
+        <sw-measure:population rdf:datatype="&xsd;long">87511</sw-measure:population>
+        <sw-dim:region rdf:resource="http://data.ordnancesurvey.co.uk/id/7000000000041405"/>
+        <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2008"/>
+        <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009NAWAC28 -->
+
+    <NamedIndividual rdf:about="&pca-population;NAWAC28">
+        <rdf:type rdf:resource="&qb;Observation"/>
+        <sw-measure:population rdf:datatype="&xsd;long">89333</sw-measure:population>
+        <sw-dim:region rdf:resource="http://data.ordnancesurvey.co.uk/id/7000000000041303"/>
+        <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2009"/>
+        <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009NAWAC63 -->
+
+    <NamedIndividual rdf:about="&pca-population;NAWAC63">
+        <rdf:type rdf:resource="&qb;Observation"/>
+        <sw-measure:population rdf:datatype="&xsd;long">88388</sw-measure:population>
+        <sw-dim:region rdf:resource="http://data.ordnancesurvey.co.uk/id/7000000000041405"/>
+        <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2009"/>
+        <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://statistics.data.wales.gov.uk/dsd/population -->
+
+    <NamedIndividual rdf:about="&dsd;population">
+        <rdf:type rdf:resource="&qb;DataStructureDefinition"/>
+        <rdfs:label xml:lang="en">Total population DSD</rdfs:label>
+        <rdfs:comment xml:lang="en">Structure of Total population</rdfs:comment>
+        <qb:sliceKey rdf:resource="http://statistics.data.wales.gov.uk/slice/population-region"/>
+        <qb:component>
+            <rdf:Description>
+                <qb:measure rdf:resource="&sw-measure;population"/>
+            </rdf:Description>
+        </qb:component>
+        <qb:component>
+            <rdf:Description>
+                <qb:dimension rdf:resource="&sdmx-dimension;refPeriod"/>
+            </rdf:Description>
+        </qb:component>
+        <qb:component>
+            <rdf:Description>
+                <qb:dimension rdf:resource="&sw-dim;region"/>
+            </rdf:Description>
+        </qb:component>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->

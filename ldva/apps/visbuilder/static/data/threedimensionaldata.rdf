@@ -1,0 +1,1110 @@
+# Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+# Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+# office@know-center.at
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX va: <http://code-research.eu/ontology/visual-analytics#>
+PREFIX code: <http://code-research.eu/resource/>
+
+
+
+INSERT DATA {
+
+GRAPH code:datasetpan_2012_detailed  {
+
+
+
+
+code:datasetpan_2012_detailed a qb:DataSet;
+rdfs:isDefinedBy <http://www.dummy.de/>;
+rdfs:label "pan_2012_detailed";
+qb:structure code:dsdpan_2012_detailed.
+
+
+code:dsdpan_2012_detailed a qb:DataStructureDefinition;
+qb:component [ qb:measure code:measure_711; rdfs:label "Value"@en;  ];
+qb:component [ qb:dimension code:dimension_177; rdfs:label "Team"@en; ];
+qb:component [ qb:dimension code:dimension_530; rdfs:label "Quality measure"@en; ];
+qb:component [ qb:dimension code:dimension_349; rdfs:label "Year"@en; ].
+
+
+code:dimension_349 a rdf:Property , qb:DimensionProperty;
+rdfs:label "Year"@en;
+rdfs:subPropertyOf va:cubeDimensionNominal. 
+
+
+code:dimension_177 a rdf:Property , qb:DimensionProperty;
+rdfs:label "Team"@en;
+rdfs:subPropertyOf va:cubeDimensionNominal.
+
+
+code:dimension_530 a rdf:Property , qb:DimensionProperty;
+rdfs:label "Quality measure"@en;
+rdfs:subPropertyOf va:cubeDimensionNominal.
+
+code:measure_711 a rdf:Property , qb:MeasureProperty;
+rdfs:label "Value"@en;
+rdfs:subPropertyOf <http://code-research.eu/resource/CubeObservationNumber>;
+rdfs:range xsd:decimal.
+
+
+ code:Kasprzak_177 a code:Entity;
+ rdfs:label "kasprzak".
+
+ code:Gillam_177 a code:Entity;
+ rdfs:label "gillam".
+
+code:Rodriguez_Torrejon_177 a code:Entity;
+ rdfs:label "rodriguez torrejon".
+
+code:Sanchez-Vega_177 a code:Entity;
+ rdfs:label "sanchez-Vega".
+
+code:Oberreuter_177 a code:Entity;
+ rdfs:label "oberreuter".
+
+code:Jayapal_177 a code:Entity;
+ rdfs:label "jayapal".
+ 
+
+code:Precision_530 a code:Entity;
+    rdfs:label "Precision".
+
+code:Recall_530 a code:Entity;
+    rdfs:label "Recall".
+
+code:Granularity_530 a code:Entity;
+    rdfs:label "Granularity".
+
+code:Runtime_530 a code:Entity;
+    rdfs:label "Runtime".
+
+
+code:2012_349 a code:Entity;
+    rdfs:label "2012".
+
+code:2011_349 a code:Entity;
+    rdfs:label "2011".   
+    
+code:2010_349 a code:Entity;
+    rdfs:label "2010".    
+    
+code:2009_349 a code:Entity;
+    rdfs:label "2009".    
+     
+code:2008_349 a code:Entity;
+    rdfs:label "2008".    
+    
+    
+code:obs1 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 5.3679195;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs2 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 6.1789512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs3 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.4587984;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs4 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 4.1473262;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs5 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.4236512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs6 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs7 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.0231256;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs8 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.0032154;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs9 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 5;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs10 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.00125786;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs11 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 0.5524708;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs12 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 3.0012548;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs13 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 1.7895623;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs14 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.0032659;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs15 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 3.447445;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs16 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 6.0012458;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs17 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 8.1112215;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs18 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 5.00145968;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs19 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 4.1547896;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs20 a qb:Observation;
+code:dimension_177 code:Kasprzak_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 2.7451236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs21 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1.0243572;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs22 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.1247872;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs23 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 8.2234527;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs24 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 5.3241264;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs25 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 5.4135893;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs26 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 0.1903951;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs27 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 1.2548796;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs28 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 7.1245362;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs29 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 5.2132657;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs30 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 3.1214589;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs31 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 6.0121456;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs32 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 0.0124598;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs33 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.1454789;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs34 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 4.2312569;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs35 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.1214569;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs36 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.3265412;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs37 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;  
+code:measure_711 8.0121326;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs38 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.07845122;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs39 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.07845122;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs40 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 7.230126;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs41 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.4153268;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs42 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1.4521368;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs43 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 4.3265471;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs44 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.3125463;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs45 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.784512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs46 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 5.4712003;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs47 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.47412546;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs48 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 4.1120321;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs49 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 0.1224578;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs50 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.4587965;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs51 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 5.1478420;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs52 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 6.000124;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs53 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 8.012312;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs54 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 5.4587965;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs55 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 0.5004208;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs56 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.5004208;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs57 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 5.0012365;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs58 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 9.0002315;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs59 a qb:Observation;
+code:dimension_177 code:Rodriguez_Torrejon_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 6.4751236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs60 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 0.3491034;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs61 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.1201326;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs62 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.4123659;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs63 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 1.2032154;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs64 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 3.2103256;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs65 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.6541203;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs66 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.1014563;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs67 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 6.0012412;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs68 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.120123;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs69 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.1014563;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs70 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.4784512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs71 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 0.1452369;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs72 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 9.121032;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs73 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 5.4120003;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs74 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.2541122;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs75 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.4784512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+code:obs76 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 5.4100369;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs77 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 0.4478965;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs78 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.8895659;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs79 a qb:Observation;
+code:dimension_177 code:Sanchez-Vega_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 6.8895659;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs80 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1.0073026;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs81 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 0.2312567;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs82 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1.2312567;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs83 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.2312567;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs84 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 4.2013265;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs85 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 2.5899274;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs86 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.4789653;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs87 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.0232657;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs88 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 0.0236512;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs89 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 2.0023124;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs90 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 5.012012;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs91 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.012012;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs92 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 1.5412369;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs93 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.4120236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs94 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 3.4558956;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs95 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 2.4120236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs96 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.4447895;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs97 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.7451239;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs98 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 6.4120236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs99 a qb:Observation;
+code:dimension_177 code:Oberreuter_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.4445785;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs100 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 0.0452519;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs101 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 2.3452519;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs102 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 1.4512589;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs103 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 5.4123659;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs104 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Granularity_530;
+code:measure_711 3.4545251;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+
+code:obs105 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.452519;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs106 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 5.4121032;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs107 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 6.7451236;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs108 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 2.4123039;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs109 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Recall_530;
+code:measure_711 6.4121454;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs110 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.4121454;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs111 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.1254583;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs112 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 1.4254583;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs113 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 2.2551232;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs114 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 3.0262522;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs115 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2012_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.0262522;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+
+code:obs116 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2011_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 1.2262522;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs117 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2010_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 5.0123265;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs118 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2009_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 4.1225220;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs119 a qb:Observation;
+code:dimension_177 code:Jayapal_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Runtime_530;
+code:measure_711 3.1455229;
+qb:dataSet code:datasetpan_2012_detailed.
+
+
+code:obs120 a qb:Observation;
+code:dimension_177 code:Gillam_177;
+code:dimension_349 code:2008_349;
+code:dimension_530 code:Precision_530;
+code:measure_711 4.4102365;
+qb:dataSet code:datasetpan_2012_detailed.
+
+	}
+}

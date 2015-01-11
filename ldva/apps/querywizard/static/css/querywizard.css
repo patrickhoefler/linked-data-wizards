@@ -1,0 +1,199 @@
+/*
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+h1 {
+    padding: 0 10px;
+}
+
+p {
+    margin: 0;
+}
+
+#navbar_container {
+    position: fixed;
+    width: 100%;
+    top: 70px;
+    left: 0px;
+    z-index: 1001;
+    display: none;
+}
+
+#main_nav {
+    margin: 10px;
+}
+
+.generic #menu_vis_dataset,
+.generic #menu_aggregate_dataset,
+.dataset #menu_save_to_qa,
+.dataset #menu_vis_generic,
+.dataset #menu_cubify {
+    display: none;
+}
+
+#content {
+    margin: 140px 10px 70px 10px;
+}
+
+#front_page {
+    width: 700px;
+    margin: 170px auto 0 auto;
+    text-align: center;
+    display: none;
+}
+
+#searchbox th {
+    text-align: right;
+}
+
+#results_page {
+    display: none;
+}
+
+#results_container {
+    white-space: nowrap;
+    min-height: 320px;
+}
+
+#results_container canvas {
+    padding-left: 30px;
+    display: block;
+}
+
+#results_container td canvas {
+    padding-left: 0;
+}
+
+#results {
+    display: inline-block;
+    margin-right: 5px;
+    white-space: normal;
+    max-width: 99999px;
+    word-wrap: break-word;
+}
+
+#results th,
+#results td {
+    border: 1px solid #ccc;
+    min-width: 100px;
+    max-width: 500px;
+}
+
+#results th {
+    white-space: nowrap;
+    background-color: #f9f9f9;
+}
+
+#results th .btn-xs {
+    max-width: 390px;
+    margin: 5px;
+    margin-top: 4px;
+}
+
+#results .dimension {
+    background-color: #D9EDF7;
+}
+
+#results .measure {
+    background-color: #DFF0D8;
+}
+
+#results .multivalue {
+    background-color: #FFFFFF;
+}
+
+.panel {
+    margin: 10px 0;
+}
+
+#dataset_title {
+    display: none;
+}
+
+#results_count {
+    display: none;
+}
+
+#load_more button {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+}
+
+#load_more canvas {
+    padding-left: 8px;
+    vertical-align: middle;
+}
+
+.cubevis {
+    width: 28px;
+    height: 14px;
+}
+
+#add_column {
+    margin: 5px;
+    margin-right: 120px;
+    vertical-align: top;
+    display: none;
+}
+
+#screencast_modal .modal-dialog {
+    width: 915px;
+}
+
+#mm_modal .modal-dialog,
+#sparql_runtime_modal .modal-dialog,
+#jsonld_modal .modal-dialog {
+    width: 90%;
+}
+
+#mm_modal .modal-body {
+    height: 600px;
+}
+
+.label {
+    font-size: 85%;
+    line-height: 1.4;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1px 0;
+    text-align: left;
+}
+
+.btn-xs {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1px 0;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    #content {
+        margin-bottom: 110px;
+    }
+}

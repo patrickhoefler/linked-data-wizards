@@ -1,0 +1,408 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block copyright %}
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{STATIC_URL}}bootstrap2/js/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+    <!--<script src="static/js/jquery.datatables.js"></script>-->
+    <script src="static/js/jquery.datatables.min.js"></script>
+    <!--<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>-->
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3.v3.1.7.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3-bubble-class.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3-multiline-class.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3-scatterplotmatrix.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3-geovis.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/d3-bar.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/table.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/underscore.js"></script>
+    <script type="text/javascript" src="http://www.mindmeister.com/javascripts/bin/embed.js"></script>
+    <script type="text/javascript">
+        function chartFactory_callVisualise(chartname, data, channelMappings, targetSelector, chartRowIndex){
+            if (chartname == 'bubblechart')
+                bubbleChart(data, channelMappings, targetSelector, chartRowIndex);
+            if (chartname == 'linechart')
+                lineChart(data, channelMappings, targetSelector, chartRowIndex);
+            if (chartname == 'barchart')
+                barChart(data, channelMappings, targetSelector, chartRowIndex, false);
+            //if (chartname == 'columnchart')
+            //    barChart(data, channelMappings, targetSelector, chartRowIndex, true);
+            if (chartname == 'scatterplotmatrix')
+                scatterplotmatrix(data, channelMappings, targetSelector, chartRowIndex);
+            if (chartname == 'map')
+                geovis(data, channelMappings, targetSelector, chartRowIndex);
+            brushingObserver.initializeSelfUpdate(chartRowIndex);
+        }
+
+        var brushingObserver = {
+            listeners: [],
+            registerListener : function(chartRowIndex, callbackData, callbackDimensions){
+                var listenerObject = {
+                    callbackData : callbackData,
+                    callbackDimensions : callbackDimensions,
+                    chartRowIndex : chartRowIndex
+                };
+                brushingObserver.listeners.push(listenerObject);
+            },
+            unregister : function(chartRowIndex){
+                var newListeners = [];
+                _.each(brushingObserver.listeners, function(item){
+                    if (item.chartRowIndex != chartRowIndex){
+                        newListeners.push(item);
+                    }
+                });
+                brushingObserver.listeners = newListeners;
+            },
+            lastSelectedData:null,
+            lastSelectedDimensions:null,
+            update: function(originChartRowIndex, selectedData, selectedDimensions){
+                console.log('Brushing update...');
+                var originDatasetIndex = Vis.view.chartRows[originChartRowIndex].datasetIndex;
+                //console.log(selectedData);
+                if (selectedData == undefined || selectedData.length == 0)
+                    selectedData = null;
+                if (selectedDimensions != undefined && selectedDimensions.length == 0)
+                    selectedDimensions = null;
+                var selectedDataChanged = !_.isEqual(selectedData, brushingObserver.lastSelectedData);
+                var selectedDimensionsChanged = !_.isEqual(selectedDimensions, brushingObserver.lastSelectedDimensions);
+                brushingObserver.lastSelectedData = _.map(selectedData, function (item){ return item});
+                brushingObserver.lastSelectedDimensions = _.map(selectedDimensions, function (item){ return item});
+                //console.log('selectedDimensionsChanged: ' + selectedDimensionsChanged);
+                //console.log('selectedDimensions !== undefined: ' + (selectedDimensions !== undefined));
+                //console.log('selectedDimensions: ');
+                //console.log(selectedDimensions);
+                for(var i=0; i<brushingObserver.listeners.length; i++){
+                    if (brushingObserver.listeners[i].chartRowIndex != originChartRowIndex){
+                        if (Vis.view.chartRows[brushingObserver.listeners[i].chartRowIndex].datasetIndex == originDatasetIndex && selectedDataChanged){
+                            brushingObserver.listeners[i].callbackData(selectedData);
+                        } else if (brushingObserver.listeners[i].callbackDimensions && selectedDimensions !== undefined && selectedDimensionsChanged) {
+                            brushingObserver.listeners[i].callbackDimensions(selectedDimensions);
+                        }
+                    }
+                }
+            }
+        };
+
+        var fortytwoId = "{{fortytwo_id}}";
+    </script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/vis-charting.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/vis.js?20140512"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{STATIC_URL}}bootstrap2/css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/vis.css?20130404" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Linked Data Vis Wizard{% endblock %}
+
+{% block header %}
+<a href="/"><img src="{{STATIC_URL}}img/code_logo_95x20.png" alt="CODE" style="width: 95px; height: 20px; margin-top: -5px; margin-right: 10px;">Linked Data Vis Wizard</a>
+
+<span id="screencast-text" style="margin-left: 30px; font-size: 60%;">Watch the <a id="screencast_modal_link" href="#screencast_modal" data-toggle="modal">screencast</a></span>
+
+<div style="float: right; font-size: 60%;">
+    {% if user.is_authenticated %}
+        <span>Welcome, {{mendeley_full_name}}!</span> <a href="/logout">Log out</a>
+    {% else %}
+        <a href="{% url 'social:begin' 'mendeley-oauth2' %}" id="login">Log in with Mendeley</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+    <div id="loadingindicator" style="display:none;"></div>
+
+    <div id="filtering-info" style="display:none;">
+        <h4>Data filtered by:</h4><ul></ul>
+    </div>
+
+    <div id="vis-row0" class="vis-row template">
+        <h1 style=""></h1>
+        <a class="remove-vis" style="display:none;" href="#"><i class="icon-remove"></i></a>
+        <div class="config-vis-buttons">
+            <button class="config-vis btn " style="display:none;"><i class="icon-cog"></i></button>
+            <button class="close-config-vis btn"><i class="icon-chevron-left"></i></button><br/>
+            <button class="add-vis btn" title="Add new chart"><i class="icon-plus"></i></button><br/>
+            <button class="add-vis-aggregate btn" title="Aggregate and add new chart"><i class="icon-indent-left"></i></button><br/>
+            <button class="bookmark btn" title="Bookmark to 42data"><i class="icon-share"></i></button><br/>
+        </div>
+        <nav class="configuration">
+            <div class="possiblecharts">
+                <h2>Possible Charts:</h2>
+                <button type="button" class="btn disabled" data-chart="parallelcoordinates" title="D3 Parallel Coordinates"><i class="icon-chart-parallelcoordinates"></i></button>
+                <button type="button" class="btn disabled" data-chart="barchart" title="Bar Chart"><i class="icon-chart-column"></i></button>
+                <button type="button" class="btn disabled" data-chart="piechart" title="Pie Chart"><i class="icon-chart-pie"></i></button>
+                <button type="button" class="btn disabled" data-chart="bubblechart" title="Bubble"><i class="icon-chart-bubble"></i></button>
+                <button type="button" class="btn disabled" data-chart="streamgraph" title="Streamgraph"><i class="icon-chart-streamgraph"></i></button>
+                <button type="button" class="btn disabled" data-chart="linechart" title="D3 Multiple Line Chart"><i class="icon-chart-multiline"></i></button>
+                <button type="button" class="btn disabled" data-chart="groupedbarchart" title="Grouped Barchar"><i class="icon-chart-bargrouped"></i></button>
+                <button type="button" class="btn disabled" data-chart="scatterplotmatrix" title="Scatterplot Matrix"><i class="icon-chart-scattermatrix"></i></button>
+                <button type="button" class="btn disabled" data-chart="map" title="Map"><i class="icon-chart-map"></i></button>
+                <button type="button" class="btn disabled" data-chart="table" title="Table"><i class="icon-chart-table"></i></button>
+            </div>
+
+            <div class="possibledimensions area" style="display: none;">
+                <h2>Available Categories:</h2>
+                <ul></ul>
+            </div>
+
+            <div class="possiblevalues area" style="display: none;">
+                <h2>Available Values:</h2>
+                <ul>
+                </ul>
+            </div>
+
+            <div class="possibleoptions area" style="display: none;">
+                <h2>Options:</h2>
+                <ul>
+                    <li>
+                        <label>Direction: </label>
+                        <div class="btn-group">
+                            <button type="button" class="btn" data-chart="columnchart" title="Column Chart"><i class="icon-chart-column"></i></button>
+                            <button type="button" class="btn" data-chart="barchart" title="Bar Chart"><i class="icon-chart-bar"></i></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div class="vis-container">
+            <div class="vis"><!-- The chart goes here... --></div>
+            <!--<button class="btn zoomIn"><i class="icon-plus"></i></button>
+            <button class="btn zoomOut"><i class="icon-minus"></i></button>-->
+        </div>
+
+        <div style="clear:both;"></div>
+    </div>
+
+    <ul style="display: none;" id="listtemplates">
+        <li data-dimension="" id="dimensiontemplate">
+            <label></label>
+            <span class="captionSingle" style="display: none;"></span>
+            <div class="btn-group">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caption"></span><span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu"></ul>
+            </div>
+            <button class="btn slim button-remove" style="" title="Remove"><i class="icon-remove"></i></button>
+        </li>
+    </ul>
+
+    <div id="lastrow">
+        <button id="add-vis" class="btn btn-large"><i class="icon-plus"></i></button><br />
+        <button id="add-vis-aggregate" class="btn btn-large"><i class="icon-indent-left"></i> <span>Aggregate (main)</span></button>
+        <br/><button id="add-vis-dataset" class="btn btn-large"><i class="icon-plus"></i> <span>Dataset</span></button>
+        {% if fortytwo_id or true %}
+        {% endif %}
+    </div>
+	
+    <!-- Screencast modal -->
+    <div id="screencast_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="screencast_modal_label" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="screencast_modal_label">Screencast</h3>
+      </div>
+      <div class="modal-body" id="screencast_modal_body">
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+    <!-- /Screencast modal -->
+
+
+    <!-- MindMeister modal -->
+    <div id="mm_modal" class="modal hide fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="mm_modal_label">MindMeister Mind Map</h3>
+          </div>
+          <div class="modal-body" id="mm_modal_body">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /MindMeister modal -->
+
+
+    <!-- Aggregate dataset modal -->
+    <div id="aggregate_modal" class="modal hide fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Aggregate this dataset</h3>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <h5>Group by <span id="aggregate_dimension_error" style="color: #d44950;">(please choose one or more, but not all)</span></h5>
+                        <div id="aggregate_dimensions"></div>
+                        <h5 style="margin-top: 20px;">Aggregate values <span id="aggregate_measure_error" style="color: #d44950;">(please choose one or more)</span></h5>
+                        <div id="aggregate_measures"></div>
+                        <div style="margin-top: 10px;">
+                            <button class="btn btn-default btn-sm" id="aggregate_more_values" type="button">Add another value &hellip;</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="aggregate_create" class="btn btn-primary" disabled>Create aggregated dataset </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Aggregate dataset modal -->
+
+
+    <div id="change-axis-label-form" class="modal hide fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">New axis label</h4>
+          </div>
+          <div class="modal-body">
+            Please enter the new axis label: <input id="axis-label-input" type="text" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="change-axis-label-save" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Axis Label modal -->
+
+
+    <div id="change-chart-caption-form" class="modal hide fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">New chart caption</h4>
+          </div>
+          <div class="modal-body">
+              <input id="chart-caption-input" type="text" style="width:90%"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="change-chart-caption-save" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Axis Label modal -->
+
+    <div id="dataset-selection-modal" class="modal hide fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Show Available Datasets</h4>
+          </div>
+          <div class="modal-body">
+              <div style="text-align: left;">
+                <select id="dataset_endpoint_selector" class="form-control" style="width: 80%; margin: auto;">
+                  {% if fortytwo_id %}
+                    <option value="http://zaire.dimis.fim.uni-passau.de:8890/sparql" data-showowndatasets="true">42 data, own stored Datasets</option>
+                  {% endif %}
+                  {% for endpoint in cube_endpoints %}
+                    <option value="{{endpoint.sparql_url}}">{{endpoint.label}}</option>
+                  {% endfor %}
+                </select>
+                <div style="height: 300px; overflow: auto; margin-top: 1em;" class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 id="endpoint_title" class="panel-title">Loading datasets, please wait …</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p style="font-weight: bold;">
+                      <span id="endpoint_datasets_count" class="pull-right">0 datasets</span>
+                      <span id="endpoint_description"></span>
+                    </p>
+                  </div>
+                  <ul id="dataset_list" class="list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Dataset Selection modal-->
+
+
+
+    <div id="modal-message" class="modal hide fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default modal-close" data-dismiss="modal">Close</button>
+
+            <button type="button" class="btn btn-primary modal-ok">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /General Message modal -->
+{% endblock %}
+
+
+{% block footer %}
+    <div id="helper-links">
+
+        <div class="btn-group">
+            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                <span class="caption">Choose Demo Dataset</span><span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-top">
+                <a href="#?dataset=http%3A%2F%2Fcode.know-center.tugraz.at%2Fqueryviseval%2F2000-2009-G20&amp;endpoint=http%3A%2F%2Fcode.know-center.tugraz.at%3A8890%2Fsparql">Co2 (Tons per Person), Life Expectancy, Population (G20, 2000–2009)</a>
+            </ul>
+        </div>
+
+        <button id="button-print" class="btn btn-mini" style="" title="Print preview"><i class="icon-print"></i></button>
+        <button id="button-capture" class="btn btn-mini" style="" title="Capture as Image"><i class="icon-camera"></i></button>
+        <a id="querywizard" href="/search" class="btn btn-mini" style="margin-left:10px;" title="To Query Wizard"><i class="icon-list" style="margin-right:5px;"></i>Query Wizard</a>
+        <button id="button-do" class="btn btn-mini" style="display: none;" title="do something"><i class="icon-film"></i></button>
+        <button id="button-do" class="btn btn-mini" style="display: none;" title="do something"><i class="icon-eye-open"></i></button>
+        <a id="mindmeister-modal-link" href="" class="btn btn-mini" style="margin-left:10px;" title="MindMap the results with MindMeister"><i class="icon-eye-open" style="margin-right:5px;"></i>MindMap</a>
+    </div>
+{% endblock %}

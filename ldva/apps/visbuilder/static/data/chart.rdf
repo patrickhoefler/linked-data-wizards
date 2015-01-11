@@ -1,0 +1,1278 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:va="http://code-research.eu/ontology/visual-analytics#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:code="http://code-research.eu/ontology/visual-analytics" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	
+	<va:ColumnChart rdf:about="http://code-research.eu/ontology/visual-analyticsColumnChart">
+		<rdfs:label>barchart</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticscolumnchart" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsGoogleColumnDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+					    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 column.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						VBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DA
+						cdvqGQAAATwSURBVHhe7Zr9T1tVGMfZX7MfjIsmJib+YGJiYmKyJUtMTExmSBajw7hp5nhZ0BmNmqFGdIlZ3FvYlDHZgsPpYDj3wi4ID
+						GFAgRYGK4W2lLb0hb5AZ76e5/YcuL1QWjp6e733Psnzw21vc3s+z/ee+33OPWVWWGGFFeqorq7eSckPzRds8Eco+aG5glf/DE/zqYAqr
+						wBgLhVQxRWDl/PQkVrzqIANWFl9OQ9XHjXfXCAGv7fi+M5nyk9Jz+4/l3rurQY8/84FvPBuI1482ISXPmjGyx9ewSuVLXi1phW7a69h7
+						7HreO3Tdrz+eQfe+PIv7Ku7jfJvOrG/XsLbJ3pQ8UMf3jvZj/dPDeLw2SFUNthw9Kex1EcX7dKxJod+lCYA7HrzpLSr/DQYABQRABgAf
+						HJpQuKXL30IAE/t+zFFAOqabTj758y6PHdzBudvufDznVk0dc7hl3tuXOl249ceD37r8+KP/nl0jQcx9CiMMVcEE+4lTM/H4PLH4Qkm4
+						Asl5c/SACZT/PKlDwUAEICNBk+ZC8Admx8DUyGMOCMYn43ioWcJTl8Ms4EEvItJLISXEYyuCADgly99bAeA9gEf7k8u4sF0GKMzETjcU
+						Ux5Y5hZiMPNAMyz6gciy1hcMiCAq70edI8H8M/DEJd/FJOs+o9W5b9W/VBMRwCqqqrO8LRTFgrgxqAPvROLafmz6tvnmPy9JP845qj6T
+						P5+Xv1IPGU8ANJYYE3+bPJziMmP5M8nP5I/VT+qJwAinuQWoMmvxxGU5T/sDMuTnyx/mvz8mZNfOJbCUkLfALb8GOxg8u9j8h+cDsHG5
+						a+e/Ej+IS5/+pwD0N9j0PRGaE/FV5pY4dpGu/TxRR1aYX5ovrAAWABMCkBthHYf0GQSXPUBn12ewhctThxvdeHr3+dS9W0e6ft2r3aTo
+						xrA05o+BtcBQH2bFydu+LR/PIpbIJcRUqcwRo3MGF1ixuhylxstrDNs5WsD1CF227OtD2Q6RJc/mQbQ4dPeICkAbGqF1ZkLwF2+PjCcs
+						T6QbpDIIisbJLLIHID2FrkYAKhDTFvksGyRHUqLzBoksT4gLHIs+dg4AKhB6hoPoH8yvT4w6oquk79PIf8oq37cSACo+msdYlr+1CFml
+						/9jJJYNBKBzNJAhf3WHuLo+wADQ+gDJP7FiEADX7nvRPR7cVP7q9YE4q35y5V9dAHjix+BW5S9XnwHwhpYFAO0eg2ojpO16gA6MkBrAn
+						gN1JbXC3173SN9paYVFiFuAH5ovLAAWAAuADKDI6wGpyoYRqeaCTX87UAQAjdYD9LMcLkIAyGWEhPFRvxqjt8M3hxbwN+v9+1dfkGb2/
+						yPOsACgnxciIhQANrXC2QC0Dfhwbyyw9oI0y/4A4QP4ZUsfaiNUCICrvV7cHvHLO0Ny7Q8wHIBmyY2OBwu4y7q/Hib/XPsDdAdARKG3Q
+						Cur/q1hv/x6PJ/9AYYDQJ0f7Qui9jef/QGGAkCtL838tPiR7/6A/wOAvB+DsvzZ5Efyz2d/AEHhAPT7GNRiPaBGz0aoyPsDZCtcfV7HV
+						pgfmi8sAAYBwMZA2/+3fosZAQD7/zvEOFhuDYTih7nSznOj75RZqvPUmR8I1Y82y+3+w9t9njoLuyWyhWie+GHWyOc89v0Oft5p/tGGk
+						e95bKCF3wL5Bv8jugRAUbSBW2GYKCv7D2Rk8jy7tbnBAAAAAElFTkSuQmCC"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+	
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsColumnChartXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsColumnChartYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:ColumnChart>
+
+	 <va:Streamgraph rdf:about="http://code-research.eu/ontology/visual-analyticsstreamgraph">
+		<rdfs:label>streamgraph</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsstreamgraph" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsStreamGraphDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 streamgraph.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						VBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DA
+						cdvqGQAAA7VSURBVHhe5ZoJcJTHlcdDXI6PTbJxDF4n1NqJg+3ETtnr3fX6SLbsdZV3s5dtvIoX2E2CDcE2DnZsgo1BIMASpwyIYA6BJ
+						E6Bbs1oRkJCQoCQkNB939eM7hlp0K2Z+b7+7+tPI9Uweh8GB2dN6av61Wu96el5//e6++uu0tcATGtY53SCdU4nWOd0gnVy3GwPp4GDd
+						XLcbA+ngYN1ctxsD6eBg3Vy3GwPp4GDdXJ80ecnyztmPL7WcdsTAY5v/l1Az52PBlTd8kyg/fafb+y942dBtm/8eEXl1z1db+jDaeBgn
+						RzX8sx+1zbjB8vttz/wYd93fvRR76wHVnT/5SMrbfdQAp58Yp3j35/c4Jj31CeO+c8GOf7tHzc5Xnh+i+PZF7Y6HnkxuG/Wv+7o+85/h
+						PR9++Vd9tvnhthvkeO9ut0yw2+ndYY2uM4jEygTKRMqEysTLBPNaeBgnRy3Luyeccv89slg7nyz++vfervnzrvesc2ctcx+31+9a7vv+
+						+/Z7r9/ee/PKAGvzVnZ9/bDq/rWrI4bxvKoIbwXOYwlhwbxqwMDWBwxhA9ODmGdYRhbkkfw2ZlRHM8dg7HEibQKF3Ia3PjlZ/1z5u913
+						Pu/oQP3vB42cNei8L47ZGJkgmSiZMJk4mQCTaUuJBS5EHXJiYgLYxq+8evBOjluXWT71q2Ler53229tD96xxP7YX7xp/5tvv21/8a537
+						AtnLev96N73erfNfr/v6H1/6EugBJhe2zOAfw7ux8839uPlXQN4PWwQbx0exNIjQ1gYNoDfHJSJGMQiQibljfBBvHNsCKtih7DBOIzgl
+						GHsPztG/QbfXxQ+uGTJoQE/v8/6n311d/9/Hs0ZFfvos60pI5TEEXwUM6R999cHhzBvrxx7kELmdfjCOjm+sdj+CrH0tt/aAykB+7/5l
+						j3xX0igFPmLTwfw3OZ+/NTfgee3XMb8fVLsEFZEDyPINIJd6aMIOz+GmHwnkstcSKJKn6CK78scRcjpUWykPitjhvH+iSH8gWbLByeHs
+						YwEvXt8fKasih1BQOIw/OOH6fNhvElj/4YSumA/iQ2jNgmW7f8JpYSGD1GyhyhkXocvrJPjmcDLeOqTy3g26DJk+9HVDvz9egdVtx9LK
+						KAPo4ewmabz3jMj4mj2GOIKnDhT7RQlVgWlFpeoaFNQ2e4WtV0q6jrdorpDRYlFwcVGl8iud+NMlVOYSp2IzB0TYVlj2J0xKj5NHdGSE
+						5gkEzCCZZSQ9yKH8DtKzgcnxhMiP6eZIGQyj+SM4WjOmAg99yUsgcfWOPDitn4spGx/SFXYRmLDKdCoPCcMtP4yqt0oapUiVVQRUmBdt
+						4omm4rGHmkFGokGajf2SCtQR8mo6lC0RFxqVpBdr+BcrUKJc2vjna5yw1zmRmKxC9H5Lm1JhGU5ab9wIq7QRXuGC6bS8X5n6XtZ8vt1C
+						jJrFAqZ1+EL6+TYfWYM+8/RJpNN0/eSCynlbmQ3jAdeQMJLqcI1nYomuq5boN5DbZcgPwklyikxJVYVha0q8ppVZDeqyGqYynkSMoEUd
+						FaKIoGplW6kV4+3J/znPP28vyutb/x6sE6O0+k2yrRLnK5StCDSq10is1bFmRo3a6/22fX08e6bcR2/6Ru/HqyTwzz7U6T8dwLS4q1I1
+						5KgfqXxjV8P1slh/m4wku7aLMwzNyP5n44geU+lOFXsREqFW5yqVKdYzsf1SS53ieRyBaaycSv/vqLvBZs4leu4YjzZJ6Vial/vtm/8e
+						rBOjrbwAlx47jDMM4NhvnsL2U0wPbEX5vW5MOcMwVyufmFMZTIB40z6C0aQFBANw98ugOHJBUjaaoCZNj3v710N3/j1YJ0sDgdUe6+wm
+						SpQ8Fo0zLO2CfPdm5H03SBh+tF2GJemCmOKnXZstzCUqpBMtPWs7mfhhTA8974wzvFD4py5wvDQKzA8/BIS/VYJwykL/x2y3u0p8evAO
+						ln6+qDR2wth78VAXiMqlpmQ+oOdNCM2w3T3Rphmb4bRLxYJkRY6B7gRV6ReBwrikzthmL8Lxjm/hvGBBTA/8iuUf/wZin63BUk/9oPho
+						ZdheGIeEjYbEUeHKn6ccabErwPrZCHhqt0uYLdDotropU52pLJVNARmIP2RP9KM2ISkuwOF6Z5AGF6IQGxIhYjKdeFkvltEFShT7GQ7Z
+						xRxK03C+JN3YbjvdWH84UJceDVAXD6XD7WtTYi2NnRGnULqM28Iw4NzkfjgSyLBbw2ikiz8eGSnxK8D62TxCIfNdiU9PRqKpRNtBy7SP
+						nGQlgftDzMDYZq1AcbHdyHWPwcn0gdw/JJyJXluRO8th+HpQCT99VLiLaT/wwq0RaRAWKwACffGWVGDYjkbHpaz4RUkPj4P0RuNiKQTo
+						O/YU+LXgXWykFi1h45vHsFqN51ypO2ik05396RV2jqELaEY+X7HKQm0P1AijDPXCeODWxGzJFkcS+rF4YsuccxoQ7zfERhnLxdJs3+Pp
+						Pt/LypWHMZYRZ2QYlWrVcBqhWqxaFZrt7YKUVePjvA4kfbUG5P7Q+wrq2m8dhzJVbSxpZ0Svw6sk6Wbqq1BCejyorP7Sjq6JhnMrkXF0
+						gSk/nAbJeMTmhHrkfS9DYj/xWESvA6me1fC9P2PcPGlEPSfLQUs7QRVe4JWCYmXtFiA2gagskbDmVuM4jdpyT38SxjlsnhsHiI3GBFBl
+						67w7C8jAZ02CAIdkh4IQrPtZNu7yZL4NrKEtGjrgrBSIojRoiY0rEtFxqM7KQkyEST+nrVI/+kmtO3PhNpohWgh8YRmm8k2k3hCNJFtI
+						PGVDRDldQAxactq0XnQgLSnF1MS/ouWxVzEzF2L8FhKGKeBgXVyiHYbFGsPbUiUCEKxdAthlWvfY1u7hLDQEvBY0Urtlk4hWrugNJNt6
+						YKrxiqsu7OQ+9IhUfVBIpylLVAa24Vo6hi3jWQbaNNrbIdST7a+DUpFsxCljRClDVBK6qk91Y5mlYmixfQGeug1bVkkPraAQuZ1+MI6O
+						YTFThsT0SqhJEhavGim2eBNEyVhgsYJaFY0+FDfOU7dBB0QNUQFzYriZoiia0MtbEJHaDLSnlpCr1E/CpnX4Qvr5BC1VFG6x4pmSgCht
+						ZtoJkjbSJbut6KRZgJdAUUDJYBQ6Foo6qWlWVFH36eroWZryNaSeEKpptlRQ7aqQ4gKqnyxRYiCVij5LVdYzsf1GcmoFMWLgylkXocvr
+						JNDXKKK5NOaLKHqVFI1a6jqdZSMeg+yXSd9RK0H2UeDEiKp9lAloTEqKAmlVPUiWvP5NL78jRuAmkd7BqOBg3VyqBepOjltQtrJdh6t2
+						UsdQi2kChZ1CbWUql3SLdQyej0SSim1pa+YPiumyhd2CrWgE0peu/Zd7zE/z15vH9/49WCdHOqFTtxM+MavB+vkUM/3wH2OKkrWu61nb
+						1Sf6+nr3faNXw/WyaGepfP/TYRv/HqwTg41ow9/bhTicqoVnSkNGD7dBXdGr+bj+vriG78erJNDOX0Z7jSHkNa7rWf/1D4jqTaRG3MeE
+						eER4tChQzhy5Ahij8eI9JhUXErIFnWmcnQmN4nBtC440/qmjOcbvx6sk0NJHcCfAzfRZmhEdEQUDhw4gLCwMBw+fFhDJuHYsWOIjIzEy
+						ZMnERUVhfjYeJjjTcgynkWJqQBNyTXoOfUlHIWVlGG4kgeFtN5tPftF+oyaL+P80Uyxb88+7NmzRxw8eBBnz54Vra2tqK2tRUFBgTh//
+						jySk5NFQkKCTIKQSYiOjhZxcXGQvsTERGE0GilkXocvrJNDMY9CMRHSerf17HX0cROWmCYc3XsEu3btwu7du7Uq19TUoLOzU6OjowPt7
+						e0abXRdtlgsaG5uRlVVFQoLC3HhwgVkZGTAbDYjKSmJQuZ1+MI6OdxGJ1yGMSGtd1vPXmuf4YRBkRmWge3B28X27dtlAoQUQiKFFE6Cx
+						YRwq5UuU1arFC9kAlpaWgQhEyFkMurr61FRUSFKS+lqzWjgYJ0c7kQ3biQuojmyGaHbQ7FlyxZs27YNERERWkUnKj5RdVlxiUc85JKQe
+						MSjoaEB1dXVqKysnMQ3fj1YJ4c7XoUzThHSerf17NU+G44ZE6l70rApaBMCAwOFTEBKSoqQIkm0kMLlDPCInqi6VnEpfKLidXV1QgqXV
+						Z8QXl5errV949eDdXK444A/FVesQMPhZuwK+iPWrVuH9evXY9++fVLAlDXOVbupqUmb5h7RUqwuvvHrwTo5OEHXijNWRe+JfphDUhDgH
+						wB/f39NvNytpUgp2Fe0rHBjY6Os8qTgsrIyyPV9LfjGrwfr5NCExKhiUpSnzVlZaVtkHwpDS0TCjkTs2LBD+K/2x8cffyxWr16NrVu3C
+						nq9aYIIISsmrfy7pKREECgqKhLFxcWT1rutZ73bvvHrwTo5JoRzOGMVqvBlFB0ohSb4k51apaVYb2TV5UEmLy9Pe3XdaOTbQ74+5dvEN
+						349WCeHJtRTZVnhnuO9opgEx21PEDs/CcHqVau16k5UWRIQECBCQkKkaHHq1Cnk5OSI/Px8mQDNerc/z3I+eveL+Ph4hIaGIigo6Ipk+
+						8avB+vksJ9wQAqO16b0Tqz1X3vFD0pkhXfu3ImjR4/KXR3Z2dnIzc3VoKCnWM73eX3T0tK08YODg6f8Pr1RIE+PvrFfDdbJscZ/zRXVl
+						W2qsJxuQp7R6fSlHVNJtKBKy2pPtvXs5/WRJzo64gp5Pti/f7+WYG/Bkh07dsiECC7ma4F1csgfk68u+YPyYiKDO3fuHLKysr4wcpbQ2
+						V275ISHh2trlzbIKSI3btw42ZYx0D2BQuLjvF5YJ4fBYEB6erqQoiXyknI1K0lNTdUuLcePHxfyVifP+PLEJ0V4C9RD9p04IfrGc6Ngn
+						RyZmZnwRa5HeQuTO69cexMCfTckPSaOwPIwdL1r90bBOjnk3VyuQzlFr1Wg7Cf77927V7vb+475VYB1cnACV61a5SAyqR1BrKP2QrLP0
+						+Z4r+dfiv/fHk4DB+vk8Ah8Swok+7Tnd76yD6eBg3VOJ1jndIJ1TidY53SCdU4nWOd0gnVOJ1jn9AFf+z9xxJVCRtW5KgAAAABJRU5Er
+						kJggg=="/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsstreamgraphXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsstreamgraphEntry">
+				<rdfs:label>Color</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsstreamgraphYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:Streamgraph>
+	<va:GroupedBarChart rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChart">
+		<rdfs:label>groupedbarchart</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsgroupedbarchart" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsGroupedBarChartDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 groupedbar.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.6929in" height="8.26772in"
+		viewBox="0 0 841.89 595.276" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:custProps>
+			<v:cp v:nameU="WantAutoLayout" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+			<v:cp v:nameU="CustomLayoutsAllowed" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="WantAutoSize" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+			<v:cp v:nameU="ShowDivider" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="GridGranularity" v:langID="1031" v:cal="0" v:val="VT0(0.039370078740157):24"/>
+			<v:cp v:nameU="Theme" v:langID="1031" v:cal="0" v:val="VT4(Classic)"/>
+			<v:cp v:nameU="TOPLINESTYLE" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="TOOLBARLOCATION" v:langID="1031" v:cal="0" v:val="VT0(4):26"/>
+		</v:custProps>
+		<v:userDefs>
+			<v:ud v:nameU="BOXWIDTH" v:val="VT0(1.1811023622047):24"/>
+			<v:ud v:nameU="BOXHEIGHT" v:val="VT0(0.59055118110236):24"/>
+			<v:ud v:nameU="HASSYNCCOPIES" v:val="VT0(1):26"/>
+			<v:ud v:nameU="OCNumDisplayFields" v:val="VT0(2):26"/>
+			<v:ud v:nameU="visPPO" v:val="VT0(2):26"/>
+			<v:ud v:nameU="DocShowPicture" v:prompt="" v:val="VT0(1):26"/>
+			<v:ud v:nameU="DocShowDivider" v:prompt="" v:val="VT0(1):26"/>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+			<v:ud v:nameU="msvNoSubprocess" v:prompt="" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:custProps>
+			<v:cp v:nameU="Theme" v:type="1" v:format="Klassisch;Modern;Elegant;Notizblock;Retro" v:invis="true" v:langID="1031"
+					v:cal="0" v:val="VT4(Klassisch)"/>
+			<v:cp v:nameU="ShapeClass" v:lbl="Shape-Klasse" v:type="1" v:format="{52BC4E31-A33B-11d1-B2B9-006008BD347E}"
+					v:invis="true" v:langID="1031" v:cal="0" v:val="VT4({52BC4E31-A33B-11d1-B2B9-006008BD347E})"/>
+		</v:custProps>
+		<v:userDefs>
+			<v:ud v:nameU="DocClass" v:prompt="Organization Chart Document" v:val="VT4({429428D1-A7E7-11d1-B2BD-006008BD347E})"/>
+			<v:ud v:nameU="AllowShapeMoveCallback" v:val="VT0(1):26"/>
+			<v:ud v:nameU="Theme" v:val="VT0(0):26"/>
+			<v:ud v:nameU="AllowCtrlMoveCallback" v:val="VT0(1):26"/>
+			<v:ud v:nameU="SCALECHANGEDEVENT" v:val="VT0(0):26"/>
+			<v:ud v:nameU="BOXWIDTH" v:val="VT0(-0.039370078740157):24"/>
+			<v:ud v:nameU="BOXHEIGHT" v:val="VT0(-0.039370078740157):24"/>
+			<v:ud v:nameU="OCNumDisplayFields" v:val="VT0(2):26"/>
+			<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+			<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape2-1" v:mID="2" v:groupContext="shape" transform="translate(220.627,-337.131)">
+			<title>Tabelle.2</title>
+			<rect v:rectContext="foreign" x="0" y="547.269" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="547.269" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="547.269" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartBarAxis">
+				<rdfs:label>Bar</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />				
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />			
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:GroupedBarChart>
+	<va:PieChart rdf:about="http://code-research.eu/ontology/visual-analyticspieChart">
+		<rdfs:label>piechart</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticspiechart" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsPieChartDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 pie.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						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
+						wRpbGlvLQAAAABJRU5ErkJggg=="/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticspieChartXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticspieChartYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:PieChart>
+	<va:LineChart rdf:about="http://code-research.eu/ontology/visual-analyticslinechart">
+		<rdfs:label>linechart</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticslinechart" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsLineChartDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 multiline.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.6875in" height="0.6875in" viewBox="0 0 49.5 49.5"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48" height="48" class="st1"/>
+			<image x="0" y="1.5" width="48" height="48" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgo
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48" height="48" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticslineChartXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticslineChartYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticslineChartLines">
+				<rdfs:label>Lines</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:LineChart>
+	<va:BubbleChart rdf:about="http://code-research.eu/ontology/visual-analyticsbubblechart">
+		<rdfs:label>bubblechart</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsbubblechart" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:supportedDimensionalt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimensionalt>
+		<va:supportedMeasurealt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</va:supportedMeasurealt>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsBubbleChartDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 buuble.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						VBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DA
+						cdvqGQAAAObSURBVHhe7Zs/aBNRHMezKbYXik1ixUEHoc0J0kVprFi9o1C3TtJFENwKNl2kGRzcOkjb1SSWjKJoL4nXFNIhOHUSHYTSS
+						TfdLoKSpgrx96u/Sy/HJffHy12Sex/40r73+4Xe93vvjsdrG2IwGAwtqVRqHEXD4AHmH6NoGCzo7m+SgrcK8M5rAgjWKsA7rjGvKjirA
+						Mxq776q4L0LVPM0DB4sAI8DkPmZsUJcfFrghQqqyIsb0vjMJSp7j5cBSHFhHswrBV5s6CXxwgNq8xazAIoz5yNvE6PXXk2dvUBTjsA7n
+						+fFmpF5VdIV8Ta1d2St/Gtqffcot757+HJttzZH087oFMDWdPTmViKyB/qMepMYnaeSbeDOrxqZbpVQofa2/DNfb2i1Vj5cprJ9OgaQi
+						ORU86Q9KtmmEBc+Gps+Ea4Qam8LGJb0AayX69+obB+TAMotAdwY/UAl2+Tj4r6Rab2ovS1gtqIPAFaAQmXrrKysbKLA/AGKpluQpiMPW
+						wOIPKOSbYpxMWdkuEWwSqi9Lbjc9QHgu4DK1rESALI1HbkrJaKL8PVeae7yKZq2jcTPThqa1kiaECw9y2B6o2m+XN/ZqDRGqGQfXP4oG
+						naVTi9CXCHU5i1eBoDkJ4QF3fvgS56/k6Ky93gdQM/BAmABsABYAIEMwOpGaGAJfAAquPxRNAweLAAWAAvAcQCuns35hdMAXD+b8wunA
+						YBhd8/m/MJxAG6dzQHRpDIZTVb3Ysnq/rml6gJNd5f/3Qi5djYHoHFQAwVB1KKLP8eo1D3c2AmCaVfO5mJLVUUNAHUuqXj3qzJc/iga+
+						kIsqSw3A1iqens22AsBIPgeiD36MUVD7+iVAHyDBdDHAbwLZ6/Lw89v0dAZ/RgAmt7mMp9kLl0jfQfdp7I9+i0AeeTFxW0urWjMN7Udz
+						s5Sm3X6LgAunWka5tJ1mcscacbvqc0cOxshOZydKw2lvdmimoAmVcNgvgGPQgO+P1TnqM0cOwHAD6mVuGxDPpPr/hbVBHk4XdQE8BsC+
+						aOO4fuv1GYdXP4oGhqyw2VWS8PZXCWUO01TvoHP+UkAOoUzT6jNOlYC6DXQqEEAr3NOblA/BoCUhrJXj4MAOXr7q/RrAK7BAmABDEYA4
+						AH//N/+/zsMUADHPkD2gtB80JJg83SAMqpp5VefRtaC0H3IVG5fsNt9Gjl7JMyAi8CLMX1kvO7runEVty5Yxa2+rhtnDASh0F/eeYXxd
+						mBpCAAAAABJRU5ErkJggg=="/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+	
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartSize">
+				<rdfs:label>Size</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />				
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartColor">
+				<rdfs:label>Color</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:BubbleChart>	
+
+
+
+
+	
+	<va:ScatterPlot rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplot">
+		<rdfs:label>scatterplot</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsscatterplot" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:supportedDimensionalt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimensionalt>
+		<va:supportedMeasurealt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedMeasurealt>
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsScatterPlotDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 scatter.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.6875in" height="0.6875in" viewBox="0 0 49.5 49.5"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48" height="48" class="st1"/>
+			<image x="0" y="1.5" width="48" height="48" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgo
+						AAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR
+						XSURBVHhe7ZtbbxtVEMfzQi/kdgLpASJq2gY1JE1kt7RNiezmoSCQ+CAIyp0WB0S1r4AQAkIbQmgTWCqUIu/aD7ZBUCgt5Vrezks/Rey
+						+ZRdpmFmPUzcK9SW73nV2/9JfZ2bOsbTzO7sn6yjpihQpUqRazczMjJA5DZ+w+dNkTsMl3v3z7PDdBbTzNQDCdRfQjtc0X3V47gJstnb
+						3qw7fWVBtntPwKQLQoQCWb9japX9sjdPWtRGATKpbZKZ36DhKLlFNck1wyVd987cNyzf+BU5b18YAenQj1QM4qkyyT2aS/ZJirum8zFf
+						pf9pw8S/bIwDYtJEUykgOQCY5gBAGnJhqNMfLfNXibzZ8+btHAEjG1KBEK2NqV6piigd9a372J0s797MFc1csmP/Fgs+vWmLhmiUuXLd
+						hCWF89YcDpPkz4X8BHBuSxrGHFDrFxnjINwAfX7a0Ty5bgCDgLIJAGOKzK5ZAEPDFNRsu/GrD4vUmAKTT6fNkbP4mmcuOjKN7pDEZU+Z
+						kDIzJ3YpciWPKOPpIIB6BWYTxKcLgtHndDYB5ZJ+OBrTTMJliqhk4x8t81Yc/rMJHP24CQFV0+5M5dWQeHhbm4f0IYXhttyl2ajjHJV/
+						1/ner8MH3q94dgm7IPBgX5qFx3UwkboPEuFKLbwrku8VV7T00p63LUwCJhJ49mAAclRl/XDrGmGuBeJS8BRA/JLPxIwoNZmV0YhoJBi/
+						zV14CIGUnnpDZiSmFYwpHMsXBaJ7kOYAD0zI7flxlDxxPOXbi6XAAyI4+JbNjJ1Ru7ATQeEc8+uTWfwRyo0/raECrHDZcMcVOzd9D8G4
+						vQm4p99gzIjfyrI7j2m5TzDV/3yfaAaAjRLc/mdPwKQIQAYgAtAXA+JmyNoHmNDhqF4Cxd27B+Jlbm//66rbaBWD/W2UYebscXgD70mU
+						YngkQAK9fhOQrJe3B10ow9HoJHn7DsYidKom9b5aBYDyKMND+nQleAxh8uaShAUHAA6+WAGEIhCF2nypB7HQZ9iCIvekAHIp0+5M59Uy
+						7GASnwVG7ANz3YgnufynEAPpeWIH+kyvhBdDz/IrWi+a0JeX7z4q8mNXzfefWvl5T7NRwjkvNqV0A3FC+bw4bnQMcVb53XjqmuFJr7Rc
+						sHQXAaXpBFXoXgMY74/nWfsVWD8DO51Y0Mqe+K9+9KAs9S6rQvZRyjDHVeLp5NQAAyJz6rsLOi7Jw79cKnWIrqvF042r0RShIAArbv5W
+						FHcsKDTzejnGOlzWmzgRg6MXtBuCIDV+SFRuKa+4cgtgsPfNO02zBrq35ciYUt5mieE9OL24z1nab4krNdOfHIDW3rtnAAPBE6wGsV7V
+						pTreeIgARgLoAAvUi5LrqAegUYQ/05//N/7/DFgLg9IFuDkTNBxsyvjzdJG80V2u/1tW4MRDrPlTXbl+w2+tq3NojUU94EXQxdR+Zdq/
+						zvPGq3Lrgqtxa53njkbaEurr+A0TMVd4nB4lHAAAAAElFTkSuQmCC"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48" height="48" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotYAxis">
+				<rdfs:label>y-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotColor">
+				<rdfs:label>Color</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:ScatterPlot>
+	
+	
+	
+	
+	
+	<va:ParallelCoordinates rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinates">
+		<rdfs:label>parallelcoordinates</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsparallelcoordinates" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsParallelCoordinatesDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 parallel.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinatesXAxis">
+				<rdfs:label>x-Axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#Multiplicity" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinatesColor">
+				<rdfs:label>Color</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+			
+	
+	</va:ParallelCoordinates>
+	<va:Scatterplotmatrix rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotmatrix">
+		<rdfs:label>scatterplotmatrix</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsscatterplotmatrix" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsScatterPlotMatrixDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 scattermatrix.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotmatrixAxis">
+				<rdfs:label>axis</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#Multiplicity" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:Scatterplotmatrix>
+	<va:Table rdf:about="http://code-research.eu/ontology/visual-analyticstable">
+		<rdfs:label>table</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticstable" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
+		
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsTableDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 table.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.687593in" height="0.687593in"
+		viewBox="0 0 49.5067 49.5067" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+			<image x="0" y="1.5" width="48.0067" height="48.0067" preserveAspectRatio="none" xlink:href="data:image/png;base64,i
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="1.5" width="48.0067" height="48.0067" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		
+		
+		
+		
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticstableColumn">
+				<rdfs:label>column</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#Multiplicity" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:Table>	
+	<va:Map rdf:about="http://code-research.eu/ontology/visual-analyticsmap">
+		<rdfs:label>map</rdfs:label>
+		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsmap" />
+		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimension>
+		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
+		<va:hasDescription>
+			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsMapDescription">
+				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
+				<va:svg rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					<![CDATA[
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generiert durch Microsoft Visio 11.0, SVG Export, v1.0 map.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.6929in" height="8.26772in"
+		viewBox="0 0 841.89 595.276" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:custProps>
+			<v:cp v:nameU="WantAutoLayout" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+			<v:cp v:nameU="CustomLayoutsAllowed" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="WantAutoSize" v:langID="1031" v:cal="0" v:val="VT0(1):26"/>
+			<v:cp v:nameU="ShowDivider" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="GridGranularity" v:langID="1031" v:cal="0" v:val="VT0(0.039370078740157):24"/>
+			<v:cp v:nameU="Theme" v:langID="1031" v:cal="0" v:val="VT4(Classic)"/>
+			<v:cp v:nameU="TOPLINESTYLE" v:langID="1031" v:cal="0" v:val="VT0(0):26"/>
+			<v:cp v:nameU="TOOLBARLOCATION" v:langID="1031" v:cal="0" v:val="VT0(4):26"/>
+		</v:custProps>
+		<v:userDefs>
+			<v:ud v:nameU="BOXWIDTH" v:val="VT0(1.1811023622047):24"/>
+			<v:ud v:nameU="BOXHEIGHT" v:val="VT0(0.59055118110236):24"/>
+			<v:ud v:nameU="HASSYNCCOPIES" v:val="VT0(1):26"/>
+			<v:ud v:nameU="OCNumDisplayFields" v:val="VT0(2):26"/>
+			<v:ud v:nameU="visPPO" v:val="VT0(2):26"/>
+			<v:ud v:nameU="DocShowPicture" v:prompt="" v:val="VT0(1):26"/>
+			<v:ud v:nameU="DocShowDivider" v:prompt="" v:val="VT0(1):26"/>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+			<v:ud v:nameU="msvNoSubprocess" v:prompt="" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:custProps>
+			<v:cp v:nameU="Theme" v:type="1" v:format="Klassisch;Modern;Elegant;Notizblock;Retro" v:invis="true" v:langID="1031"
+					v:cal="0" v:val="VT4(Klassisch)"/>
+			<v:cp v:nameU="ShapeClass" v:lbl="Shape-Klasse" v:type="1" v:format="{52BC4E31-A33B-11d1-B2B9-006008BD347E}"
+					v:invis="true" v:langID="1031" v:cal="0" v:val="VT4({52BC4E31-A33B-11d1-B2B9-006008BD347E})"/>
+		</v:custProps>
+		<v:userDefs>
+			<v:ud v:nameU="DocClass" v:prompt="Organization Chart Document" v:val="VT4({429428D1-A7E7-11d1-B2BD-006008BD347E})"/>
+			<v:ud v:nameU="AllowShapeMoveCallback" v:val="VT0(1):26"/>
+			<v:ud v:nameU="Theme" v:val="VT0(0):26"/>
+			<v:ud v:nameU="AllowCtrlMoveCallback" v:val="VT0(1):26"/>
+			<v:ud v:nameU="SCALECHANGEDEVENT" v:val="VT0(0):26"/>
+			<v:ud v:nameU="BOXWIDTH" v:val="VT0(-0.039370078740157):24"/>
+			<v:ud v:nameU="BOXHEIGHT" v:val="VT0(-0.039370078740157):24"/>
+			<v:ud v:nameU="OCNumDisplayFields" v:val="VT0(2):26"/>
+			<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+			<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(311.361,-351.613)">
+			<title>Tabelle.1</title>
+			<rect v:rectContext="foreign" x="0" y="592.676" width="2.60003" height="2.60003" class="st1"/>
+			<image x="0" y="592.676" width="2.60003" height="2.60003" preserveAspectRatio="none" xlink:href="data:image/png;base64,
+						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"/>
+			<rect v:rectContext="foreign" x="0" y="592.676" width="2.60003" height="2.60003" class="st1"/>
+		</g>
+	</g>
+</svg>
+
+
+
+
+
+	]]>
+				</va:svg>
+
+			</va:ChartDescription>
+		</va:hasDescription>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsmapCountry">
+				<rdfs:label>country</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+		<va:hasVisualChannel>
+			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsmapNuance">
+				<rdfs:label>nuance</rdfs:label>
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
+				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
+			</va:Axis>
+		</va:hasVisualChannel>
+	</va:Map>	
+</rdf:RDF>

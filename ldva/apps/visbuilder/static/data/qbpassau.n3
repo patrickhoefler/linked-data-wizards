@@ -1,0 +1,114 @@
+# Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+# Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+# office@know-center.at
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX  qb: <http://purl.org/linked-data/cube#> 
+PREFIX  va: <http://www.code-research.eu/ontology/visual-analytics#> 
+PREFIX  code: <http://www.code-research.eu/resource/>
+PREFIX  sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX  interval: <http://reference.data.gov.uk/def/intervals/>
+PREFIX  sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>
+PREFIX  xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+
+INSERT DATA {
+
+GRAPH code:datasetpan_2009_ext_shortened {
+
+
+code:dimension_93 a rdf:Property , qb:DimensionProperty;
+rdfs:label "athlete"@en ;
+rdfs:subProperyOf va:cubeDimensionNominal;
+rdfs:range code:nominal.
+
+code:measure_947 a rdf:Property , qb:MeasureProperty;
+rdfs:label "Performance measure value"@en;
+rdfs:subPropertyOf sdmx-measure:obsValue;
+rdfs:range xsd:decimal. 
+
+code:dsdpan_2009_ext a qb:DataStructureDefinition;
+qb:component [ qb:dimension code:dimension_93 ];
+qb:component [ qb:measure code:measure_947 ].
+
+code:datasetpan_2009_ext a qb:DataSet;
+qb:structure code:dsdpan_2009_ext. 
+
+code:obs9 a qb:Observation;
+code:dimension_93 [ rdfs:label "allen" ];
+code:measure_947 [ rdfs:label "0.0117" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+
+code:obs3 a qb:Observation;
+code:dimension_93 [ rdfs:label "palkovskii" ];
+code:measure_947 [ rdfs:label "0.3045" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:dsdpan_2009_ext a qb:DataStructureDefinition;
+qb:component [ qb:dimension code:dimension_93 ];
+qb:component [ qb:measure code:measure_947 ].
+
+code:obs1 a qb:Observation;
+code:dimension_93 [ rdfs:label "kasprzak" ];
+code:measure_947 [ rdfs:label "0.6093" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs7 a qb:Observation;
+code:dimension_93 [ rdfs:label "vallesbalaguer" ];
+code:measure_947 [ rdfs:label "0.0264" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs5 a qb:Observation;
+code:dimension_93 [ rdfs:label "scherbinin" ];
+code:measure_947 [ rdfs:label "0.1422" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs8 a qb:Observation;
+code:dimension_93 [ rdfs:label "malcolm" ];
+code:measure_947 [ rdfs:label "0.0187" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs2 a qb:Observation;
+code:dimension_93 [ rdfs:label "basile" ];
+code:measure_947 [ rdfs:label "0.6041" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs0 a qb:Observation;
+code:dimension_93 [ rdfs:label "grozea" ];
+code:measure_947 [ rdfs:label "0.6957" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs4 a qb:Observation;
+code:dimension_93 [ rdfs:label "muhr" ];
+code:measure_947 [ rdfs:label "0.1885" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:obs6 a qb:Observation;
+code:dimension_93 [ rdfs:label "pereira" ];
+code:measure_947 [ rdfs:label "0.0649" ];
+qb:dataSet code:datasetpan_2009_ext.
+
+code:datasetpan_2009_ext a qb:DataSet;
+qb:structure code:dsdpan_2009_ext. 
+
+
+}
+
+}

@@ -1,0 +1,507 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block copyright %}
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css?300" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/querywizard.css?20131202" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/querywizard.js?20140519"></script>
+    <script type="text/javascript" src="http://www.mindmeister.com/javascripts/bin/embed.js"></script>
+{% endblock %}
+
+{% block title %}Linked Data Query Wizard{% endblock %}
+
+{% block header %}
+<a href="/" style="text-decoration: none;"><img src="{{STATIC_URL}}img/code_logo_95x20.png" alt="CODE" style="width: 95px; height: 20px; margin-top: -5px; margin-right: 10px;">Linked Data Query Wizard</a>
+
+<span id="screencast-text" style="margin-left: 30px; font-size: 60%;">Watch the <a id="screencast_modal_link" data-toggle="modal" href="#screencast_modal">screencast</a></span>
+
+<div style="float: right; font-size: 60%;">
+    {% if user.is_authenticated %}
+        <span>Welcome, {{mendeley_full_name}}!</span> <a href="/logout">Log out</a>
+    {% else %}
+        <a href="{% url 'social:begin' 'mendeley-oauth2' %}" id="login">Log in with Mendeley</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="front_page">
+  <div class="alert_container"></div>
+
+  <form id="search_form" class="form-inline" style="margin: 5em 0;">
+    <h2 style="margin-bottom: .8em;">Search Linked Data</h2>
+    <input autofocus="autofocus" type="text" id="q" style="width: 500px;" class="form-control">
+    <div>
+      <select id="ep" style="margin: 20px 10px; width: 300px;" class="form-control">
+      {% for endpoint in search_endpoints %}
+        <option value="{{endpoint.sparql_url}}" data-search-type="{{endpoint.search_type}}">{{endpoint.label}}</option>
+      {% endfor %}
+      </select>
+      <button type="submit" id="search_button" style="margin: 20px 10px;" class="btn btn-default">Search</button>
+    </div>
+  </form>
+
+  <hr>
+  <div style="margin: -1.8em auto 0 auto; font-size: 150%; background-color: #fff; width: 40px;">or</div>
+
+  <div style="text-align: left; margin-top: 4em;">
+    <h2 style="text-align: center; margin-bottom: .8em;">Show Available Datasets</h2>
+    <select id="dataset_endpoint_selector" class="form-control" style="width: 80%; margin: auto;">
+      {% for endpoint in cube_endpoints %}
+        <option value="{{endpoint.sparql_url}}">{{endpoint.label}}</option>
+      {% endfor %}
+    </select>
+    <div style="height: 400px; overflow: auto; margin-top: 1em;" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 id="endpoint_title" class="panel-title">Loading datasets, please wait …</h3>
+      </div>
+      <div class="panel-body">
+        <p style="font-weight: bold;">
+          <span id="endpoint_datasets_count" class="pull-right">0 datasets</span>
+          <span id="endpoint_description"></span>
+        </p>
+      </div>
+      <ul id="dataset_list" class="list-group list-group-flush">
+      </ul>
+    </div>
+    <button type="button" id="viscompare_button" style="display:none;" class="btn btn-default">Compare in Vis Wizard</button>
+  </div>
+</div>
+
+<div id="results_page">
+  <div id="navbar_container">
+    <nav class="navbar navbar-default" role="navigation" id="main_nav">
+      <ul class="nav navbar-nav">
+        <li id="menu_vis_generic">
+          <a href="#"><span class="glyphicon glyphicon-signal"></span> Visualize the <span class="current_results_count"></span> displayed results</a>
+        </li>
+        <li id="menu_vis_dataset">
+          <a href="#"><span class="glyphicon glyphicon-signal"></span> Visualize this dataset</a>
+        </li>
+        <li id="menu_mindmap">
+          <a data-toggle="modal" href="#mindmap_metadata_modal"><span class="glyphicon glyphicon-eye-open"></span> MindMap the <span class="current_results_count"></span> displayed results</a>
+        </li>
+        <li id="menu_aggregate_dataset">
+          <a href="#"><span class="glyphicon glyphicon-th-list"></span> Aggregate this dataset</a>
+        </li>
+        {% if fortytwo_id %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-share"></span> 42-data <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li id="menu_save_data_to_42">
+              <a href="#"><span class="glyphicon glyphicon-export"></span> Save the displayed data to 42-data</a>
+            </li>
+            <li id="menu_save_query_to_42">
+              <a href="#"><span class="glyphicon glyphicon-export"></span> Save the live query to 42-data</a>
+            </li>
+          </ul>
+        </li>
+        {% endif %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-fire"></span> For the Geeks <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <!--
+            <li id="menu_cubify">
+              <a href="#"><span class="glyphicon glyphicon-th"></span> Cubify the <span class="current_results_count"></span> displayed results</a>
+            </li>
+            -->
+            <li id="menu_display_sparql_stats">
+              <a data-toggle="modal" href="#sparql_runtime_modal"><span class="glyphicon glyphicon-time"></span> Display the SPARQL queries</a>
+            </li>
+            <li id="menu_display_as_jsonld">
+              <a data-toggle="modal" href="#jsonld_modal"><span class="glyphicon glyphicon-star-empty"></span> Display the <span class="current_results_count"></span> results as JSON-LD</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="alert_container"></div>
+
+  <div class="panel" id="dataset_title">
+    <div class="panel-body">
+    </div>
+  </div>
+
+  <div id="results_container">
+
+    <table id="results" data-source="" data-relation="Query Wizard" data-auth="{{fortytwo_id}}" data-description="" data-label=""></table>
+
+    <div id="add_column" class="btn-group">
+      <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+        Add column &hellip; <span class="caret"></span>
+      </button>
+      <ul id="available_predicates" class="dropdown-menu" style="max-height: 256px; overflow: auto;">
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="panel" id="results_count">
+    <div class="panel-body">
+      Displaying <span class="current_results_count"></span> of <span id="total_results_count"></span> results
+    </div>
+  </div>
+
+  <div id="load_more"></div>
+</div>
+
+<!-- Cubify -->
+<form id="cubify_form" method="post" />
+<input type="hidden" name="htmlTable" id="cubify_html_table" />
+<input type="hidden" name="sparqlQuery" id="cubify_sparql_query" />
+<input type="hidden" name="mendeleyId" id="cubify_mendeley_id" value="{{mendeley_id}}" />
+<input type="hidden" name="mendeleyFullName" id="cubify_mendeley_full_name" value="{{mendeley_full_name}}" />
+<input type="hidden" name="mendeleyProfileUrl" id="cubify_mendeley_profile_url" value="{{mendeley_profile_url}}" />
+<input type="hidden" name="mendeleyPhotoUrl" id="cubify_mendeley_photo_url" value="{{mendeley_photo_url}}" />
+<input type="hidden" name="label" id="cubify_label" value="" />
+<input type="hidden" name="description" id="cubify_description" value="" />
+<input type="hidden" name="source" id="cubify_source" value="" />
+</form>
+<!-- /Cubify -->
+
+<!-- MindMeister modal -->
+<div id="mm_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="mm_modal_label">MindMeister Mind Map</h3>
+      </div>
+      <div class="modal-body" id="mm_modal_body">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /MindMeister modal -->
+
+<!-- Screencast modal -->
+<div id="screencast_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="screencast_modal_label">Screencast</h3>
+      </div>
+      <div class="modal-body" id="screencast_modal_body">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Screencast modal -->
+
+<!-- Search filter modal -->
+<div id="search_filter_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal" role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Search Filter for <span class="target"></span></h4>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="search_filter_predicate_index" />
+          <div class="form-group">
+            <label for="search_filter_input" class="col-lg-3 control-label">Search term</label>
+            <div class="col-lg-6">
+              <input class="form-control" id="search_filter_input" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Apply filter</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Search filter modal -->
+
+<!-- Numeric filter modal -->
+<div id="numeric_filter_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal" role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Numeric Filter for <span class="target"></span></h4>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="numeric_filter_predicate_index" />
+          <div class="form-group">
+            <label for="numeric_filter_input_min" class="col-lg-5 control-label">Greater than or equal to</label>
+            <div class="col-lg-4">
+              <input type="number" class="form-control" id="numeric_filter_input_min" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="numeric_filter_input_max" class="col-lg-5 control-label">Less than or equal to</label>
+            <div class="col-lg-4">
+              <input type="number" class="form-control" id="numeric_filter_input_max" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Apply filter</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Numeric filter modal -->
+
+<!-- Date filter modal -->
+<div id="date_filter_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal" role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Date Filter for <span class="target"></span></h4>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="date_filter_predicate_index" />
+          <div class="form-group">
+            <label for="date_filter_input_min" class="col-lg-5 control-label">Greater than or equal to</label>
+            <div class="col-lg-5">
+              <input type="date" class="form-control" id="date_filter_input_min" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date_filter_input_max" class="col-lg-5 control-label">Less than or equal to</label>
+            <div class="col-lg-5">
+              <input type="date" class="form-control" id="date_filter_input_max" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Apply filter</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Date filter modal -->
+
+<!-- DateTime filter modal -->
+<div id="datetime_filter_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal" role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit DateTime Filter for <span class="target"></span></h4>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="datetime_filter_predicate_index" />
+          <div class="form-group">
+            <label for="datetime_filter_input_min" class="col-lg-5 control-label">Greater than or equal to</label>
+            <div class="col-lg-6">
+              <input type="datetime-local" step="1" class="form-control" id="datetime_filter_input_min" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="datetime_filter_input_max" class="col-lg-5 control-label">Less than or equal to</label>
+            <div class="col-lg-6">
+              <input type="datetime-local" step="1" class="form-control" id="datetime_filter_input_max" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Apply filter</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /DateTime filter modal -->
+
+<!-- Aggregate dataset modal -->
+<div id="aggregate_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Aggregate this dataset</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <h5>Group by <span id="aggregate_dimension_error" style="color: #d44950;">(please choose one or more, but not all)</span></h5>
+          <div id="aggregate_dimensions">
+          </div>
+          <h5 style="margin-top: 20px;">Aggregate values <span id="aggregate_measure_error" style="color: #d44950;">(please choose one or more)</span></h5>
+          <div id="aggregate_measures">
+          </div>
+          <div style="margin-top: 10px;">
+            <button class="btn btn-default btn-sm" id="aggregate_more_values" type="button">Add another value &hellip;</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <span class="spinner" style="display: inline-block; vertical-align: middle; margin-right: 10px;"></span>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" id="aggregate_create" class="btn btn-primary" disabled>Create aggregated dataset</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Aggregate dataset modal -->
+
+<!-- SPARQL runtime modal -->
+<div id="sparql_runtime_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Completed SPARQL Queries</h4>
+      </div>
+      <div class="modal-body">
+        <div id="sparql_endpoint"></div>
+        <div id="sparql_query"></div>
+        <div style="margin-bottom: 5px;"><span style="font-weight: bold;">Query Log</span> (click entry to display SPARQL query)</div>
+        <div id="sparql_log"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /SPARQL runtime modal -->
+
+<!-- JSON-LD modal -->
+<div id="jsonld_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">The <span class="current_results_count"></span> displayed results as JSON-LD</h4>
+      </div>
+      <div class="modal-body">
+        <div id="jsonld">
+          <textarea readonly="readonly" style="width: 100%; height: 400px;"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /JSON-LD modal -->
+
+<!-- Dataset metadata modal -->
+<div id="dataset_metadata_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form role="form">
+        <input type="hidden" id="dataset_redirect" />
+        <input type="hidden" id="dataset_payload_type" />
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">What's this dataset about?</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="dataset_title_input">Title *</label>
+            <div>
+              <input class="form-control" id="dataset_title_input" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dataset_description_input">Description *</label>
+            <div>
+              <textarea class="form-control" id="dataset_description_input" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" disabled id="dataset_metadata_submit">Continue</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Dataset metadata modal -->
+
+<!-- Mindmap metadata modal -->
+<div id="mindmap_metadata_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form role="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">What's this MindMap about?</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="mindmap_title_input">Title *</label>
+            <div>
+              <input class="form-control" id="mindmap_title_input" />
+            </div>
+          </div>
+          <!--
+          <div class="form-group">
+            <label for="mindmap_description_input">Description</label>
+            <div>
+              <textarea class="form-control" id="mindmap_description_input" rows="3"></textarea>
+            </div>
+          </div>
+          -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" disabled id="mindmap_metadata_submit">Create MindMap</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Mindmap metadata modal -->
+
+<!-- Stats modal -->
+<div id="stats_modal" class="modal fade" tabindex="-1">
+</div>
+<!-- /Stats modal -->
+{% endblock %}
+
+{% block footer %}
+<a id="endpoint_stats" data-toggle="modal" href="stats" data-target="#stats_modal">Endpoint Statistics</a>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block copyright %}
+<!--
+Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+office@know-center.at
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        var scriptUrls = [];
+        //var dataUrl = "/viz?cmd=getD3Data&chart=multiline&chartid=googleFull&dataset=http:%2F%2Fdata.lod2.eu%2Fscoreboard%2Fds%2Findicator%2Fi_iuolc_IND_TOTAL__ind_iu3";
+    </script>
+    
+    <link type="text/css" href="http://code.jquery.com/ui/jquery-ui-git.css" rel="stylesheet" />
+    
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+   <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+   <script src="static/js/jquerydatatables.js"></script>
+   <script src="static/js/jquerydatatablesmin.js"></script>
+   <!--  <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.5.0"></script> -->
+    <script type="text/javascript" src="{{STATIC_URL}}js/visauto.js"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{STATIC_URL}}css/querywizard.css?20130203" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/vis.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Linked Data Visualization{% endblock %}
+
+{% block header %}<a href="/autotest"><img src="{{STATIC_URL}}img/code_logo_95x20.png" alt="CODE" style="width: 95px; height: 20px; margin-top: -5px; margin-right: 10px;">Linked Data Visualization</a>{% endblock %}
+
+{% block content %}
+    
+  
+    <table width="100%" border="0" align="center">
+    	<tr>
+    		<td width="30%" valign="top">
+    			<nav>
+			        <ul>
+			          <!--  <li><a href="#?dataset=http%3A%2F%2Fdata.lod2.eu%2Fscoreboard%2Fds%2Findicator%2Fi_iuolc_IND_TOTAL__ind_iu3">Example Dataset 1</a></li> --> 
+			           
+			           <li><a href="#?dataset=http%3A%2F%2Fdata.lod2.eu%2Fscoreboard%2Fds%2Findicator%2Fbb_dsl_TOTAL_FBB__lines">Example Dataset 1</a></li> 
+			            <li><a href="#?dataset=http:%2F%2Fcode-research.eu%2Fresource%2Fdatasetpan_2009_ext">Example Dataset 2</a></li> 
+			            <li><a href="#?dataset=http:%2F%2Fwww.code-research.eu%2Fresource%2Fdataset_id_49592">Example Dataset 2</a></li> 
+			            <li><a href="#?dataset=http:%2F%2Fcode-research.eu%2Fresource%2Fdatasetpan_2009_ext_sh">Example Dataset 3</a></li> 
+			            <li><a href="#?dataset=http:%2F%2Fcode-research.eu%2Fresource%2Fdatasetpan_2012_detailed">Example Dataset 4</a></li> 
+			            <a href="#?dataset=http:%2F%2Fcode-research.eu%2Fresource%2FDataset-82732a9f-6903-4f1c-ae7d-6ae07d4585a1">Multi-measues</a>; 
+			        </ul>
+			    </nav>
+    		</td>
+    		<td  valign="top">
+    	
+    			<table width="50%" border="0" align="center">
+				  	<tr>
+						<th bgcolor="#FFFFFF" align="center" valign="top">
+
+						<div id="vis">
+						    <canvas id="background"></canvas>
+      					    <canvas id="foreground"></canvas>
+						</div>
+
+						</th>
+						<td>
+        <label>
+                 <input type="submit" name="preview" id="preview" style="font-size:0.7em" class="fg-button ui-state-default ui-priority-primary ui-corner-all" value="Preview" />
+             </label>
+        </td>
+					</tr>
+					<tr>
+						<th bgcolor="#FFFFFF"  valign="top">
+							<div id="demo2Up"></div>
+							<div id="demo2"  style="overflow:auto;width:100%;height:500px;"></div>
+							
+						</th>	
+					</tr>
+				</table>
+    		</td>
+    		<td>
+    		
+	    		<table width="100%" border="0" align="center">
+				  	<tr>
+							<td  scope="col" bgcolor="#FAFAFA">
+			                    <ul id="selectable3" class="list">
+				                    <li class="ui-widget-content"></li>
+			                    </ul>
+					        </td>
+					                
+					    	<td  scope="col" bgcolor="#FAFAFA">
+					                    <ul id="selectable1" class="list">
+					                    <li class="ui-widget-content"></li>
+					                    </ul>
+					        </td>
+					          <td scope="col" bgcolor="#FAFAFA">
+					                    <ul id="selectable2" class="list">
+					                    <li class="ui-widget-content"></li>
+					                    </ul>
+					        </td>
+					        <td scope="col" bgcolor="#FAFAFA" >
+					                    <ul id="selectable4" class="list">
+					                    <li class="ui-widget-content"></li>
+					                    </ul>
+					        </td>
+					</tr>
+					<tr>
+						<td  scope="col" colspan="4" bgcolor="#FAFAFA">
+							<div id="suggestions"></div>
+						</td>
+					</tr>
+				</table>
+    		</td>
+    		
+        
+    	</tr>
+    	
+    	
+    </table>
+
+
+
+    <!--<script type="text/javascript" src="{{STATIC_URL}}js/d3-multiline.js"></script>-->
+
+{% endblock %}

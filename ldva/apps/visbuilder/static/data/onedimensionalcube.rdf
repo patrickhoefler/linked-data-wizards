@@ -1,0 +1,132 @@
+# Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+# Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+# office@know-center.at
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX va: <http://code-research.eu/ontology/visual-analytics#>
+PREFIX code: <http://code-research.eu/resource/>
+
+
+INSERT DATA {
+
+    GRAPH code:datasetpan_2009_ext_sh {
+
+        code:datasetpan_2009_ext_sh a qb:DataSet;
+            rdfs:label "pan_2009_ext_sh";
+            qb:structure code:dsdpan_2009_ext_sh.
+
+
+        code:dsdpan_2009_ext_sh a qb:DataStructureDefinition;
+            qb:component [ qb:dimension code:team_722; rdfs:label "Team"@en ];
+            qb:component [ qb:measure code:value_52; rdfs:label "Value"@en ].
+
+
+        code:team_722 a rdf:Property, qb:DimensionProperty;
+            rdfs:label "Team"@en ;
+            rdfs:subProperyOf va:cubeDimensionNominal.
+            
+        code:value_52 a rdf:Property, qb:MeasureProperty;
+            rdfs:label "Value"@en;
+            rdfs:subPropertyOf va:cubeObservationNumber;
+            rdfs:range xsd:decimal. 
+
+
+        code:Allen_722 a code:Entity;
+            rdfs:label "allen".
+
+        code:Grozea_722 a code:Entity;
+            rdfs:label "grozea".
+
+        code:Palkovskii_722 a code:Entity;
+            rdfs:label "palkovskii".
+
+        code:Kasprzak_722 a code:Entity;
+            rdfs:label "kasprzak".
+
+        code:Vallesbalaguer_722 a code:Entity;
+            rdfs:label "vallesbalaguer".
+
+        code:Malcolm_722 a code:Entity;
+            rdfs:label "malcolm".
+
+        code:Basile_722 a code:Entity;
+            rdfs:label "basile".
+
+        code:Pereira_722 a code:Entity;
+            rdfs:label "pereira".
+
+        code:Scherbinin_722 a code:Entity;
+            rdfs:label "scherbinin".
+
+        code:Muhr_722 a code:Entity;
+            rdfs:label "muhr".
+
+
+        code:obs9 a qb:Observation;
+            code:team_722 code:Allen_722;
+            code:value_52 0.0117;
+            qb:dataSet code:datasetpan_2009_ext_sh;
+            rdfs:label "PAN Challenge result for team Allen for Plagdet"@en.
+
+        code:obs1 a qb:Observation;
+            code:team_722 code:Kasprzak_722;
+            code:value_52 0.6093;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs8 a qb:Observation;
+            code:team_722 code:Malcolm_722;
+            code:value_52 0.0187;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs0 a qb:Observation;
+            code:team_722 code:Grozea_722;
+            code:value_52 0.6957;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs3 a qb:Observation;
+            code:team_722 code:Palkovskii_722;
+            code:value_52 0.3045;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs2 a qb:Observation;
+            code:team_722 code:Basile_722;
+            code:value_52 0.6041;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs5 a qb:Observation;
+            code:team_722 code:Scherbinin_722;
+            code:value_52 0.1422;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+            
+        code:obs4 a qb:Observation;
+            code:team_722 code:Muhr_722;
+            code:value_52 0.1885;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs7 a qb:Observation;
+            code:team_722 code:Vallesbalaguer_722;
+            code:value_52 0.0264;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+
+        code:obs6 a qb:Observation;
+            code:team_722 code:Pereira_722;
+            code:value_52 0.0649;
+            qb:dataSet code:datasetpan_2009_ext_sh.
+    }
+}

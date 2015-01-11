@@ -1,0 +1,345 @@
+# Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
+# Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
+# office@know-center.at
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX va: <http://code-research.eu/ontology/visual-analytics#>
+PREFIX code: <http://code-research.eu/resource/>
+
+
+INSERT DATA {
+
+GRAPH code:datasetpan_2009_ext {
+
+code:datasetpan_2009_ext a qb:DataSet;
+    rdfs:label "pan_2009_ext";
+    qb:structure code:dsdpan_2009_ext.
+
+
+code:dsdpan_2009_ext a qb:DataStructureDefinition;
+    qb:component [ qb:dimension code:quality_measure_850; rdfs:label "Quality measure"@en ];
+    qb:component [ qb:dimension code:team_722; rdfs:label "Team"@en ];
+    qb:component [ qb:measure code:value_52; rdfs:label "Value"@en ].
+
+
+code:quality_measure_850 a rdf:Property , qb:DimensionProperty;
+    rdfs:label "Quality measure"@en ;
+    rdfs:subProperyOf va:cubeDimensionNominal.
+
+code:team_722 a rdf:Property , qb:DimensionProperty;
+    rdfs:label "Team"@en ;
+    rdfs:subProperyOf va:cubeDimensionNominal.
+
+code:value_52 a rdf:Property , qb:MeasureProperty;
+    rdfs:label "Value"@en;
+    rdfs:subPropertyOf <http://code-research.eu/resource/CubeObservationNumber>;
+    rdfs:range xsd:decimal. 
+
+
+code:Allen_722 a code:Entity;
+    rdfs:label "allen".
+
+code:Grozea_722 a code:Entity;
+    rdfs:label "grozea".
+
+code:Palkovskii_722 a code:Entity;
+    rdfs:label "palkovskii".
+
+code:Kasprzak_722 a code:Entity;
+    rdfs:label "kasprzak".
+
+code:Vallesbalaguer_722 a code:Entity;
+    rdfs:label "vallesbalaguer".
+
+code:Malcolm_722 a code:Entity;
+    rdfs:label "malcolm".
+
+code:Basile_722 a code:Entity;
+    rdfs:label "basile".
+
+code:Pereira_722 a code:Entity;
+    rdfs:label "pereira".
+
+code:Scherbinin_722 a code:Entity;
+    rdfs:label "scherbinin".
+
+code:Muhr_722 a code:Entity;
+    rdfs:label "muhr".
+
+
+code:Plagdet_850 a code:Entity;
+    rdfs:label "Plagdet".
+
+code:Precision_850 a code:Entity;
+    rdfs:label "Precision".
+
+code:Recall_850 a code:Entity;
+    rdfs:label "Recall".
+
+code:Granularity_850 a code:Entity;
+    rdfs:label "Granularity".
+
+
+code:obs9 a qb:Observation;
+    code:team_722 code:Allen_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.0117;
+    qb:dataSet code:datasetpan_2009_ext;
+    rdfs:label "PAN Challenge result for team Allen for Plagdet"@en.
+
+code:obs10 a qb:Observation;
+    code:team_722 code:Grozea_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.7418;
+    qb:dataSet code:datasetpan_2009_ext;
+    rdfs:label "PAN Challenge result for team Grozea for Precision"@en.
+
+code:obs23 a qb:Observation;
+    code:team_722 code:Palkovskii_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.437;
+    qb:dataSet code:datasetpan_2009_ext;
+    rdfs:label "PAN Challenge result for team Palkovskii for Recall"@en.
+
+code:obs1 a qb:Observation;
+    code:team_722 code:Kasprzak_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.6093;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs37 a qb:Observation;
+    code:team_722 code:Vallesbalaguer_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 1.0068;
+    qb:dataSet code:datasetpan_2009_ext;
+    rdfs:label "PAN Challenge result for team Vallesbalaguer for Granularity"@en.
+
+code:obs18 a qb:Observation;
+    code:team_722 code:Malcolm_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.029;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs19 a qb:Observation;
+    code:team_722 code:Allen_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.3684;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs8 a qb:Observation;
+    code:team_722 code:Malcolm_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.0187;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs11 a qb:Observation;
+    code:team_722 code:Kasprzak_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.5573;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs22 a qb:Observation;
+    code:team_722 code:Basile_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.6272;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs36 a qb:Observation;
+    code:team_722 code:Pereira_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 5.3966;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs0 a qb:Observation;
+    code:team_722 code:Grozea_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.6957;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs12 a qb:Observation;
+    code:team_722 code:Basile_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.6727;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs3 a qb:Observation;
+    code:team_722 code:Palkovskii_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.3045;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs25 a qb:Observation;
+    code:team_722 code:Scherbinin_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.5284;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs35 a qb:Observation;
+    code:team_722 code:Scherbinin_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 19.4327;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs13 a qb:Observation;
+    code:team_722 code:Palkovskii_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.6689;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs24 a qb:Observation;
+    code:team_722 code:Muhr_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.3714;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs2 a qb:Observation;
+    code:team_722 code:Basile_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.6041;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs34 a qb:Observation;
+    code:team_722 code:Muhr_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 4.4354;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs27 a qb:Observation;
+    code:team_722 code:Vallesbalaguer_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.4586;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs33 a qb:Observation;
+    code:team_722 code:Palkovskii_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 2.3317;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs14 a qb:Observation;
+    code:team_722 code:Muhr_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.6051;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs5 a qb:Observation;
+    code:team_722 code:Scherbinin_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.1422;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs26 a qb:Observation;
+    code:team_722 code:Pereira_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.1001;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs15 a qb:Observation;
+    code:team_722 code:Scherbinin_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.7473;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs4 a qb:Observation;
+    code:team_722 code:Muhr_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.1885;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs32 a qb:Observation;
+    code:team_722 code:Basile_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 1.106;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs39 a qb:Observation;
+    code:team_722 code:Allen_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 2.8256;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs29 a qb:Observation;
+    code:team_722 code:Allen_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.0116;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs16 a qb:Observation;
+    code:team_722 code:Pereira_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.6552;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs21 a qb:Observation;
+    code:team_722 code:Kasprzak_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.6967;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs31 a qb:Observation;
+    code:team_722 code:Kasprzak_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 1.0228;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs7 a qb:Observation;
+    code:team_722 code:Vallesbalaguer_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.0264;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs38 a qb:Observation;
+    code:team_722 code:Malcolm_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 6.778;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs28 a qb:Observation;
+    code:team_722 code:Malcolm_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.6048;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs17 a qb:Observation;
+    code:team_722 code:Vallesbalaguer_722;
+    code:quality_measure_850 code:Precision_850;
+    code:value_52 0.0136;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs20 a qb:Observation;
+    code:team_722 code:Grozea_722;
+    code:quality_measure_850 code:Recall_850;
+    code:value_52 0.6585;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs30 a qb:Observation;
+    code:team_722 code:Grozea_722;
+    code:quality_measure_850 code:Granularity_850;
+    code:value_52 1.0038;
+    qb:dataSet code:datasetpan_2009_ext.
+
+code:obs6 a qb:Observation;
+    code:team_722 code:Pereira_722;
+    code:quality_measure_850 code:Plagdet_850;
+    code:value_52 0.0649;
+    qb:dataSet code:datasetpan_2009_ext.
+
+}
+
+}
