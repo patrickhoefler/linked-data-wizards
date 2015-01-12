@@ -1,0 +1,79 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  # Here we use the official Ubuntu Server 14.04 LTS (Trusty Tahr) 64-bit box.
+  config.vm.box = "ubuntu/trusty64"
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Sync the base project folder to /vagrant in the VM
+  config.vm.synced_folder "..", "/vagrant"
+
+  # VirtualBox settings
+  config.vm.provider "virtualbox" do |v|
+    v.name = "linked-data-wizards"
+    v.memory = 512
+  end
+
+  # Fix missing locale Ubuntu bug
+  $script = <<SCRIPT
+if [ -z "$LC_ALL" ]; then
+	echo "Setting the missing locale ..."
+	echo 'LC_ALL=en_US.UTF-8' >> /etc/default/locale
+fi
+SCRIPT
+  config.vm.provision "shell", inline: $script
+
+  # Run the Docker provisioner
+  config.vm.provision "docker" do |d|
+    # Pin the Docker version
+    d.version = "1.4.1"
+
+    # Create the coffee-maker Docker image
+    d.build_image "/vagrant/dev/coffee-maker",
+      args: "--tag=patrickhoefler/linked-data-wizards-coffee-maker"
+    # Watch and compile the Query Wizard coffeescript file
+    d.run "coffee-maker",
+      image: "patrickhoefler/linked-data-wizards-coffee-maker",
+      args: "--name=ldw-coffee-maker -v /vagrant:/vagrant"
+
+    # Create them main Docker image
+    d.build_image "/vagrant",
+      args: "--tag=patrickhoefler/linked-data-wizards"
+    # Synchronize the DB
+    d.run "syncdb",
+      image: "patrickhoefler/linked-data-wizards",
+      cmd: "python manage.py syncdb --noinput",
+      args: "--name=ldw-syncdb -v /vagrant:/usr/src/app"
+    # Loading default SPARQL endpoints
+    d.run "loaddata",
+      image: "patrickhoefler/linked-data-wizards",
+      cmd: "python manage.py loaddata endpoints",
+      args: "--name=ldw-loadendpoints -v /vagrant:/usr/src/app"
+    # Run the development webserver
+    d.run "webserver",
+      image: "patrickhoefler/linked-data-wizards",
+      cmd: "python manage.py runserver 0.0.0.0:8000",
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000"
+
+    # And we're done
+    $script = <<SCRIPT
+echo 'If you just saw any scary red messages claiming that "stdin: is not a tty", please ignore them. All is well.'
+echo ' '
+echo 'Your local instance of the Linked Data Wizards is now ready at http://192.168.33.10:8000/ — have fun! :)'
+
+SCRIPT
+    config.vm.provision "shell", inline: $script
+  end
+end

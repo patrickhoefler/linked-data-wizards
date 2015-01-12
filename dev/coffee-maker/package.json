@@ -1,0 +1,14 @@
+{
+  "name": "coffee-maker",
+  "version": "0.1.0",
+  "description": "Watch and compile the Query Wizard coffeescript file",
+  "author": "Patrick Hoefler <patrick.hoefler@gmail.com>",
+  "scripts": {
+    "start": "coffee -cw -o /vagrant/ldva/apps/querywizard/static/js/ /vagrant/ldva/apps/querywizard/static/js/querywizard.coffee"
+  },
+  "dependencies": {
+    "coffee-script": "~1.8.0"
+  },
+  "private": true,
+  "license": "MIT"
+}
