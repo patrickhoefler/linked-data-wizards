@@ -51,16 +51,11 @@ SCRIPT
     # Create them main Docker image
     d.build_image "/vagrant",
       args: "--tag=patrickhoefler/linked-data-wizards"
-    # Synchronize the DB
-    d.run "syncdb",
+    # Initialize the DB
+    d.run "dbinit",
       image: "patrickhoefler/linked-data-wizards",
-      cmd: "python manage.py syncdb --noinput",
+      cmd: "./dbinit.sh",
       args: "--name=ldw-syncdb -v /vagrant:/usr/src/app"
-    # Loading default SPARQL endpoints
-    d.run "loaddata",
-      image: "patrickhoefler/linked-data-wizards",
-      cmd: "python manage.py loaddata endpoints",
-      args: "--name=ldw-loadendpoints -v /vagrant:/usr/src/app"
     # Run the development webserver
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",

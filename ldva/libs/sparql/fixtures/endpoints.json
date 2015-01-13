@@ -1,517 +1,517 @@
 [
   {
-    "pk": "dbp", 
-    "model": "sparql.endpoint", 
+    "pk": "dbp",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://dbpedia.org/sparql", 
-      "default_language": "en", 
-      "label": "DBpedia", 
-      "search_type": "virtuoso", 
-      "sort_order": 1, 
+      "sparql_url": "http://dbpedia.org/sparql",
+      "default_language": "en",
+      "label": "DBpedia",
+      "search_type": "virtuoso",
+      "sort_order": 1,
       "website_url": "http://dbpedia.org/"
     }
-  }, 
+  },
   {
-    "pk": "wd", 
-    "model": "sparql.endpoint", 
+    "pk": "wd",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://95.85.46.112:8890/sparql", 
-      "default_language": "en", 
-      "label": "Wikidata (CODE Edition)", 
-      "search_type": "virtuoso", 
-      "sort_order": 10, 
+      "sparql_url": "http://95.85.46.112:8890/sparql",
+      "default_language": "en",
+      "label": "Wikidata (CODE Edition)",
+      "search_type": "virtuoso",
+      "sort_order": 10,
       "website_url": "http://www.wikidata.org/"
     }
-  }, 
+  },
   {
-    "pk": "eu", 
-    "model": "sparql.endpoint", 
+    "pk": "eu",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://open-data.europa.eu/en/sparqlep", 
-      "default_language": "en", 
-      "label": "EU Open Data", 
-      "search_type": "regex", 
-      "sort_order": 20, 
+      "sparql_url": "http://open-data.europa.eu/en/sparqlep",
+      "default_language": "en",
+      "label": "EU Open Data",
+      "search_type": "regex",
+      "sort_order": 20,
       "website_url": "http://open-data.europa.eu/"
     }
-  }, 
+  },
   {
-    "pk": "lodcc", 
-    "model": "sparql.endpoint", 
+    "pk": "lodcc",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://lod.openlinksw.com/sparql", 
-      "default_language": "en", 
-      "label": "LOD Cloud Cache", 
-      "search_type": "virtuoso", 
-      "sort_order": 100, 
+      "sparql_url": "http://lod.openlinksw.com/sparql",
+      "default_language": "en",
+      "label": "LOD Cloud Cache",
+      "search_type": "virtuoso",
+      "sort_order": 100,
       "website_url": "http://lod.openlinksw.com/"
     }
-  }, 
+  },
   {
-    "pk": "lld", 
-    "model": "sparql.endpoint", 
+    "pk": "lld",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://linkedlifedata.com/sparql", 
-      "default_language": "en", 
-      "label": "Linked Life Data", 
-      "search_type": "lld", 
-      "sort_order": 100, 
+      "sparql_url": "http://linkedlifedata.com/sparql",
+      "default_language": "en",
+      "label": "Linked Life Data",
+      "search_type": "lld",
+      "sort_order": 100,
       "website_url": "http://linkedlifedata.com/"
     }
-  }, 
+  },
   {
-    "pk": "42-data", 
-    "model": "sparql.endpoint", 
+    "pk": "42-data",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://zaire.dimis.fim.uni-passau.de:8890/sparql", 
-      "default_language": "en", 
-      "label": "42-data", 
-      "search_type": "virtuoso", 
-      "sort_order": 999, 
+      "sparql_url": "http://zaire.dimis.fim.uni-passau.de:8890/sparql",
+      "default_language": "en",
+      "label": "42-data",
+      "search_type": "virtuoso",
+      "sort_order": 999,
       "website_url": "http://42-data.org/"
     }
-  }, 
+  },
   {
-    "pk": "codev", 
-    "model": "sparql.endpoint", 
+    "pk": "codev",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://code.know-center.tugraz.at:8890/sparql", 
-      "default_language": "en", 
-      "label": "CODEV", 
-      "search_type": "virtuoso", 
-      "sort_order": 999, 
+      "sparql_url": "http://code.know-center.tugraz.at:8890/sparql",
+      "default_language": "en",
+      "label": "CODEV",
+      "search_type": "virtuoso",
+      "sort_order": 999,
       "website_url": "http://code.know-center.tugraz.at/"
     }
-  }, 
+  },
   {
-    "pk": "270a-ecb", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-ecb",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://ecb.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "European Central Bank (ECB) (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://ecb.270a.info/sparql",
+      "default_language": "en",
+      "label": "European Central Bank (ECB) (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://ecb.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "europeana", 
-    "model": "sparql.endpoint", 
+    "pk": "europeana",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://europeana.ontotext.com/sparql", 
-      "default_language": "en", 
-      "label": "Europeana", 
-      "search_type": "owlim", 
-      "sort_order": 999, 
+      "sparql_url": "http://europeana.ontotext.com/sparql",
+      "default_language": "en",
+      "label": "Europeana",
+      "search_type": "owlim",
+      "sort_order": 999,
       "website_url": "http://europeana.ontotext.com/"
     }
-  }, 
+  },
   {
-    "pk": "270a-fao", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-fao",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://fao.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Food and Agriculture Organization (FAO) of the United Nations (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://fao.270a.info/sparql",
+      "default_language": "en",
+      "label": "Food and Agriculture Organization (FAO) of the United Nations (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://fao.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "270a-oecd", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-oecd",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://oecd.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Organization for Economic Co-operation and Development (OECD) (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://oecd.270a.info/sparql",
+      "default_language": "en",
+      "label": "Organization for Economic Co-operation and Development (OECD) (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://oecd.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "270a-bfs", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-bfs",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://bfs.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Swiss Federal Statistical Office (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://bfs.270a.info/sparql",
+      "default_language": "en",
+      "label": "Swiss Federal Statistical Office (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://bfs.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "270a-transparency", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-transparency",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://transparency.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Transparency International (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://transparency.270a.info/sparql",
+      "default_language": "en",
+      "label": "Transparency International (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://transparency.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "vienna-lod", 
-    "model": "sparql.endpoint", 
+    "pk": "vienna-lod",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://ogd.ifs.tuwien.ac.at/sparql", 
-      "default_language": "en", 
-      "label": "Vienna Linked Open Data", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://ogd.ifs.tuwien.ac.at/sparql",
+      "default_language": "en",
+      "label": "Vienna Linked Open Data",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://cweiss.net/lod/"
     }
-  }, 
+  },
   {
-    "pk": "270a-worldbank", 
-    "model": "sparql.endpoint", 
+    "pk": "270a-worldbank",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://worldbank.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Worldbank (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
+      "sparql_url": "http://worldbank.270a.info/sparql",
+      "default_language": "en",
+      "label": "Worldbank (270a)",
+      "search_type": "fuseki",
+      "sort_order": 999,
       "website_url": "http://worldbank.270a.info/"
     }
-  }, 
+  },
   {
-    "pk": "aemet", 
-    "model": "sparql.endpoint", 
+    "pk": "aemet",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://aemet.linkeddata.es/sparql", 
-      "default_language": "en", 
-      "label": "aemet", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://aemet.linkeddata.es/sparql",
+      "default_language": "en",
+      "label": "aemet",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://aemet.linkeddata.es/"
     }
-  }, 
+  },
   {
-    "pk": "beneficiaries-of-the-european-commission", 
-    "model": "sparql.endpoint", 
+    "pk": "beneficiaries-of-the-european-commission",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://fintrans.publicdata.eu/sparql", 
-      "default_language": "en", 
-      "label": "beneficiaries-of-the-european-commission", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://fintrans.publicdata.eu/sparql",
+      "default_language": "en",
+      "label": "beneficiaries-of-the-european-commission",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://fintrans.publicdata.eu/"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-genbank", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-genbank",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://genbank.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-genbank", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://genbank.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-genbank",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://genbank.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-hgnc", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-hgnc",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://hgnc.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-hgnc", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://hgnc.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-hgnc",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://hgnc.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-homologene", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-homologene",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://homologene.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-homologene", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://homologene.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-homologene",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://homologene.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-interpro", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-interpro",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://interpro.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-interpro", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://interpro.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-interpro",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://interpro.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-kegg-pathway", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-kegg-pathway",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://kegg.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-kegg-pathway", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://kegg.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-kegg-pathway",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://kegg.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-mgi", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-mgi",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://mgi.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-mgi", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://mgi.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-mgi",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://mgi.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-omim", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-omim",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://omim.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-omim", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://omim.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-omim",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://omim.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-pubmed", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-pubmed",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://pubmed.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-pubmed", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://pubmed.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-pubmed",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://pubmed.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-reactome", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-reactome",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://reactome.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-reactome", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://reactome.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-reactome",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://reactome.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "bio2rdf-sgd", 
-    "model": "sparql.endpoint", 
+    "pk": "bio2rdf-sgd",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://sgd.bio2rdf.org/sparql", 
-      "default_language": "en", 
-      "label": "bio2rdf-sgd", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://sgd.bio2rdf.org/sparql",
+      "default_language": "en",
+      "label": "bio2rdf-sgd",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://sgd.bio2rdf.org"
     }
-  }, 
+  },
   {
-    "pk": "data-gov", 
-    "model": "sparql.endpoint", 
+    "pk": "data-gov",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://services.data.gov/sparql", 
-      "default_language": "en", 
-      "label": "data-gov", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://services.data.gov/sparql",
+      "default_language": "en",
+      "label": "data-gov",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://data.gov/"
     }
-  }, 
+  },
   {
-    "pk": "datameti", 
-    "model": "sparql.endpoint", 
+    "pk": "datameti",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://datameti.go.jp/sparql", 
-      "default_language": "ja", 
-      "label": "datameti", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://datameti.go.jp/sparql",
+      "default_language": "ja",
+      "label": "datameti",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://datameti.go.jp/"
     }
-  }, 
+  },
   {
-    "pk": "datos-bne-es", 
-    "model": "sparql.endpoint", 
+    "pk": "datos-bne-es",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://datos.bne.es/sparql", 
-      "default_language": "en", 
-      "label": "datos-bne-es", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://datos.bne.es/sparql",
+      "default_language": "en",
+      "label": "datos-bne-es",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://datos.bne.es"
     }
-  }, 
+  },
   {
-    "pk": "dbpedia-el", 
-    "model": "sparql.endpoint", 
+    "pk": "dbpedia-el",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://el.dbpedia.org/sparql", 
-      "default_language": "el", 
-      "label": "dbpedia-el", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://el.dbpedia.org/sparql",
+      "default_language": "el",
+      "label": "dbpedia-el",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://wiki.el.dbpedia.org"
     }
-  }, 
+  },
   {
-    "pk": "dbpedia-ja", 
-    "model": "sparql.endpoint", 
+    "pk": "dbpedia-ja",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://ja.dbpedia.org/sparql", 
-      "default_language": "ja", 
-      "label": "dbpedia-ja", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://ja.dbpedia.org/sparql",
+      "default_language": "ja",
+      "label": "dbpedia-ja",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://ja.dbpedia.org/"
     }
-  }, 
+  },
   {
-    "pk": "enipedia", 
-    "model": "sparql.endpoint", 
+    "pk": "enipedia",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://enipedia.tudelft.nl/sparql", 
-      "default_language": "en", 
-      "label": "enipedia", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://enipedia.tudelft.nl/sparql",
+      "default_language": "en",
+      "label": "enipedia",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://enipedia.tudelft.nl"
     }
-  }, 
+  },
   {
-    "pk": "event-media", 
-    "model": "sparql.endpoint", 
+    "pk": "event-media",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://eventmedia.eurecom.fr/sparql", 
-      "default_language": "en", 
-      "label": "event-media", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://eventmedia.eurecom.fr/sparql",
+      "default_language": "en",
+      "label": "event-media",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://eventmedia.eurecom.fr/"
     }
-  }, 
+  },
   {
-    "pk": "farmbio-chembl", 
-    "model": "sparql.endpoint", 
+    "pk": "farmbio-chembl",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://rdf.farmbio.uu.se/chembl/sparql", 
-      "default_language": "en", 
-      "label": "farmbio-chembl", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://rdf.farmbio.uu.se/chembl/sparql",
+      "default_language": "en",
+      "label": "farmbio-chembl",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "https://github.com/egonw/chembl.rdf"
     }
-  }, 
+  },
   {
-    "pk": "geolinkeddata", 
-    "model": "sparql.endpoint", 
+    "pk": "geolinkeddata",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://geo.linkeddata.es/sparql", 
-      "default_language": "en", 
-      "label": "geolinkeddata", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://geo.linkeddata.es/sparql",
+      "default_language": "en",
+      "label": "geolinkeddata",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://geo.linkeddata.es/"
     }
-  }, 
+  },
   {
-    "pk": "libver", 
-    "model": "sparql.endpoint", 
+    "pk": "libver",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://libver.math.auth.gr:8890/sparql", 
-      "default_language": "en", 
-      "label": "libver", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://libver.math.auth.gr:8890/sparql",
+      "default_language": "en",
+      "label": "libver",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://libver.math.auth.gr"
     }
-  }, 
+  },
   {
-    "pk": "linkedgeodata", 
-    "model": "sparql.endpoint", 
+    "pk": "linkedgeodata",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://linkedgeodata.org/sparql/", 
-      "default_language": "en", 
-      "label": "linkedgeodata", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://linkedgeodata.org/sparql/",
+      "default_language": "en",
+      "label": "linkedgeodata",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://linkedgeodata.org/"
     }
-  }, 
+  },
   {
-    "pk": "ogolod", 
-    "model": "sparql.endpoint", 
+    "pk": "ogolod",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://miuras.inf.um.es/sparql", 
-      "default_language": "en", 
-      "label": "ogolod", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://miuras.inf.um.es/sparql",
+      "default_language": "en",
+      "label": "ogolod",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://miuras.inf.um.es/~ogo/ogolod.html"
     }
-  }, 
+  },
   {
-    "pk": "open-energy-info-wiki", 
-    "model": "sparql.endpoint", 
+    "pk": "open-energy-info-wiki",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://en.openei.org/sparql", 
-      "default_language": "en", 
-      "label": "open-energy-info-wiki", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://en.openei.org/sparql",
+      "default_language": "en",
+      "label": "open-energy-info-wiki",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://en.openei.org/"
     }
-  }, 
+  },
   {
-    "pk": "uriburner", 
-    "model": "sparql.endpoint", 
+    "pk": "uriburner",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://linkeddata.uriburner.com/sparql", 
-      "default_language": "en", 
-      "label": "uriburner", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://linkeddata.uriburner.com/sparql",
+      "default_language": "en",
+      "label": "uriburner",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://uriburner.com/"
     }
-  }, 
+  },
   {
-    "pk": "webnmasunotraveler", 
-    "model": "sparql.endpoint", 
+    "pk": "webnmasunotraveler",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://webenemasuno.linkeddata.es/sparql", 
-      "default_language": "en", 
-      "label": "webnmasunotraveler", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://webenemasuno.linkeddata.es/sparql",
+      "default_language": "en",
+      "label": "webnmasunotraveler",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://webenemasuno.linkeddata.es/"
     }
-  }, 
+  },
   {
-    "pk": "yovisto", 
-    "model": "sparql.endpoint", 
+    "pk": "yovisto",
+    "model": "sparql.endpoint",
     "fields": {
-      "sparql_url": "http://sparql.yovisto.com/", 
-      "default_language": "en", 
-      "label": "yovisto", 
-      "search_type": "regex", 
-      "sort_order": 999, 
+      "sparql_url": "http://sparql.yovisto.com/",
+      "default_language": "en",
+      "label": "yovisto",
+      "search_type": "regex",
+      "sort_order": 999,
       "website_url": "http://www.yovisto.com/ontology/"
     }
   }
