@@ -26,11 +26,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 512
   end
 
-  # Fix missing locale Ubuntu bug
+  # Fix missing locale and create swap file
   $script = <<SCRIPT
 if [ -z "$LC_ALL" ]; then
 	echo "Setting the missing locale ..."
 	echo 'LC_ALL=en_US.UTF-8' >> /etc/default/locale
+fi
+
+if [ ! -f /swapfile ]; then
+fallocate -l 512M /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo "/swapfile none swap sw 0 0" >> /etc/fstab
 fi
 SCRIPT
   config.vm.provision "shell", inline: $script
@@ -56,7 +64,7 @@ SCRIPT
       image: "patrickhoefler/linked-data-wizards",
       cmd: "./dbinit.sh",
       args: "--name=ldw-syncdb -v /vagrant:/usr/src/app"
-    # Run the development webserver
+    # Start the development webserver
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
