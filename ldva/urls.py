@@ -55,7 +55,7 @@ urlpatterns = patterns(
     (r'^robots\.txt$', RobotsView.as_view()),
 
     # CODE Query Wizard
-    (r'^$', RedirectView.as_view(url='/search')),
+    (r'^$', RedirectView.as_view(url='/search', permanent=False)),
     (r'^search', SearchView.as_view()),
     url(
         r'^query/get_cube_dimensions_and_measures$',
@@ -116,13 +116,13 @@ urlpatterns = patterns(
     url(r'^phantom', 'ldva.libs.phantomjs.phantom.phantom_capture'),
     (r'^vis', VisView.as_view()),
     (r'^autotest', AutoView.as_view()),
-    
+
     url(r'^viz', 'ldva.apps.visbuilder.codeviz.service', name='service'),
-    
+
     # Cubifier Test
     url(
         r'^cubifier',
         'ldva.libs.cubifier.views.test'
     ),
-    
+
 )
