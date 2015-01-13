@@ -121,11 +121,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <a href="/">Linked Data Vis Wizard</a>
 
 <div style="float: right; font-size: 60%;">
+  {% if mendeley_login_enabled %}
     {% if user.is_authenticated %}
-        <span>Welcome, {{mendeley_full_name}}!</span> <a href="/logout">Log out</a>
+      <span>Welcome, {{mendeley_full_name}}!</span> <a href="/logout">Log out</a>
     {% else %}
-        <a href="{% url 'social:begin' 'mendeley-oauth2' %}" id="login">Log in with Mendeley</a>
+      <a href="{% url 'social:begin' 'mendeley-oauth2' %}" id="login">Log in with Mendeley</a>
     {% endif %}
+  {% endif %}
 </div>
 {% endblock %}
 

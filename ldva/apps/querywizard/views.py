@@ -54,6 +54,11 @@ class SearchView(TemplateView):
         # Call the base implementation first to get a context
         context = super(SearchView, self).get_context_data(**kwargs)
 
+        # Check if "Log in with Mendeley" is enabled
+        context['mendeley_login_enabled'] = False
+        if settings.SOCIAL_AUTH_MENDELEY_OAUTH2_KEY != '':
+            context['mendeley_login_enabled'] = True
+
         # Add all searchable endpoints
         context['search_endpoints'] = Endpoint.objects.exclude(
             search_type='fuseki'
@@ -657,7 +662,7 @@ def aggregate(request):
 
     html_table = Template("""
     <table data-source="$source"
-      data-relation="$relation" 
+      data-relation="$relation"
       data-auth="$author"
       data-description="$description"
       data-label="$label">

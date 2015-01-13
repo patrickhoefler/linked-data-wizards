@@ -37,6 +37,11 @@ class VisView(TemplateView):
         context = super(VisView, self).get_context_data(**kwargs)
         context['time'] = datetime.now()
 
+        # Check if "Log in with Mendeley" is enabled
+        context['mendeley_login_enabled'] = False
+        if settings.SOCIAL_AUTH_MENDELEY_OAUTH2_KEY != '':
+            context['mendeley_login_enabled'] = True
+
         # If a user is logged in, get the social auth extra data
         context['mendeley_id'] = ''
         context['mendeley_full_name'] = ''
