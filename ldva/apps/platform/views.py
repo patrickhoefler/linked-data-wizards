@@ -89,23 +89,19 @@ class StatsView(TemplateView):
 
 
 class RobotsView(TemplateView):
-    
+
     """
-    Return different robots.txt files depending 
-    if we are on the dev or the production site.
+    Return robots.txt file
 
     """
 
     def get_template_names(self):
-        if self.request.META['HTTP_HOST'] == 'code.know-center.tugraz.at':
-            return 'robots_allow.txt'
-        else:
-            return 'robots_disallow.txt'
+        return 'robots_allow.txt'
 
 
 def incoming_from_qa_portal(request):
     """Make sure the user is logged in. Return an appropriate redirect."""
-    
+
     # Make sure the user is logged in
     if not request.user.is_authenticated():
         # Redirect the user to Mendeley for authentication
