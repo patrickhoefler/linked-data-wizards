@@ -20,6 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.views.generic import TemplateView
 from datetime import datetime
 from ldva.apps.platform.models import UserMeta
