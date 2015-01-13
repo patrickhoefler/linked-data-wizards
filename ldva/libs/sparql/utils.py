@@ -1023,6 +1023,18 @@ class SPARQLQuery:
             elif 'comment' in result_dataset.keys():
                 dataset_description = result_dataset['comment']['value']
 
+            # Check if the endpoint exists. If not, create it.
+            try:
+                Endpoint.objects.get(sparql_url=self.endpoint_url)
+            except:
+                Endpoint.objects.create(
+                    id=self.endpoint_url,
+                    label=self.endpoint_url,
+                    sparql_url=self.endpoint_url,
+                    website_url='',
+                    sort_order=1000
+                )
+
             # Create and save the datasets
             dataset = Dataset.objects.create(
                 pk=dataset_uri,
