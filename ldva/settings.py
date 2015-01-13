@@ -20,7 +20,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Django settings for ldva project.
 
-DEBUG = True
+import os
+
+
+DEBUG = bool(os.environ.get('DEBUG', False))
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -31,16 +34,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'code.sqlite',                   # Or path to database file if using sqlite3.
-        'USER': '',                              # Not used with sqlite3.
-        'PASSWORD': '',                          # Not used with sqlite3.
-        'HOST': '',                              # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                              # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': os.environ.get('DB_NAME', 'code.sqlite'),                     # Or path to database file if using sqlite3.
+        'USER': os.environ.get('DB_USER'),                                    # Not used with sqlite3.
+        'PASSWORD': os.environ.get('DB_PASSWORD'),                            # Not used with sqlite3.
+        'HOST': os.environ.get('MYSQL_PORT_3306_TCP_ADDR', ''),               # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': os.environ.get('MYSQL_PORT_3306_TCP_PORT', ''),               # Set to empty string for default. Not used with sqlite3.
     },
 }
 
-LOCAL_SPARQL_ENDPOINT = ''
+LOCAL_SPARQL_ENDPOINT = os.environ.get('LOCAL_SPARQL_ENDPOINT', '')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -78,7 +81,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.environ.get('STATIC_ROOT', '')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -99,7 +102,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ''
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -187,8 +190,8 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.user_details'
 )
 
-SOCIAL_AUTH_MENDELEY_OAUTH2_KEY = ''
-SOCIAL_AUTH_MENDELEY_OAUTH2_SECRET = ''
+SOCIAL_AUTH_MENDELEY_OAUTH2_KEY = os.environ.get('MENDELEY_KEY', '')
+SOCIAL_AUTH_MENDELEY_OAUTH2_SECRET = os.environ.get('MENDELEY_SECRET', '')
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

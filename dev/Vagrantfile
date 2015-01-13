@@ -65,7 +65,7 @@ SCRIPT
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
-      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000"
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e DEBUG=True"
 
     # And we're done
     $script = <<SCRIPT
