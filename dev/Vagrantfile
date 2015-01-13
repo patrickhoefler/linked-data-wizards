@@ -56,6 +56,14 @@ SCRIPT
       image: "patrickhoefler/linked-data-wizards-coffeemaker",
       args: "--name=ldw-coffeemaker -v /vagrant:/vagrant"
 
+    # Create the Virtuoso Docker image
+    d.build_image "/vagrant/dev/virtuoso",
+      args: "--tag=patrickhoefler/linked-data-wizards-virtuoso"
+    # Start Virtuoso
+    d.run "virtuoso",
+      image: "patrickhoefler/linked-data-wizards-virtuoso",
+      args: "--name=ldw-virtuoso -p 8890:8890 -p 1111:1111"
+
     # Create them main Docker image
     d.build_image "/vagrant",
       args: "--tag=patrickhoefler/linked-data-wizards"
@@ -68,15 +76,43 @@ SCRIPT
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
-      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e DEBUG=True"
-
-    # And we're done
-    $script = <<SCRIPT
-echo 'If you just saw any scary red messages claiming that "stdin: is not a tty", please ignore them. All is well.'
-echo ' '
-echo 'Your local instance of the Linked Data Wizards is now ready at http://192.168.33.10:8000/ — have fun! :)'
-
-SCRIPT
-    config.vm.provision "shell", inline: $script
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e LOCAL_SPARQL_ENDPOINT=http://192.168.33.10:8890/sparql -e DEBUG=True"
   end
+
+  # Make sure that we can use SPARQL updates in Virtuoso
+  $script = <<SCRIPT
+# Count how often we have tried to connect to Virtuoso
+TIMEOUT_COUNTER=0
+
+# Check if Virtuoso is ready
+echo 'Granting SPARQL update rights in Virtuoso ...'
+sleep 10
+
+while ! docker exec ldw-virtuoso isql-vt exec='select 1;' &> /dev/null; do
+  if ((TIMEOUT_COUNTER == 0)); then
+    echo 'Waiting for Virtuoso ...'
+  elif ((TIMEOUT_COUNTER == 1)); then
+    echo 'Still waiting for Virtuoso ...'
+  elif ((TIMEOUT_COUNTER == 2)); then
+    echo 'Virtuoso failed to respond, giving up.' >&2
+    exit 1
+  fi
+
+  ((TIMEOUT_COUNTER++))
+  sleep 10
+done
+
+# Grant SPARQL update rights
+docker exec ldw-virtuoso isql-vt exec='grant SPARQL_UPDATE to "SPARQL";' &> /dev/null
+
+# And we're done
+echo 'Finished!'
+echo ' '
+echo 'If you just saw any scary red messages about "Executing 3 build triggers"'
+echo 'or claiming that "stdin: is not a tty", please ignore them. All is well.'
+echo ' '
+echo 'Your local instance of the Linked Data Wizards is now ready at'
+echo 'http://192.168.33.10:8000 — have fun! :)'
+SCRIPT
+  config.vm.provision "shell", inline: $script
 end
