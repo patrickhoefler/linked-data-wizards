@@ -27,7 +27,7 @@ class GroupedBarChartGenerator(generator.Generator):
     mappingInfoDimension=None
     mappingInfoMeasure=None
     dimensions=None
-    
+
     labelOfDimensionArray=[]
     labelOfMeasureArray=[]
     measureContentArray=[]
@@ -128,14 +128,14 @@ var svg = d3.select("#"+loc).append("svg")
       .text(function(d) { return d; });
 """}
     results={'code':'', 'errors':[]}
-      
+
     def __init__(self, mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue):
         self.mappingInfoDimension=mappingInfoForDimension
         self.mappingInfoMeasure=mappingIngfoForMeasure
         self.mappingInfoValue=mappingInfoForValue
         self.results={'code':'', 'errors': []}
-       
-    def transform(self):                  
+
+    def transform(self):
         try:
             code=""
             parallelcoordinatesGeneratorRows={}
@@ -144,26 +144,26 @@ var svg = d3.select("#"+loc).append("svg")
                 xAxisLabel = element['observation']['dimensionlabel0']
                 labelForYAxis = element['observation']['dimensionlabel1'] #TODO: hard coded stuff shall be fixed
                 #print "xAxisLabel------------------------------------------->", xAxisLabel, "labelForYAxis------------------------------------------->", labelForYAxis
-                
-                
-                elementForYAxisArray=[]               
+
+
+                elementForYAxisArray=[]
                 elementForXAxis=xAxisLabel
                 elementForYAxis = element['observation']['measurevalue']
-                
+
                 if not elementForYAxis:
                         elementForYAxis = str(0.0)
-                
-                
-                
+
+
+
                 valueObj = { labelForYAxis : elementForYAxis }
                 if elementForXAxis in parallelcoordinatesGeneratorRows:
                     parallelcoordinatesGeneratorRows[elementForXAxis].append(valueObj)
                 else:
                     parallelcoordinatesGeneratorRows[elementForXAxis] =  elementForYAxisArray
                     parallelcoordinatesGeneratorRows[elementForXAxis].append(valueObj)
-                
+
                 xEntries.append(labelForYAxis)
-    
+
             xEntries = self.unique(xEntries)
 
 
@@ -172,72 +172,71 @@ var svg = d3.select("#"+loc).append("svg")
             for element in parallelcoordinatesGeneratorRows:
                 #print "-------------------------------------------> ", element
                 values = parallelcoordinatesGeneratorRows[ element ]
-                
+
                 strValueObject = ""
-                
+
                 strContent = ""
                 valueKeys = []
                 for value in values:
                     for key in value.keys():
                         valueKeys.append(key)
                         strContent = strContent + '"'+key+'"'+":" + value[key]+","
-                        
-                strContent = strContent +  '"State": '+ '"'+element+'"'    
+
+                strContent = strContent +  '"State": '+ '"'+element+'"'
                 #gib nullen dazu
                 for xValue in xEntries:
                     if xValue in valueKeys:
                         strContent = strContent
                     else:
                         strContent = strContent + '"'+xValue+'"'+":0.0,"
-                
-                
-                
+
+
+
                 '''tempList = list(strContent)
                 tempList[len(tempList)-1]=""
                 strEndContent = "".join(tempList)'''
-                
-                strValueObject = "{" +strContent+ "}, "             
-                toDictObject = strValueObject               
+
+                strValueObject = "{" +strContent+ "}, "
+                toDictObject = strValueObject
                 strResult = strResult + toDictObject
-            
-          
+
+
             tempList = list(strResult)
             tempList[len(tempList)-2]=""
             strEndResult = "".join(tempList)
             strResult = strEndResult + "]"
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             print"grouped bar chart", (strResult)
             code=self.codeObject['code']
             code=code.replace("@@@DATA@@@", "".join(strResult))
-            print "CODE\n", code 
+            print "CODE\n", code
             #self.results['code']=code
-            
+
             self.results['code']=code
-                
+
             #addRows=self.transformRows(parallelcoordinatesGeneratorRowsArray)
-            
-           
+
+
         except Exception as ex:
-            raise Exception("-GroupedBarChartGenerator.transform: %s"%ex)          
-         
+            raise Exception("-GroupedBarChartGenerator.transform: %s"%ex)
+
     def unique(self, items):
         found = []
         keep = []
-    
+
         for item in items:
             if item not in found:
                 found.append(item)
                 keep.append(item)
-    
+
         return keep
-                                                   
-    
-    
 
 
-                
+
+
+

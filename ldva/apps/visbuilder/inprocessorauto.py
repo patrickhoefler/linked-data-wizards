@@ -27,32 +27,31 @@ class InProcessorAuto():
         self.dataset = ds
         self.selectedChart = chart
         self.dimension = dimension
-        
+
         self.endpoint = endpoint
         self.deletedMeasure = deletedMeasure
         self.chartrowindex = chartrowindex
         self.datasetFilters = datasetFilters
-    
-        
+
+
     def process(self):
         try:
             time_start = time.time()
-           
+
             outProcessorForAuto = outprocessorauto.OutProcessorForAutomaticallyMapping(self.dataset, self.selectedChart, self.dimension, self.endpoint, self.deletedMeasure, self.chartrowindex, self.datasetFilters )
             resultArray = outProcessorForAuto.process()
             time_end = time.time() - time_start
             return resultArray
-        
+
         except Exception as ex:
             print ("-InProccessorAuto.process: %s"%ex)
-            raise Exception("%s"%ex) 
-    
+            raise Exception("%s"%ex)
+
     def getVis(self):
         try:
             outProcessorForAuto = outprocessorauto.OutProcessorForAutomaticallyMapping(self.dataset, self.selectedChart, self.dimension, self.endpoint, self.deletedMeasure, self.chartrowindex, self.datasetFilters)
-            resultArray = outProcessorForAuto.getVis()   
+            resultArray = outProcessorForAuto.getVis()
             return resultArray
         except Exception as ex:
-            raise Exception("-InProccessorAuto.getVis: %s"%ex)  
-    
-    
+            raise Exception("-InProccessorAuto.getVis: %s"%ex)
+

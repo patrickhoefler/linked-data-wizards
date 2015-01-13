@@ -25,12 +25,12 @@ from ldva.libs.sparql.utils import SPARQLQuery
 from django.utils import simplejson
 
 class ParallelGenerator(generator.Generator):
-    
-    
+
+
     mappingInfoDimension = None
     mappingInfoMeasure = None
     dimensions = None
-    
+
     codeObjectTwo= {'code': """var loc=config.location; function drawParallelCoordinates() {
 window.requestAnimFrame = (function(){
   return window.requestAnimationFrame       ||
@@ -69,15 +69,15 @@ function getUriFromLabel(label){
             return tableForMesArray[i].measure;
 }
 
-var col = d3.scale.category20(); 
+var col = d3.scale.category20();
 var strg = {};
 
 for (var j = 0; j<colArray.length; j++){
     var label = colArray[j];
-   
-    
+
+
     var clr = col(j);
-    
+
     strg[label] = clr;
 
 }
@@ -138,8 +138,8 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
   // Extract the list of dimensions.
   dimensions = d3.keys(data[0]).slice(1).concat(d3.keys(data[0]).slice(0,1)); //Put the ordinal dimensions on opposite sides of the chart for easier viewing
   x.domain(dimensions);
-  
-  
+
+
   //console.log(dimensions);
   var line = d3.svg.line(),
     axis = d3.svg.axis().orient("left"),
@@ -149,47 +149,47 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
 
   // Create a scale for each.
  dimensions.forEach(function(d) {
-    var vals = data.map(function(p) {return p[d];}); 
+    var vals = data.map(function(p) {return p[d];});
     ///console.log(vals);
-    //if (vals.every(quant_p) && vals >=2003 && vals <=2008){ 
+    //if (vals.every(quant_p) && vals >=2003 && vals <=2008){
     if (vals.every(quant_p) && d !== "Year" && d!== "Reference Period" && d!="Score"  && d!="Source" && d!== "year"){
       y[d] = d3.scale.linear()
           .domain(d3.extent(vals.map(function(p){return +p})))
           .range([h, 0]);}
     else{
-    
+
       y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}).sort())
           .rangePoints([h, 0],1);}
   })
-  
+
   /*dimensions.forEach(function(d) {
-    var vals = data.map(function(p) {return p[d];}); 
+    var vals = data.map(function(p) {return p[d];});
     if ( vals >=2003 && vals <=2008){
     //console.log(vals);
         y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}).sort(d3.ascending))
           .rangePoints([h, 0],1);}
 
-    else if (vals.every(quant_p)){ 
+    else if (vals.every(quant_p)){
       y[d] = d3.scale.linear()
           .domain(d3.extent(vals.map(function(p){return +p})))
           .range([h, 0]);}
     else{
-    
+
       y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}).sort())
           .rangePoints([h, 0],1);}
   })*/
-  
-  
-  
-  
+
+
+
+
   // Render full foreground
   paths(data, foreground, brush_count);
   var selektiert = [];
   var selektierteIndex = 0;
-  
+
   var selektierte = {  };
 
   // Add a group element for each dimension.
@@ -199,8 +199,8 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
       .attr("class", "dimension")
       .attr("id", function(d) {return "IDPREFIX_" + d.split(" ").join("_"); })
       .attr("transform", function(d) { return "translate(" + x(d) + ")"; });
-      
-    
+
+
 
   // Add an axis and title.
   g.append("svg:g")
@@ -213,7 +213,7 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
       .each(function(d) { selektierte[d] = this; d3.select(this).on('click', function(x){
                 Vis.view.getNewAxisLabel(d, function(newAxisLabel){ (d3.select(selektierte[d]).text());d3.select(selektierte[d]).text(newAxisLabel); });
             });
-      
+
              });
 
   // Add and store a brush for each axis.
@@ -225,30 +225,30 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
               y[d].brush = d3.svg.brush().y(y[d])
                   .on("brush", brush)
                   .on("brushend", brushend)
-          ); 
+          );
       })
     .selectAll("rect")
       .attr("x", -12)
       .attr("width", 24);
-      
+
   // Handles a brush event, toggling the display of foreground lines.
   function brush() {
 
-  
+
     brush_count++;
     var actives = dimensions.filter(function(p) { return !y[p].brush.empty(); }),
         extents = actives.map(function(p) { return y[p].brush.extent(); });
-       
+
 
     // Get lines within extents
     var selected = [];
     var selected2 = [];
-    
-    
+
+
     data.map(function(d) {
       return actives.every(function(p, i) {
         var p_new = (y[p].ticks)?d[p]:y[p](d[p]); //convert to pixel range if ordinal
-          
+
           //console.log(d);
           return extents[i][0] <= p_new && p_new <= extents[i][1];
       }) ? selected.push(d) : null;
@@ -259,13 +259,13 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
     /*console.log(foreground);
     alert(brush_count);*/
     paths(selected, foreground, brush_count);
-    
-    
-    
+
+
+
   }
-  
+
 //---------------------------------------------------------------------
-  
+
    // Handles a brush event, toggling the display of foreground lines.
   function brushend() {
 
@@ -287,7 +287,7 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
     data.map(function(d) {
       return actives.every(function(p, i) {
         var p_new = (y[p].ticks)?d[p]:y[p](d[p]); //convert to pixel range if ordinal
-          
+
           //console.log(d);
           return extents[i][0] <= p_new && p_new <= extents[i][1];
       }) ? selected.push(d) : null;
@@ -315,7 +315,7 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
     // Render selected lines
     foreground.clearRect(0,0,w+1,h+1);
     paths(selected, foreground, brush_count);
-    
+
     //console.log("------DA------");
     //console.log(selected);
     //strgStream = getSelectedData( selected);
@@ -330,17 +330,17 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
     }
 
   }
-  
-  
+
+
  //----------------------------------------------------------------
-  
+
   function getSelectedData(selected){
  //console.log(selected);
- 
-  
-    
+
+
+
     var compledData2 = [];
-    
+
     for (var i = 0; i< selected.length; i++ ){
         var selectedObject =  selected[i];
         //alert(selectedObject);
@@ -349,116 +349,116 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
           //alert(selectedObject);
             var selectedEntry = selectedObject[j];
             var entry = "" ;
-            
+
             for (var k= 0; k<selectedEntry.length ; k++){
               //alert(selectedObject);
                 entry = selectedEntry[k];
                  if (IsNumeric(entry) && entry <=1980 || entry >=2014){
                      entry =  parseFloat(entry);
                  }
-                compledData.push(entry); 
-                  
-                
+                compledData.push(entry);
+
+
             }
-                  
+
         }
-        
+
         compledData2.push(compledData);
-        
+
     }
-    
-    
+
+
     //console.log(compledData2);
-    return compledData2;        
-}  
- 
-  
-  
- //-------------------------------------------------------------------- 
-  
+    return compledData2;
+}
+
+
+
+ //--------------------------------------------------------------------
+
  function prepareData (strgStream){
     //console.log(firstDim);
     var newArray = [];
      var dim2  = "";
      var myArray = [];
-     for (var i = 0; i< strgStream.length; i++){ 
-       
+     for (var i = 0; i< strgStream.length; i++){
+
         var valNewObject = "";
               for (var k = 0 ; k<messLabel.length; k++){
                    var value = messLabel[k];
-                   valNewObject = valNewObject+ parseFloat(strgStream[i][value]) + ", "  ; 
+                   valNewObject = valNewObject+ parseFloat(strgStream[i][value]) + ", "  ;
                     var dimNewObject = "";
                     //console.log(firstDim);
                     for (var j = 0; j< firstDim.length; j++){
                           var dim = firstDim[j].label.split(' ').join('');
-                         
+
                           var strgStr = strgStream[i][dim];
                           var strgStr = strgStr.split('/').join(',');
-            
+
                           dimNewObject = dimNewObject+ strgStr+ ","  ;
-                          
-                          
-                           
-             }        
-          
-         } 
+
+
+
+             }
+
+         }
          dimNewObjectNew = dimNewObject.substring(0, dimNewObject.length-1);
          myArray = listToArray(dimNewObject, ',');
          myArray2 = listToArray(valNewObject, ',');
-        
 
-    
-        
+
+
+
 
 
       newArray.push([myArray, myArray2]);
     }
-      
+
 
   //console.log(newArray);
  return (newArray);
- 
+
   }
-  
+
   //-----------------------------------------------------
   function listToArray(fullString, separator) {
 
-  
+
   var fullArray = [];
 
   if (fullString !== undefined) {
-  
-  
+
+
     if (fullString.indexOf(separator) == -1) {
       fullAray.push(fullString);
     } else {
-    
+
       fullArray = fullString.split(separator);
     }
   }
- 
+
 fullArrayNew =  fullArray.splice(fullArray.length-1, 1);
 return fullArray;
 }
-  
-  
-//-----------------------------------------------------------------------------  
+
+
+//-----------------------------------------------------------------------------
 
 function IsNumeric(input)
 {
     return (input - 0) == input && (input+'').replace(/^\s+|\s+$/g, "").length > 0;
 }
-  
-  
-  
+
+
+
 //----------------------------------------------------------------------------
 
 //var selectedData = [{'Country':'Bulgaria', 'Value': '0.6852', 'Year':'2009'}, {'Year': '2009', 'Value': '0.2151', 'Country': 'Cyprus'}];
  //foreground.clearRect(0,0,w+1,h+1);
  //paths(selectedData, foreground, 0  );
- 
- 
- 
+
+
+
 brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = newChartRowIndex; }, chartRoxIndex, function(selectedData){
     //console.log(selectedData);
 
@@ -468,7 +468,7 @@ brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = ne
                   y[d].brush = d3.svg.brush().y(y[d])
                       .on("brush", brush)
                       .on("brushend", brushend)
-              ); 
+              );
           })
         .selectAll("rect")
           .attr("x", -12)
@@ -484,44 +484,44 @@ brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = ne
     }*/
 
      var dataArrayFirst = [];
-    
+
   if(selectedData)
      for (var i = 0; i<selectedData.length; i++){
          var selectData = selectedData[i];
          /*console.log('##############');
          console.log(selectData);*/
-         
-         
+
+
          var l  = 0;
         var entityObject = {};
          for (l = 0; l<firstDim.length; l++){
              var dime = (firstDim[l].label).split(' ').join('');
              var entity = "";
-            
+
              entityObject[dime] = selectData[l];
              //console.log(entityObject);
-            
+
              for (var g = 0; g<messLabel.length;g ++){
                  var value = (messLabel[g]);
                  entityObject[value] = String(selectData[l+1]);
-                 
-     
+
+
              }
-    
-        }     
+
+        }
         dataArrayFirst.push((entityObject));
            foreground.clearRect(0,0,w+1,h+1);
-    paths(dataArrayFirst, foreground,20  ); 
-          
-      //console.log(entityObject);   
-     
+    paths(dataArrayFirst, foreground,20  );
+
+      //console.log(entityObject);
+
      //dataArraySecond.push(dataArrayFirst);
-     
-     
- }    
 
 
-      
+ }
+
+
+
 }, function(selectedDimensions){
 
     var selected = [];
@@ -578,24 +578,24 @@ brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = ne
 
 
 //----------------------------------------------------------------------------------------------------
-  
+
 function paths(data, ctx, count) {
  /*console.log('path');
     console.log(data);
     console.log(brush_count);
      console.log(ctx);*/
-    
+
     var n = data.length,
         i = 0,
         reset = false;
-        
-        
+
+
     function render() {
       var max = d3.min([i+60, n]);
       data.slice(i,max).forEach(function(d) {
       //console.log(d);
         path(d, foreground, @@@LAB@@@);
-        
+
       });
       i = max;
     };
@@ -611,103 +611,103 @@ function paths(data, ctx, count) {
 
 
 function path(d, ctx, color) {
-    
+
 
   if (color) ctx.strokeStyle = color;
   ctx.beginPath();
   dimensions.map(function(p,i) {
     if (i == 0) {
       ctx.moveTo(x(p),y[p](d[p]));
-    } else { 
+    } else {
       ctx.lineTo(x(p),y[p](d[p]));
     }
   });
   ctx.stroke();
-}; 
+};
 }
-drawParallelCoordinates() 
+drawParallelCoordinates()
  """}
 
-   
+
     def __init__(self, mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue, dataset, chartrowIndex):
         self.mappingInfoDimension = mappingInfoForDimension
         self.mappingInfoMeasure = mappingIngfoForMeasure
         self.mappingInfoValue = mappingInfoForValue
-        
+
         self.chartRoxIndex = chartrowIndex
         self.dataset = dataset
-        self.results = {'code':'', 'errors': [], 'mappinginfo': {}}       
+        self.results = {'code':'', 'errors': [], 'mappinginfo': {}}
     def transform(self):
-        try:  
+        try:
             self.results =  {}
-            code = self.codeObjectTwo['code']      
+            code = self.codeObjectTwo['code']
             tableForDim = {}
-            
-            
-            tableForMeasure = {}        
+
+
+            tableForMeasure = {}
             tableForDimArray= []
-            
-            
-            
+
+
+
             indexArrayColor = self.getDimensionIndex('Color')
             indexForColor = indexArrayColor[0]['index']
             labelForColor = indexArrayColor[0]['label']
-            
-          
+
+
             for entry in self.mappingInfoDimension:
                 dim = entry['dimensionuri']
                 dimLabel = entry['label']
                 dimLabel = dimLabel.replace(' ', '')
                 tableForDim = {'dimension' : '', 'label': ''}
-                
+
                 tableForDim['dimension'] = dim
                 tableForDim['label'] = dimLabel
                 tableForDimArray.append(tableForDim)
-                
-                 
+
+
             tableForMesArray = []
             labelArray = []
             for meas in self.mappingInfoMeasure:
                 value = meas ['measureuri']
                 label = meas ['label']
                 labelArray.append(label)
-                
-                
+
+
                 tableForMeasure = {'measure' : '', 'label': ''}
                 tableForMeasure ['measure'] = value
                 tableForMeasure ['label'] = label
-                
-                tableForMesArray.append (tableForMeasure)   
+
+                tableForMesArray.append (tableForMeasure)
 
             lengtArray = []
             parallelcoordinatesGeneratorRowsArray = []
-            for i in range(len(tableForDimArray)): 
-                label = tableForDimArray[i]['label'] 
-                dim = 'dimensionlabel%s'% (i) 
-                
+            for i in range(len(tableForDimArray)):
+                label = tableForDimArray[i]['label']
+                dim = 'dimensionlabel%s'% (i)
+
                 xAxisArray = []
-                parallelcoordinatesGeneratorRows = {}               
-                for element in self.mappingInfoValue:                             
-                    xAxis = element['observation'][dim]              
+                parallelcoordinatesGeneratorRows = {}
+                for element in self.mappingInfoValue:
+                    xAxis = element['observation'][dim]
                     if dim in parallelcoordinatesGeneratorRows:
                         parallelcoordinatesGeneratorRows[dim].append(xAxis)
                     else:
                             parallelcoordinatesGeneratorRows[dim] =  xAxisArray
                             parallelcoordinatesGeneratorRows[dim].append(xAxis)
-                            
-                parallelcoordinatesGeneratorRowsArray.append(parallelcoordinatesGeneratorRows)    
-               
-                  
+
+                parallelcoordinatesGeneratorRowsArray.append(parallelcoordinatesGeneratorRows)
+
+
             entitiesArray = []
-            for i in range(len(parallelcoordinatesGeneratorRowsArray)):           
-                entities = parallelcoordinatesGeneratorRowsArray[i]['dimensionlabel%s'% (i)]   
+            for i in range(len(parallelcoordinatesGeneratorRowsArray)):
+                entities = parallelcoordinatesGeneratorRowsArray[i]['dimensionlabel%s'% (i)]
                 entities = self.unique(entities)
-                
+
                 lengOfDim = len(entities)
                 entitiesObject = {'index': i, 'entity': entities, 'length':lengOfDim }
                 entitiesArray.append(entitiesObject)
-       
-           
+
+
             findLabel = ""
             findIndex = ""
             maxLength = 0
@@ -715,19 +715,19 @@ drawParallelCoordinates()
                 if k['length']> maxLength:
                     maxLength = k['length']
                     findIndex = k['index']
-                    findLabel = tableForDimArray[findIndex]['label'] 
-            
-            
+                    findLabel = tableForDimArray[findIndex]['label']
+
+
             colorArray = []
             for element in self.mappingInfoValue:
                 color = element['observation']['dimensionlabel%s'% (indexForColor)]
                 colorArray.append(color)
-        
-            strResult = "[ "   
+
+            strResult = "[ "
             xAxisArray = []
-            for element in self.mappingInfoValue:              
+            for element in self.mappingInfoValue:
                 strg = ""
-                for i in range(len(tableForDimArray)):                 
+                for i in range(len(tableForDimArray)):
                     xAxis = element['observation']['dimensionlabel%s'% (i)]
                     label2 = tableForDimArray[i]['label']
                     strg = strg + '"'+label2+'":"'+xAxis+'",'
@@ -742,26 +742,26 @@ drawParallelCoordinates()
                     if not bol:
                         yAxis = str(0.0)
                     strg2 = strg2 + '"' + labelForValue + '":"'+ yAxis+'",'
-                        
+
                 strg3 = strg + strg2
                 '''tempList1 = list(strg2)
                 tempList1[len(tempList1)-1]=""
-                strEndContent1 = "".join(tempList1)''' 
-                
-                strValueObject = "{" +strg3+ "}, "             
-                toDictObject = strValueObject               
+                strEndContent1 = "".join(tempList1)'''
+
+                strValueObject = "{" +strg3+ "}, "
+                toDictObject = strValueObject
                 strResult = strResult + toDictObject
-                  
+
             tempList = list(strResult)
             tempList[len(tempList)-2]=""
             strEndResult = "".join(tempList)
-                    
+
             strResult = strEndResult + "]"
-           
-            code=code.replace("@@@DATA@@@", "".join(strResult)) 
-            code = code.replace("@@@COLOR@@@", simplejson.dumps((colorArray))) 
-            
-            code = code.replace("@@@MESSLABEL@@@", simplejson.dumps((labelArray))) 
+
+            code=code.replace("@@@DATA@@@", "".join(strResult))
+            code = code.replace("@@@COLOR@@@", simplejson.dumps((colorArray)))
+
+            code = code.replace("@@@MESSLABEL@@@", simplejson.dumps((labelArray)))
             code = code.replace("@@@CHARTROWINDEX@@@", self.chartRoxIndex )
             code = code.replace("@@@FIRSTDIM@@@", simplejson.dumps((self.mappingInfoDimension )))
             code = code.replace("@@@TABLEFORMESARRAY@@@", simplejson.dumps(tableForMesArray))
@@ -770,49 +770,49 @@ drawParallelCoordinates()
 
             labForClr = "colors[d."+labelForColor.replace(" ", "")+"]"
             code = code.replace("@@@LAB@@@", (labForClr))
-            
+
             self.results['code']=code
-        
-              
+
+
         except Exception as ex:
             raise Exception("-ParallelGeneratorOne.transform: %s"%ex)
- 
+
     def unique(self, items):
         found = []
         keep = []
-    
+
         for item in items:
             if item not in found:
                 found.append(item)
                 keep.append(item)
-    
+
         return keep
 
-      
+
     def isReal(self, txt):
         try:
             float(txt)
             return True
         except ValueError:
-            return False  
-        
-        
+            return False
+
+
     def getDimensionIndex(self, channelName):
         mappedDimensionIndexArray = []
-    
+
         mappedDimensionUriArray = []
         mappedDimensionLabelArray = []
         for clientObj in self.mappingInfoDimension:
             cubeComponent = clientObj['cubecomponent']
             if cubeComponent == channelName:
                 mappedDimensionUri = clientObj['dimensionuri']
- 
+
                 label = clientObj['label']
                 index = clientObj['index']
-                
+
                 newObject = {'label': label, 'index': index, 'uri':mappedDimensionUri }
-                mappedDimensionIndexArray.append( newObject)    
-              
+                mappedDimensionIndexArray.append( newObject)
+
         return mappedDimensionIndexArray
-                         
-                   
+
+

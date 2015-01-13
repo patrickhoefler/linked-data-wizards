@@ -23,40 +23,40 @@ var globals={
 	     cachedChart:"",
 	     cachedDimension: "",
 	     dimensionUri : "",
-	     
-	     mappingArray : [], 
+
+	     mappingArray : [],
 	     chartArray : [],
 	     dimensionArray : [],
-	     
+
 	     dataset : "",
 	     chartUri : "",
-	     
+
 	     visualChannelInfo : [],
 	     switchArray: [],
 	     mappingInfoForVisualChannels: [],
 	     cubeComponentArray : []
-	    
+
 	     };
 
 $(document).ready(function () {
-    $.address.externalChange(external_address_change_handler); 
+    $.address.externalChange(external_address_change_handler);
     globals.mappingArray = [];
     $("#selectable3").selectable({
     	stop: function(){
             $(".ui-selected", this).each(function(){
             	globals.cachedChart= this.id;
             	globals.chartUri = $(this).attr("charturi");
-            	
+            
             	getPossibleVisualizationVariants ();
             	getVisualization();
-            	
+            
             });
         },
      selecting:function() {
     	$(".ui-selected", this).each(function(){
     	$(this).toggleClass("ui-selected");
     	});
-      }	
+      }
     });
 
     $("#selectable4").selectable({
@@ -64,19 +64,19 @@ $(document).ready(function () {
             $(".ui-selected", this).each(function(){
             	globals.cachedVisualChannel = this.id;
 
-            });           
+            });
     	 },
-        
+
      selecting:function() {
     	$(".ui-selected", this).each(function(){
     	$(this).toggleClass("ui-selected");
     	});
-      }	
+      }
     });
     $("#preview").button();
 
     $("#preview").click(
-    		
+    
     		function(){
     			//console.log(globals.cachedChart);
     			globals.cubeComponentArray = [];
@@ -86,41 +86,41 @@ $(document).ready(function () {
     			getDimensions();
     			for (var i = 0; i<globals.dimensionArray.length;i++ ){
     				var dimuri = globals.dimensionArray[i].dimensionuri;
-    				
+    
     				var label = globals.dimensionArray[i].label;
     				var el = document.getElementById("vischannel"+i);
     				var visChannel= el.options[el.selectedIndex].text;
     				var visChannelObject = {'dimensionuri':dimuri, 'cubecomponent':visChannel, 'label':label, 'index':i};
     				visChannelArray.push(visChannelObject);
-    				
+    
     			}
     			globals.cubeComponentArray = visChannelArray
-    			
-    			getVisualization();	   			    			
-    		}
-    		);  
     
+    			getVisualization();	   			    
+    		}
+    		);
+
 });
 
 function external_address_change_handler(event){
     var value, dataset, chart, chartid;
     if (event.parameterNames.length > 0) {
-    	$("#vis").html();        
+    	$("#vis").html();
         $("#demo2").html('');
         $("#demo2Up").html('');
-        
-        $("#selectable4").html('');	
-        $("#selectable3").html('');	
-        
+
+        $("#selectable4").html('');
+        $("#selectable3").html('');
+
         $("#selectable2").html('');
-        $("#selectable1").html('');      
+        $("#selectable1").html('');
         $("#suggestions").html('');
-        
+
         for (key in event.parameters) {
             value = event.parameters[key];
             if (key == "dataset"){
                 globals.dataset = value;
-            } 
+            }
         }
         if (dataset == ""){
             alert('Parameter list not correct');
@@ -132,14 +132,14 @@ function external_address_change_handler(event){
 }
 
 /*function selectDim(cachedDimension, dimensionUri){
-	globals.mappingArray = []; 
-	
+	globals.mappingArray = [];
+
 	var mappingObject = {'dim':cachedDimension , 'dimensionuri':dimensionUri};
-	globals.mappingArray.push(mappingObject); 
+	globals.mappingArray.push(mappingObject);
 	//console.log(globals.dimensionArray);
 	if (globals.cachedChart == "parallelcoordinates"){
 		for (var i = 0; i<globals.dimensionArray.length;i++){
-			
+
 			var lab = globals.dimensionArray[i].label;
 			var dimensionUri = globals.dimensionArray[i].dimensionuri;
 			if (lab != cachedDimension){
@@ -147,11 +147,11 @@ function external_address_change_handler(event){
 				globals.mappingArray.push(mappingObject2);
 				//console.log(globals.mappingArray);
 			}
-				
+
 		}
-		
+
 	}
-	
+
 
 	//console.log(globals.mappingArray);
 	//globals.mappingArray = [];
@@ -172,7 +172,7 @@ function hasDuplicatedEntry( chartName, chartArray )
 function getPreview (){
     globals.chartArray = [];
     globals.visualChannelInfo = [];
-    
+
     //console.log(decodeURIComponent(globals.dataset));
     //console.log(decodeURIComponent(globals.dataset));
     $.post("/viz", { cmd: "getPreviewAuto", chart:'', dataset:decodeURIComponent(globals.dataset), dimension:''},
@@ -180,14 +180,14 @@ function getPreview (){
     	//alert (dt.length);
             var charts="";
             $("#vis").html();
-            
+
             $("#vis").html("<canvas id='background'></canvas><canvas id='foreground'></canvas>");
             $("#demo2").html('');
-            
+
             $("#demo2Up").html('');
             $("#selectable2").html('');
             $("#selectable3").html('');
-          
+
             globals.visualChannelInfo = dt;  // Um die visual channel(s) vom supportedchart(s) zu erhalten
             //console.log(dt);
             var chartArray = [];
@@ -196,18 +196,18 @@ function getPreview (){
             	//console.log(dt);
             	var ch = dt[x].chartname;
             	var churi = dt[x].charturi;
-            	
-            	
+            
+            
             	if ( !hasDuplicatedEntry( ch, chartArray ) )
         		{
                 	globals.chartArray.push(ch);
                     charts = charts+'<li id="'+ch+'" charturi="'+churi+'" class="ui-widget-content">'+ch+'</li>';
-                    
+
                     chartArray.push(ch);
         		}
-            	
+            
             }
-            getDimensions(); 
+            getDimensions();
 			$("#selectable3").html(charts);
     }, "json").error(function() {err("Error while showing supported charts."); });
     }
@@ -216,7 +216,7 @@ function getDimensions (){
 	//console.log(decodeURIComponent(globals.dataset));
 	$.post("/viz", { cmd: "getDimension",  dataset:decodeURIComponent(globals.dataset)},
 	        function(dt) {
-			
+
 			globals.dimensionArray = dt;
 			getMeasure();
 			//console.log(globals.dimensionArray);
@@ -234,21 +234,21 @@ function getDimensions (){
 	                //globals.switchArray = dt;
 	                //dimensions = dimensions+'<li id='+dimension+'dimensionuri='+dimensionuri+'class="ui-widget-content">'+dimension+'</li>';
 	                if(dt.length != 1){
-	                	dimensions = dimensions+'<li id="'+dimension+'" dimensionuri="'+dimensionuri+'" class="ui-widget-content">'+dimension+'</li>'; 
-	                		
+	                	dimensions = dimensions+'<li id="'+dimension+'" dimensionuri="'+dimensionuri+'" class="ui-widget-content">'+dimension+'</li>';
+	                
 	                }
 	                if(dimension==null){
 	                    alert("Dimension can not be showed");
 	                    return;
 	                }
-	                
+
 	            }
 	            /*if(dt.length == 1){
 	            	//var chart = "";annel
-	            	
+	            
                 	var mappingObject = {'dim':dimension , 'dimensionuri':dimensionuri};
                 	globals.mappingArray.push(mappingObject);
-                
+
             		chart = globals.chartArray [0];
             		globals.cachedChart = chart;
             		//console.log (chart);
@@ -271,41 +271,41 @@ function getMeasure(){
             var measures = "";
             for(var x = 0; x < dt.length; x++){
             	var measure = dt[x].label;
-                var measureuri = dt[x].measureuri;	
-                
+                var measureuri = dt[x].measureuri;
+
                 if(globals.dimensionArray.length != 1){
-                	measures = measures+'<li id="'+measure+'" measurenuri="'+measureuri+'" class="ui-widget-content">'+measure+':y-Axis'+'</li>';       	
+                	measures = measures+'<li id="'+measure+'" measurenuri="'+measureuri+'" class="ui-widget-content">'+measure+':y-Axis'+'</li>';       
                 }
                 if(measure==null){
                     alert("Dimension can not be showed");
                     return;
                 }
-	                
+
               }
 	            $("#selectable2").html(measures);
 	        }, "json")
 	        .error(function() {alert("Error while loading dimensions."); });
 	}
 
-function getVisualization (){	
+function getVisualization (){
 	console.log (globals.cubeComponentArray);
-	var start=null; 
+	var start=null;
 		 console.log (globals.cachedChart);
-	
+
 		 console.log(globals.cubeComponentArray);
 		   //$("#vis").html("<img src='/static/images/ajax-loader.gif' border='0'>");
 		    $.post("/viz", { cmd: "getVisualization", chart:globals.cachedChart, dataset:decodeURIComponent(globals.dataset), dimension:JSON.stringify(globals.cubeComponentArray)},
-		    	
+		    
 		        function(dt) {
 		            var conf =  'var config={location:"vis", height:"600", width:"700", title:"Generated chart"}';
 		            var warn = null;
 		            $("#vis").html();
-		            
+
 		            $("#selectable4").html();
 		            $("#demo2").html('');
-		            
+
 		            $("#demo2Up").html('');
-		            $("#vis").html("<canvas id='background'></canvas><canvas id='foreground'></canvas>");		            
+		            $("#vis").html("<canvas id='background'></canvas><canvas id='foreground'></canvas>");
 
                     start = dt.start;
                     //console.log(start);
@@ -317,7 +317,7 @@ function getVisualization (){
 
                     console.log(start);
                     eval(start);
-                    
+
                     globals.cubeComponentArray = [];
 
 		        }, "json")
@@ -338,22 +338,22 @@ function getPossibleVisualizationVariants(){
 		//console.log(nameOfChart);
 
 		if (nameOfChart == globals.cachedChart){
-			
+
 			var visualChannels = object.visualchannels;
 
 			var channel = "";
 			var chans = "";
-			
+
 			for (var l = 0; l<=(visualChannels.length-1);l++){
 
 				var vis = visualChannels[l];
-				//nsole.log(vis);	
+				//nsole.log(vis);
 
 				var name = vis.label;
 
 				if (name !== "y-Axis"){
 					chans = chans+'<option value="1" >'+name+'</optional>';
-				}	
+				}
 			}
 
 			channel = channel+ '<select id="vischannel'+counter+'">'+chans+'</select>'  ;
@@ -364,24 +364,24 @@ function getPossibleVisualizationVariants(){
 		}
 
 	}
-	if(globals.dimensionArray.length !=1){	
+	if(globals.dimensionArray.length !=1){
 
 		$("#selectable4").html(channels);
 
 	}
-	sortingString(  );	
+	sortingString(  );
 	getPossibleVisualizationVariantsAsString();
 }
 
-	
-	
-	
+
+
+
 //-------------------------------------------------------------------------------
 function getPossibleVisualizationVariantsAsString(){
 	var nameArray = [];
 	var channels = "";
 	var nameString = "";
-	
+
 	var htmlString = "<font style=\"font-size:80%;\">";
 	var cnt = 1;
 	for (var i = 0;i<globals.mappingInfoForVisualChannels.length;i++){
@@ -391,17 +391,17 @@ function getPossibleVisualizationVariantsAsString(){
 		//console.log(nameOfChart);
 
 		if (nameOfChart == globals.cachedChart){
-			
+
 			var visualChannels = object.visualchannels;
 
 			var channel = "";
 			var chans = "";
-			
+
 			var htmlSuggestion = "";
 			for (var l = 0; l<=(visualChannels.length-1);l++){
 
 				var vis = visualChannels[l];
-				//nsole.log(vis);	
+				//nsole.log(vis);
 
 				var name = vis.label;
 				var componentObj = vis.component;
@@ -410,20 +410,20 @@ function getPossibleVisualizationVariantsAsString(){
 				var dimensionLabel = componentObj.label;
 				var cubeDimUri = vis.name;
 				var cubeDimLabel = vis.label;
-				
-				var currentSuggestionHtml =  
+
+				var currentSuggestionHtml =
 					"Datatype: "+dataType + "<br>"
 					+ "Dimension URI: "+dimensionUri+"<br>"
 					+ "Dimension: <b>"+dimensionLabel+"</b><br>"
 					+ "Visual Channel URI: "+cubeDimUri+"<br>"
 					+ "Visual Channel Label: <b>"+ cubeDimLabel+"</b><br>"
 				htmlSuggestion = htmlSuggestion + currentSuggestionHtml+"<br>";
-	
+
 			}
 			htmlString = htmlString+"<b>Suggestion Nr. "+(cnt)+"</b><hr>"+htmlSuggestion;
 			cnt = cnt+1;
-			
-			
+
+
 		}
 
 	}
@@ -441,11 +441,11 @@ function sortingString(  ){
         console.log(dimensionuri + "############"+cubeComponent);
         var cubeComponentObject = {'label':dimension, 'dimensionuri':dimensionuri, 'cubecomponent':cubeComponent, 'index': x}
         globals.cubeComponentArray.push(cubeComponentObject);
-       
+
         $("#vischannel"+x).val(cubeComponent);
-       
-        
-	}		
+
+
+	}
 }
 
 function getCubeComponent(dimensionuri){
@@ -456,14 +456,14 @@ function getCubeComponent(dimensionuri){
 		//console.log("Hallo:" +nameOfChart+", : "+globals.cachedChart);
 
 		var chans = "";
-		
+
 		if (nameOfChart == globals.cachedChart){
 			//alert("JA")
 			for (var l = 0; l<=(visualChannels.length-1);l++){
 				chans = "";
 				name = "";
 
-				var vis = visualChannels[l];	
+				var vis = visualChannels[l];
 
                 var component = vis.component;
                 var dimuri = component.dimensionuri ;

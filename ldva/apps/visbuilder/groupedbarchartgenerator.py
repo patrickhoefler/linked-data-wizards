@@ -27,7 +27,7 @@ class GroupedBarChartGenerator(generator.Generator):
     mappingInfoDimension=None
     mappingInfoMeasure=None
     dimensions=None
-    
+
     labelOfDimensionArray=[]
     labelOfMeasureArray=[]
     measureContentArray=[]
@@ -37,7 +37,7 @@ class GroupedBarChartGenerator(generator.Generator):
 var loc=config.location;
 var chartRoxIndex = @@@CHARTROWINDEX@@@;
 var firstDim = "@@@FIRSTDIM@@@";
-var globalLegend = []; 
+var globalLegend = [];
 
 var margin = {top: 20, right: 20, bottom: 165, left: 40},
     width = 960 - margin.left - margin.right,
@@ -65,10 +65,10 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
     .tickFormat(d3.format(".2s"));
-    
-   
-  
-    
+
+
+
+
 
 var svg = d3.select("#"+loc).append("svg")
     //.attr("width", width + margin.left + margin.right)
@@ -83,13 +83,13 @@ var svg = d3.select("#"+loc).append("svg")
         .x(x0)
        .on("brush", brush)
        .on("brushend", brush);
-        
+
 
   svg.append("g")
         .attr("class", "brush")
         .call(brush)
       .selectAll("rect")
-      
+
         .attr("y", -6)
         .attr("height", height + 7);
 
@@ -98,11 +98,11 @@ var svg = d3.select("#"+loc).append("svg")
     var data = @@@DATA@@@;
 
      var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State" && key !== "id"; });
-     
+
 
   data.forEach(function(d) {
-  
-    var sa= d.State; 
+
+    var sa= d.State;
     var id = d.id;
     d.ages = ageNames.map(function(name) { return {name: name, value: +d[name], state: sa, id: id}; });
    //console.log(d.ages);
@@ -113,21 +113,21 @@ var svg = d3.select("#"+loc).append("svg")
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })].sort());
 
 
-    
+
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
-      .selectAll("text")  
+      .selectAll("text")
             .style("text-anchor", "end")
             .attr("dx", "-.8em")
             .attr("dy", ".15em")
             .attr("transform", function(d) {
-            
-                return "rotate(-65)" 
+
+                return "rotate(-65)"
                 });
-                
-            
+
+
      svg.select("g.x.axis")
             .append("text")
             .attr("class", "label")
@@ -137,8 +137,8 @@ var svg = d3.select("#"+loc).append("svg")
             .text("@@@LABEL@@@")
             .on('click', function(){
                 Vis.view.getNewAxisLabel("@@@LABEL@@@", function(newAxisLabel){ svg.select("g.x.axis text.label").text(newAxisLabel); });
-            });            
-                
+            });
+
 
   svg.append("g")
       .attr("class", "y axis")
@@ -153,10 +153,10 @@ var svg = d3.select("#"+loc).append("svg")
       .on('click', function(){
                 Vis.view.getNewAxisLabel("@@@LABELY@@@", function(newAxisLabel){ svg.select("g.y.axis text.label").text(newAxisLabel); });
             });
- 
- 
 
-      
+
+
+
 
   var state = svg.selectAll(".state")
       .data(data)
@@ -166,118 +166,118 @@ var svg = d3.select("#"+loc).append("svg")
 
 
 
-    
+
     //---------------------------------------------------------------------------
- 
- 
- 
+
+
+
 
   state.selectAll("rect")
-  
+
       .data(function(d) { return d.ages; })
     .enter().append("rect")
     .attr("class", "rect-background")
-    
+
       .attr("width", x1.rangeBand())
       .attr("x", function(d) { return x1(d.name); })
       .attr("y", function(d) { return y(d.value); })
       .attr("id", function(d) { /*if (IsNumeric(d.name.split(" ").join("_"))){
-          return "IDPREFIX_" + d.name.split(" ").join("_") + d.state.split(" ").join("_"); 
-      
+          return "IDPREFIX_" + d.name.split(" ").join("_") + d.state.split(" ").join("_");
+
       }
       else if(IsNumeric(d.state.split(" ").join("_"))){
-      
-          return "IDPREFIX_" + d.state.split(" ").join("_") + d.name.split(" ").join("_"); 
-      
+
+          return "IDPREFIX_" + d.state.split(" ").join("_") + d.name.split(" ").join("_");
+
       }
       else if (!IsNumeric(d.name.split(" ").join("_")) && !IsNumeric(d.state.split(" ").join("_"))) {
-      
-     
+
+
            return "IDPREFIX_" + d.name.split(" ").join("_") + d.state.split(" ").join("_");
       }*/
-      
+
       if(d.id == firstDim){
-          return "IDPREFIX_" + d.state.split(" ").join("_") + d.name.split(" ").join("_"); 
-      
+          return "IDPREFIX_" + d.state.split(" ").join("_") + d.name.split(" ").join("_");
+
       }
       else{
-      
+
       return "IDPREFIX_" + d.name.split(" ").join("_") + d.state.split(" ").join("_");
-      
+
       }
-    
-    
-      
+
+
+
       })
 
       //.attr("idone", function(d) { return "IDPREFIX_" + d.state.split(" ").join("_"); })
       .attr("data", function (d) {
-      
+
             /*if (IsNumeric(d.name.split(" ").join("_"))){
                 globalLegend.push( {"cluster": d.name.split(" ").join("_"), "color":  color(d.name), "state": d.state.split(" ").join("_")} );
              }
              else if (IsNumeric(d.state.split(" ").join("_"))) {
-             
+
                  globalLegend.push( {"cluster": d.state.split(" ").join("_"), "color":  color(d.name), "state": d.name.split(" ").join("_")} );
-             
+
              }
-                
+
             else if (!IsNumeric(d.name.split(" ").join("_")) && !IsNumeric(d.state.split(" ").join("_"))) {
-           
-     
+
+
               globalLegend.push( {"cluster": d.name.split(" ").join("_"), "color":  color(d.name), "state": d.state.split(" ").join("_")} );
           } */
-                
-       
+
+
             if(d.id == firstDim){
                 globalLegend.push( {"cluster": d.state.split(" ").join("_"), "color":  color(d.name), "state": d.name.split(" ").join("_")} );
-            
-            
-            }    
+
+
+            }
             else{
-            
+
             globalLegend.push( {"cluster": d.name.split(" ").join("_"), "color":  color(d.name), "state": d.state.split(" ").join("_")} );
-            
-            }    
-                
-                
-                
-                
-                
+
+            }
+
+
+
+
+
                 /*console.log("hiiii");
                 console.log(globalLegend);*/
-                
-                 
+
+
                 return  d.name + "," + d.value + ","+ d.state;
-               
-            
+
+
              } )
       .attr("height", function(d) { return height - y(d.value); })
       .style("stroke-width", "2")
       .style("fill", function(d) { return color(d.name); })
       .on("mouseover", function (d) {
-                
+
                   d3.select(this).style("stroke", "black")
                   .style("fill", "black")
-                
+
                 .append("title")
                .text(function(d, i) {
-              
+
                     return d.name + "," + d.value + ","+ d.state;
-               
+
             })
              })
             .on("mouseout", function (d) {
                 d3.select(this).style("stroke", "transparent")
                 .style("fill", function(d) { return color(d.name); })
-                
-                
+
+
             });
-            
-            
-    
-            
-            
+
+
+
+
+
 
   function getClassName(label){
         var replacer = new RegExp(" ","g");
@@ -298,10 +298,10 @@ var svg = d3.select("#"+loc).append("svg")
       .style("fill", color)
       .text(function(d) { return d; })
       .on("mouseover", function (d) {
-      
+
                 var zName = "IDPREFIX_" + d.split(" ").join("_");
                 //console.log(d3.selectAll("rect#"));
-              //console.log(d3.select(".xAxis" + d+ " .rect-background").style("stroke", "black"));  
+              //console.log(d3.select(".xAxis" + d+ " .rect-background").style("stroke", "black"));
                d3.selectAll("rect#"+zName).style("stroke", "black");
                 //d3.select(".label-" + labelClassName+ " .rect-background").style("display", "none");
             })
@@ -317,55 +317,55 @@ var svg = d3.select("#"+loc).append("svg")
       .style("text-anchor", "end")
       .text(function(d) {  return d; });
 
-           
-       
 
-    
- 
+
+
+
+
      //---------------------------------------------------------------------------
-    
+
        function brush() {
-       
+
        selectedData = [];
                for ( cnt = 0; cnt < globalLegend.length; cnt++ )
                {
                     var entry = globalLegend[cnt];
-                    var completeName =  entry.cluster; 
-                    var completeNameOne = entry.state;  
-                    
+                    var completeName =  entry.cluster;
+                    var completeNameOne = entry.state;
+
                     var entryArray = [];
-                    
+
                     entryArray.push(completeName);
                     entryArray.push(completeNameOne);
                     entryArray.push(completeName);
-                    
+
                     selectedData.push(entryArray);
                }
-          
-    
-    drawSelectedData(selectedData);    
-       
 
-       
-         var time=[];   
+
+    drawSelectedData(selectedData);
+
+
+
+         var time=[];
          var e = brush.extent();
-         var selectData = getSelectedData(e); 
-          
-          
-        //drawSelectedData(selectData);  
-          
+         var selectData = getSelectedData(e);
+
+
+        //drawSelectedData(selectData);
+
          var va1=e[0];
-         var va2=e[1]; 
-         
-         
+         var va2=e[1];
+
+
          if(va1 == va2 ){
          selectData = [];
-         
-         
+
+
          }
-         
-         
-          
+
+
+
          //console.log(d3.selectAll('rect'));
           /*console.log('###########################');
          console.log(selectData);*/
@@ -374,13 +374,13 @@ var svg = d3.select("#"+loc).append("svg")
 
 
 
-  //-----------------------------------------------------------------------------------------------------------------------    
-      
+  //-----------------------------------------------------------------------------------------------------------------------
+
     function getSelectedData(e){
 
     var va1=e[0];
     var va2=e[1];
-    
+
     var arr = [];
     for(var i = 0; i < d3.selectAll('.rect-background')[0].length; i++){
         var str = d3.select($('.rect-background')[i].parentNode).attr('transform');
@@ -392,7 +392,7 @@ var svg = d3.select("#"+loc).append("svg")
         /*console.log(first);
         console.log(x);
         console.log(sum);*/
-   
+
         if(sum >= va1 && sum <= va2 ){
             var rect = ( d3.select($('.rect-background')[i]).attr('data'));
             /*console.log('daaaaaaa');
@@ -401,26 +401,26 @@ var svg = d3.select("#"+loc).append("svg")
             var dimOne = split[0];
             var value = split[1];
             var dimTwo = split[2];
-            
-            
+
+
             if (IsNumeric(dimOne)){
-            
+
                 arr.push([dimOne, dimTwo, parseFloat(value)]);
-            
-            
+
+
             }
             else{
                 arr.push([dimTwo, dimOne, parseFloat(value)]);
             }
         }
-  
+
 
     }
 /*console.log("hi");
 console.log(arr);*/
 return arr;
- 
-} 
+
+}
 
 function IsNumeric(input)
 {
@@ -433,336 +433,336 @@ function IsNumeric(input)
 brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = newChartRowIndex; }, chartRoxIndex, function(selectedData){
 /*console.log("hieerr");
     console.log(selectedData);*/
-     
+
     //d3.select("rect").call(brush.clear());
-    
+
      brush.clear();
         svg.selectAll('.brush').call(brush);
-        
-     /*brush.clear();   
+
+     /*brush.clear();
        .on("brush", brush)
        .on("brushend", brush)
         .call(brush)
       .selectAll("rect")
-      
+
         .attr("y", -6)
         .attr("height", height + 7);
-        
+
         svg.selectAll('.brush').call(brush);*/
-        
+
      if ( selectedData == null )   // When the brush is deactivated in another charts.
            {
                selectedData = [];
                for ( cnt = 0; cnt < globalLegend.length; cnt++ )
                {
                     var entry = globalLegend[cnt];
-                    var completeName =  entry.cluster; 
-                    var completeNameOne = entry.state;  
-                    
+                    var completeName =  entry.cluster;
+                    var completeNameOne = entry.state;
+
                     var entryArray = [];
-                    
+
                     entryArray.push(completeName);
                     entryArray.push(completeNameOne);
                     entryArray.push(completeName);
-                    
+
                     selectedData.push(entryArray);
                }
            }
-    
-    
-    
-    
-    
-    drawSelectedData(selectedData);       
-           
+
+
+
+
+
+    drawSelectedData(selectedData);
+
     });
-    
-  
+
+
  //---------------------------------------------------------------------------
     function drawSelectedData(selectedDataFromOtherChart)
     {
         var selectedNamesArray = getSelectedNames(selectedDataFromOtherChart);
         paintPath(selectedNamesArray);
     }
-    
-    
+
+
     //---------------------------------------------------------------------------
     function paintPath( exludeList )
     {
-        
+
         var pathMainList = svg.selectAll(".rect-background");
         var pathList = pathMainList[0];
-        
-        
+
+
         for ( var cnt = 0; cnt < pathList.length; cnt++)
         {
             var path = pathList[cnt];
             var pathId = d3.select(path).attr("id");
             //var pathIdOne = d3.select(path).attr("idone");
-            
+
            /*console.log("brushedata");
            console.log(exludeList);
            console.log("pathID");
            console.log(pathId);*/
-            
-            if ( exludeList.indexOf( pathId ) >= 0 ) 
+
+            if ( exludeList.indexOf( pathId ) >= 0 )
             {
                 //alert("habe ich " + pathId);
                 var originalColor = getOriginalColor(pathId);
-               
+
                 d3.select(path).style("stroke", "none")
-                      .transition().style("fill", originalColor) 
+                      .transition().style("fill", originalColor)
                       .style("opacity", 1.0)
             }
             else
             {
-            
+
                 d3.select(path).style("stroke", "grey")
                       .transition().style("fill", "grey")
                       .style("opacity", 0.4)
             }
-                    
-            
+
+
         }
-        
-        
+
+
     }
-    
+
     //---------------------------------------------------------------------------
     function getSelectedNames(selectedDataFromOtherChart)
     {
-    
+
        /* console.log("*************");
         console.log(globalLegend);*/
         var selectedNamesArray = [];
         for ( cnt = 0; cnt <  selectedDataFromOtherChart.length; cnt++)
         {
-            
-           
+
+
             var entry0 = "";
             var entry = globalLegend[cnt];
             if (typeof entry !== "undefined") {
-                
-                
-            
+
+
+
             entry0 = entry.cluster;
-           
+
            }
-            
-            
-           var entry1 = ""; 
+
+
+           var entry1 = "";
            if (typeof entry !== "undefined") {
-                
-                
-            
+
+
+
             entry1 =  entry.state;
-           
+
            }
-            
-             
-            
-            
-                     
-            
+
+
+
+
+
+
             var point = selectedDataFromOtherChart[cnt];
             //alert(point[0]);
-            
+
             /*if (  IsNumeric(point[0].split(" ").join("_")) ||  IsNumeric(point[1].split(" ").join("_"))     ){
-               
+
                 selectedNamesArray.push("IDPREFIX_" + point[0].split(" ").join("_") + point[1].split(" ").join("_"));
-            
+
             }
             else{
-            
+
                 selectedNamesArray.push("IDPREFIX_" + point[0].split(" ").join("_") + point[1].split(" ").join("_"));
             }*/
-            
-            
-            
-            
+
+
+
+
             selectedNamesArray.push("IDPREFIX_" + point[0].split(" ").join("_") + point[1].split(" ").join("_"));
-            
-        
+
+
         }
         //globelLegend = [];
         return selectedNamesArray;
     }
-    
+
     //---------------------------------------------------------------------------
     function getOriginalColor( countryName )
     {
         //alert(countryName);
-        
+
         for ( var cnt = 0; cnt < globalLegend.length; cnt ++ )
         {
             var entry = globalLegend[cnt];
             /*console.log("entryyyy");
             console.log(entry);*/
-            
+
             var completeName = "IDPREFIX_" + entry.cluster + entry.state;
             /*console.log("founnd");
             console.log(completeName);*/
-            
-            if ( completeName.split(" ").join("_") == countryName.split(" ").join("_") ) 
+
+            if ( completeName.split(" ").join("_") == countryName.split(" ").join("_") )
             {
                 return entry.color;
             }
         }
-        
+
         return "#cccccc";
     }
-    
-    
-    //---------------------------------------------------------------------------
-    
-    
-        
-       
 
-    
+
+    //---------------------------------------------------------------------------
+
+
+
+
+
+
 //---------------------------------------------------------------------------
- 
- 
-      
-      
+
+
+
+
 """}
     results={'code':'', 'errors':[]}
-      
+
     def __init__(self, mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue, chartrowIndex):
         self.mappingInfoDimension=mappingInfoForDimension
         self.mappingInfoMeasure=mappingIngfoForMeasure
-        
+
         self.mappingInfoValue=mappingInfoForValue
         self.chartRoxIndex = chartrowIndex
         self.results={'code':'', 'errors': []}
-    
-    def transform(self):                  
+
+    def transform(self):
         try:
             code=""
             parallelcoordinatesGeneratorRows={}
             parallelcoordinatesGeneratorRowsArray = []
             xEntries = []
-            
-           
+
+
             firstDim = self.mappingInfoDimension[0]['label']
-            
-            
-            
-            
-            
+
+
+
+
+
             indexXAxis = self.getDimensionIndex( "x-Axis")
             indexForXAxis = indexXAxis['ind']
             labelXAxis = indexXAxis['label']
-            
-            
+
+
             indexBarAxis = self.getDimensionIndex( "Bar")
-           
+
             indexForBarAxis = indexBarAxis['ind']
             labelBar = indexXAxis['label']
-            
+
             for element in self.mappingInfoValue:
                 xAxisLabel = element['observation']['dimensionlabel%s'%(indexForXAxis)]
                 labelForYAxis = element['observation']['dimensionlabel%s'%(indexForBarAxis)]
-                
-                
-                elementForYAxisArray=[]               
+
+
+                elementForYAxisArray=[]
                 elementForXAxis=xAxisLabel
                 elementForYAxis = element['observation']['measurevalue%s'%0]
-                
+
                 labelYAxis = self.mappingInfoMeasure[0]['label']
-                
-            
+
+
                 if not elementForYAxis:
                         elementForYAxis = str(0.0)
-                
-                bol = self.isReal(elementForYAxis)    
-                            
+
+                bol = self.isReal(elementForYAxis)
+
                 if not bol:
-                    elementForYAxis = str(0.0) 
-                                
-                    
+                    elementForYAxis = str(0.0)
+
+
                 valueObj = { labelForYAxis : elementForYAxis }
                 if elementForXAxis in parallelcoordinatesGeneratorRows:
                     parallelcoordinatesGeneratorRows[elementForXAxis].append(valueObj)
                 else:
                     parallelcoordinatesGeneratorRows[elementForXAxis] =  elementForYAxisArray
                     parallelcoordinatesGeneratorRows[elementForXAxis].append(valueObj)
-                
+
                 xEntries.append(labelForYAxis)
-                
-            
+
+
             xEntries = self.unique(xEntries)
 
             strResult = "[ "
             for element in parallelcoordinatesGeneratorRows:
                 values = parallelcoordinatesGeneratorRows[ element ]
                 values.sort()
-                
+
                 strValueObject = ""
-                
+
                 strContent = ""
                 valueKeys = []
                 for value in values:
                     for key in value.keys():
                         valueKeys.append(key)
-                        
+
                         strContent = strContent + '"'+key+'"'+":" + value[key]+","
-                        
+
                 strContent = strContent  + '"State": '+ '"'+element+'",'  + '"id": '+ '"'+labelXAxis+'",'
-                
+
                 for xValue in xEntries:
                     if xValue in valueKeys:
                         strContent = strContent
                     else:
                         strContent = strContent + '"'+xValue+'"'+":0.0,"
-                
-                
-                
+
+
+
                 tempList = list(strContent)
                 tempList[len(tempList)-1]=""
                 strEndContent = "".join(tempList)
-                
-                strValueObject = "{" +strContent+ "}, "             
-                toDictObject = strValueObject               
+
+                strValueObject = "{" +strContent+ "}, "
+                toDictObject = strValueObject
                 strResult = strResult + toDictObject
-                        
-          
+
+
             tempList = list(strResult)
             tempList[len(tempList)-2]=""
             strEndResult = "".join(tempList)
             strResult = strEndResult + "]"
-        
-            
- 
+
+
+
             code = self.codeObject['code']
             code = code.replace ("@@@LABEL@@@", labelXAxis)
             code = code.replace ("@@@LABELY@@@", labelYAxis)
             code = code.replace("@@@CHARTROWINDEX@@@", self.chartRoxIndex )
             code = code.replace("@@@FIRSTDIM@@@", firstDim )
             code = code.replace("@@@DATA@@@", "".join(strResult))
-   
+
             self.results['code']=code
- 
-            print strResult 
+
+            print strResult
         except Exception as ex:
-            raise Exception("-GroupedBarChartGenerator.transform: %s"%ex)          
-         
+            raise Exception("-GroupedBarChartGenerator.transform: %s"%ex)
+
     def unique(self, items):
         found = []
         keep = []
-    
+
         for item in items:
             if item not in found:
                 found.append(item)
                 keep.append(item)
-    
+
         return keep
-                                                   
-    
+
+
     def getDimensionIndex(self, channelName):
         mappedDimensionIndex = ""
         xAxisDimension = ""
-    
+
         mappedDimensionUri = ""
         mappedDimensionLabel = ""
         for clientObj in self.mappingInfoDimension:
@@ -770,37 +770,37 @@ brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = ne
             cubeComponent = clientObj['cubecomponent']
             if cubeComponent == channelName:
                 mappedDimensionUri = clientObj['dimensionuri']
-    
+
                 mappedDimensionLabel = clientObj['label']
-                mappedDimensionIndex = clientObj['index']   
-                
+                mappedDimensionIndex = clientObj['index']
+
                 mappedObject = {'label': mappedDimensionLabel, 'ind' : mappedDimensionIndex}
-                         
+
                 return mappedObject
-                    
-           
+
+
     def getDimensionIndex2(self, channelName, indexForXAxis,  indexForLineAxis):
-        
+
         xAxis = self.mappingInfoDimension[indexForXAxis]['index']
         dimForXAxis = self.mappingInfoDimension[indexForXAxis]['dimensionuri']
-        
+
         lineAxis = self.mappingInfoDimension[indexForLineAxis]['index']
         dimForLineAxis = self.mappingInfoDimension[indexForLineAxis]['dimensionuri']
-         
-               
-    
+
+
+
         for clientObj in self.mappingInfoDimension:
             cubeComponent = clientObj['cubecomponent']
             if cubeComponent == channelName:
                 mappedDimensionUri = clientObj['dimensionuri']
                 mappedDimensionLabel = clientObj['label']
-                
+
                 mappedDimensionIndex = clientObj['index']
                 if (mappedDimensionUri != dimForXAxis and mappedDimensionUri != dimForLineAxis ):
                     if (mappedDimensionIndex != xAxis and mappedDimensionIndex!= lineAxis ):
-                        
-                
-                        return mappedDimensionIndex       
+
+
+                        return mappedDimensionIndex
 
     def isReal(self, txt):
         try:
@@ -808,4 +808,3 @@ brushingObserver.registerListener(function(newChartRowIndex){ chartRowIndex = ne
             return True
         except ValueError:
             return False
-                

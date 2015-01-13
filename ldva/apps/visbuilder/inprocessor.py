@@ -27,8 +27,8 @@ class InProcessor():
         self.dataset = ds
         self.selectedChart = chart
         self.iDOfSelectedChart = chartID
-       
-            
+
+
     def process(self):
         try:
             outProcessorObject = outprocessor.OutProcessor(self.dataset, self.selectedChart, self.iDOfSelectedChart)
@@ -36,6 +36,5 @@ class InProcessor():
             self.resultArray = outProcessorObject.resultArray
         except Exception as ex:
             raise Exception("-InProccessor.process: %s"%ex)
-        
-        
-    
+
+

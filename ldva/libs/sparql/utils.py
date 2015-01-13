@@ -1410,7 +1410,7 @@ class SPARQLQuery:
         except Exception as ex:
             print ("-get_cube_dimensions_for_auto_mapping: %s"%ex)
             raise Exception("%s"%ex)
-        
+
         #print "-----------------------", dimensionsList
         return dimensionsList
 

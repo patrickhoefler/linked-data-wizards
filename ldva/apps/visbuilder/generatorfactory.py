@@ -26,37 +26,37 @@ import d3data
 
 
 class GeneratorFactory():
-    
+
     def __init__(self):
         pass
-    
+
     def createFactory(self, name, mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue, possibleVisualizations):
         try:
 
             if name=="parallelcoordinates":
                 parallelCoordinatesGenerator= parallelcoordinatesgenerator.ParallelCoordinatesGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue)
                 return(parallelCoordinatesGenerator)
-            
+
             if name=="streamgraph":
                 streamgraphGenerator= streamgraphgenerator.StreamgraphGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue)
                 return(streamgraphGenerator)
-            
+
             if name=="piechart":
                 pieChartGenerator= d3piechartgenerator.D3PieChartGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue)
                 return(pieChartGenerator)
-            
+
             if name=="groupedbarchart":
                 groupedChartGenerator= groupedbarchartgenerator.GroupedBarChartGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue)
                 return(groupedChartGenerator)
 
-                     
+
             if name=="d3data":
                 d3dataGenerator = d3data.D3DataGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue)
                 return(d3dataGenerator)
-              
+
             else:
                 print("WARNING: generator for %s does not exist" %name)
                 return(None)
-            
+
         except Exception as ex:
-            raise Exception("-Generatorfactory.init: %s"%ex)   
+            raise Exception("-Generatorfactory.init: %s"%ex)

@@ -27,8 +27,8 @@ class InProcessorAuto():
         self.selectedChart = chart
         self.dimension = dimension
 
-       
-                
+
+
     def process(self):
         try:
             resultArray = []
@@ -38,15 +38,14 @@ class InProcessorAuto():
             #self.resultArray = outProcessorForAuto.resultArray
         except Exception as ex:
             raise Exception("-InProccessorAuto.process: %s"%ex)
-    
-    
+
+
     def getVis(self):
         try:
             resultArray = []
             outProcessorForAuto = outprocessorauto.OutProcessorForAutomaticallyMapping(self.dataset, self.selectedChart, self.dimension )
-            resultArray = outProcessorForAuto.getVis()   
+            resultArray = outProcessorForAuto.getVis()
             return resultArray
         except Exception as ex:
-            raise Exception("-InProccessorAuto.getVis: %s"%ex)  
-    
-    
+            raise Exception("-InProccessorAuto.getVis: %s"%ex)
+

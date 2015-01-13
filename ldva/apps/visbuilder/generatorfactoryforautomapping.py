@@ -30,53 +30,53 @@ import d3data
 
 
 class GeneratorFactoryForAutoMapping():
-    
+
     def __init__(self):
         pass
-    
+
     def createFactoryauto(self, name, mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue, dataset, chartrowIndex):
         try:
             if name=="parallelcoordinates":
                 parallelCoordinatesGenerator= parallelgenerator.ParallelGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue, dataset, chartrowIndex)
                 return(parallelCoordinatesGenerator)
-            
+
             if name=="piechart":
                 pieChartGenerator= piechartgenerator.PieChartGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue, dataset, chartrowIndex)
                 return(pieChartGenerator)
-            
-            
+
+
             if name=="streamgraph":
                 #print "OKAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYyyyy"
                 streamgraphGenerator= streamgraphgenerator.StreamgraphGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue, dataset, chartrowIndex)
                 return(streamgraphGenerator)
-            
-            
+
+
             if name=="groupedbarchart":
                 groupedChartGenerator= groupedbarchartgenerator.GroupedBarChartGenerator(mappingInfoForDimension, mappingIngfoForMeasure,  mappingInfoForValue, chartrowIndex)
                 return(groupedChartGenerator)
-            
+
             if name=="scatterplotmatrix":
                 scatterplotmatrixGenerator = scatterplotmatrixgenerator.ScatterPlotMatrixGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue)
                 return(scatterplotmatrixGenerator)
-            
+
             if name=="map":
                 geovisGenerator = geovisgenerator.GeovisGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue)
                 return(geovisGenerator)
-            
+
             if name=="table":
                 tableGenerator = tablegenerator.TableGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue)
-                return(tableGenerator) 
-            
-            
-            
+                return(tableGenerator)
+
+
+
             if name=="bubblechart" or name=="linechart" or name=="json" or name=="barchart":
                 generator = d3data.D3DataGenerator(mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue)
                 return(generator)
-            
-              
+
+
             else:
                 print("WARNING: generator for %s does not exist" %name)
                 return(None)
-            
+
         except Exception as ex:
             raise Exception("-Generatorfactory.init: %s"%ex)

@@ -38,14 +38,14 @@ class ScatterPlotMatrixGenerator(object):
         self.mappingInfoValue = mappingInfoForValue
 
     def transform(self):
-                    
+
         try:
             self.results = {'code':'', 'errors': [], 'id':''}
-            
+
             #get datatypes
             types = self.getLabelsAndTypes()
             self.results["test"] = ""
-            
+
             columns = self.transformColumns()
 
             #generate a legend
@@ -56,10 +56,10 @@ class ScatterPlotMatrixGenerator(object):
                 if rowElement[1] == "string":
                     valueStringDictionary[rowElement[0]] = []
                     #stringList.append(rowElement[0])
-                 
-            ###   
+
+            ###
             #rows = []
-     
+
             # collect sortable rows (all sortable rows are string types)
             for element in self.mappingInfoValue:
                 rowValues = []
@@ -68,36 +68,36 @@ class ScatterPlotMatrixGenerator(object):
                     rowValues.append(element['observation']['dimensionlabel' + str(i)])
                 #another types
 #!!!#                rowValues.append(element['observation']['measurevalue'])
-                
+
                 for i in range(len(self.mappingInfoMeasure)):
                     rowValues.append(element['observation']['measurevalue' + str(i)])
-                    
+
                 for index,rowElement in enumerate(types):
                     if rowElement[1] == "string":
                         valueStringDictionary[rowElement[0]].append(rowValues[index])
-                 
-                ##        
-                #rows.append(rowValues)        
+
+                ##
+                #rows.append(rowValues)
 
 
             legendDictionary = copy.deepcopy(valueStringDictionary)
-            
+
             # sorted and uniqued the data for legends
             for dictkey in valueStringDictionary:
                 sortAndUniqueData = self.uniqueForSortData(sorted(valueStringDictionary[dictkey]))
                 legendDictionary[dictkey] = sortAndUniqueData
                 valueStringDictionary[dictkey] = self.arrayValueToDictKeyForUniqueData(sortAndUniqueData)
-                
-                
-            
-            
+
+
+
+
             #convert the data to the json format for the scatterplotmatrix
             rows = []
 
             for element in self.mappingInfoValue:
-                
+
                 rowValues = []
-     
+
                 for i in range(len(self.mappingInfoDimension)):
                     rowValues.append(element['observation']['dimensionlabel' + str(i)])
                     #!# ms = element['observation']['measurevalue' + '0']
@@ -109,15 +109,15 @@ class ScatterPlotMatrixGenerator(object):
                     ms = element['observation']['measurevalue' + str(i)]
                     if not ms:
                         ms = str(0.0)
-                        
-                         
-                    bol = self.isReal(ms)    
-                    
+
+
+                    bol = self.isReal(ms)
+
                     if not bol:
-                        ms = str(0.0)      
-                        
+                        ms = str(0.0)
+
                     rowValues.append(ms)
-                        
+
                 #change string data instead number data values
                 dictobjs = {}
                 for index,rowElement in enumerate(types):
@@ -126,27 +126,27 @@ class ScatterPlotMatrixGenerator(object):
                     elif rowElement[1] == "decimal":
                         rowValues[index] = float(rowValues[index])
                     elif rowElement[1] == "int":
-                        rowValues[index] = int(rowValues[index])        
-                                         
+                        rowValues[index] = int(rowValues[index])
+
                     dictobjs[rowElement[0]] = rowValues[index]
 
-                #assign to json            
+                #assign to json
                 rows.append(dictobjs)
-         
 
-            
+
+
             rows.append(legendDictionary)
-             
+
             self.results["columns"] = columns
             self.results["rows"] = rows
 
-        
+
 
         except Exception as ex:
             raise Exception("-Scatterplotmatrix.transform: %s"%ex)
 
-    
-    
+
+
     def arrayValueToDictKeyForUniqueData(self,array):
         try:
             dictionaryByName={}
@@ -154,11 +154,11 @@ class ScatterPlotMatrixGenerator(object):
             for index,element in enumerate(array):
                 #if(dictionaryByName[element] != element)
                 dictionaryByName[element] = index
-    
+
             return dictionaryByName
         except Exception as ex:
             raise Exception("-Scatterplotmatrix.arrayValueToDictKeyForUniqueData: %s"%ex)
-    
+
 
 
     #get return datatype in string and another types
@@ -176,22 +176,22 @@ class ScatterPlotMatrixGenerator(object):
                 #meas = element['measureuri']
                 #addColumnForYAxis=(meas)
                 #splitteColumnentityForYAxis = addColumnForYAxis[addColumnForYAxis.rfind("/")+1:]
-                
+
                 splitType = element['datatype'].split('#')
                 typename = splitType[len(splitType)-1]
                 #labelTypes.append([splitteColumnentityForYAxis,typename])
-                
+
                 labelTypes.append([meas,typename])
 
             ###important
             #hard code change datatypes
             if ["Year","string"] in labelTypes:
                 labelTypes[labelTypes.index(["Year","string"] )] = ["Year","int"]
-            
-            
-            
+
+
+
             return(labelTypes)
-        
+
         except Exception as ex:
             raise Exception("-Scatterplotmatrix.getLabelsAndTypes: %s"%ex)
 
@@ -200,13 +200,13 @@ class ScatterPlotMatrixGenerator(object):
         try:
             returnArray = []
             returnArray.append(sortedArray[0])
-            
+
             for element in sortedArray:
                 if element != returnArray[len(returnArray)-1]:
                     returnArray.append(element)
-                    
+
             return returnArray
-        
+
         except Exception as ex:
             raise Exception("-Scatterplotmatrix.uniqueForSortData: %s"%ex)
 
@@ -232,7 +232,7 @@ class ScatterPlotMatrixGenerator(object):
         except Exception as ex:
             raise Exception("-Scatterplotmatrix.transformColumns: %s"%ex)
 
-    
+
     def isReal(self, txt):
         try:
             float(txt)
@@ -241,4 +241,3 @@ class ScatterPlotMatrixGenerator(object):
             return False
 
 
-                

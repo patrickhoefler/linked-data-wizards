@@ -27,13 +27,13 @@ class D3DataGenerator(object):
 
     def __init__(self, mappingInfoForDimension, mappingInfoForMeasure, mappingInfoForValue):
         self.mappingInfoDimension = mappingInfoForDimension
-        
-       
+
+
         self.mappingInfoMeasure = mappingInfoForMeasure
         self.mappingInfoValue = mappingInfoForValue
 
     def transform(self):
-                    
+
         try:
 
             self.results = {'code': '', 'errors': [], 'id': ''}

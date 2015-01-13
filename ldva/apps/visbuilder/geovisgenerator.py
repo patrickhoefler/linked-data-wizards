@@ -37,14 +37,14 @@ class GeovisGenerator(object):
         self.mappingInfoMeasure = mappingIngfoForMeasure
         self.mappingInfoValue = mappingInfoForValue
 
-    def transform(self):         
+    def transform(self):
         try:
             self.results = {'code':'', 'errors': [], 'id':''}
-            
+
             #get datatypes
             types = self.getLabelsAndTypes()
             self.results["test"] = ""
-            
+
             columns = self.transformColumns()
 
             '''
@@ -56,28 +56,28 @@ class GeovisGenerator(object):
                 if rowElement[1] == "string":
                     valueStringDictionary[rowElement[0]] = []
                     #stringList.append(rowElement[0])
-            '''     
-            ###   
+            '''
+            ###
             rows = []
-     
+
             for element in self.mappingInfoValue:
                 rowValues = []
                 for i in range(len(self.mappingInfoDimension)):
                     rowValues.append(element['observation']['dimensionlabel' + str(i)])
-              
-                rowValues.append(element['observation']['measurevalue%s'%0])
-                rows.append(rowValues)        
 
-    
+                rowValues.append(element['observation']['measurevalue%s'%0])
+                rows.append(rowValues)
+
+
             self.results["columns"] = columns
             self.results["rows"] = rows
 
-        
+
             #print "---------------", self.results
         except Exception as ex:
             raise Exception("-Geovis.transform: %s"%ex)
 
-   
+
 
     #get return datatype in string and another types
     def getLabelsAndTypes(self):
@@ -93,7 +93,7 @@ class GeovisGenerator(object):
                 meas = element['measureuri']
                 addColumnForYAxis=(meas)
                 splitteColumnentityForYAxis = addColumnForYAxis[addColumnForYAxis.rfind("/")+1:]
-                
+
                 splitType = element['datatype']
                 typename = splitType[len(splitType)-1]
                 labelTypes.append([splitteColumnentityForYAxis,typename])
@@ -102,11 +102,11 @@ class GeovisGenerator(object):
             #hard code change datatypes
             #if ["Year","string"] in labelTypes:
             #    labelTypes[labelTypes.index(["Year","string"] )] = ["Year","int"]
-            
-            
-            
+
+
+
             return(labelTypes)
-        
+
         except Exception as ex:
             raise Exception("-Geovis.getLabelsAndTypes: %s"%ex)
 
@@ -115,13 +115,13 @@ class GeovisGenerator(object):
         try:
             returnArray = []
             returnArray.append(sortedArray[0])
-            
+
             for element in sortedArray:
                 if element != returnArray[len(returnArray)-1]:
                     returnArray.append(element)
-                    
+
             return returnArray
-        
+
         except Exception as ex:
             raise Exception("-ColumnGenerator.uniqueForSortData: %s"%ex)
     '''
@@ -148,4 +148,3 @@ class GeovisGenerator(object):
 
 
 
-                

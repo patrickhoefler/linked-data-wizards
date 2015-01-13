@@ -25,171 +25,170 @@ class D3PieChartGenerator(generator.Generator):
     mappingInfoDimension=None
     mappingInfoMeasure=None
     dimensions=None
-    
+
     labelOfDimensionArray=[]
     labelOfMeasureArray=[]
     measureContentArray=[]
     codeObject={'code': """
- 
+
 var loc=config.location;
-var w = 900, 
+var w = 900,
 
-h = 600, 
+h = 600,
 
-r = 300, 
+r = 300,
 
 color = d3.scale.category20();
 
- 
+
 
 var data = @@@DATA@@@;
 
 var vis = d3.select("body")
 .select("#"+loc)
-.append("svg:svg") 
+.append("svg:svg")
 
-.data([data]) 
+.data([data])
 
-.attr("width", w) 
+.attr("width", w)
 
 .attr("height", h)
 
-.append("svg:g") 
+.append("svg:g")
 
-.attr("transform", "translate(" + r + "," + r + ")") 
+.attr("transform", "translate(" + r + "," + r + ")")
 
- 
 
-var arc = d3.svg.arc() 
+
+var arc = d3.svg.arc()
 
 .outerRadius(r);
 
- 
 
-var pie = d3.layout.pie() 
 
-.value(function(d) { return d.value; }); 
+var pie = d3.layout.pie()
 
- 
+.value(function(d) { return d.value; });
+
+
 
 var arcs = vis.selectAll("g.slice")
 
-.data(pie) 
-.enter() 
+.data(pie)
+.enter()
 
-.append("svg:g") 
+.append("svg:g")
 
-.attr("class", "slice"); 
- 
+.attr("class", "slice");
+
 
 arcs.append("svg:path")
 
-.attr("fill", function(d, i) { return color(i); } ) 
+.attr("fill", function(d, i) { return color(i); } )
 
-.attr("d", arc); 
+.attr("d", arc);
 
- 
 
-arcs.append("svg:text") 
 
-.attr("transform", function(d) { 
+arcs.append("svg:text")
+
+.attr("transform", function(d) {
 
 
 d.innerRadius = 0;
 
 d.outerRadius = r;
 
-return "translate(" + arc.centroid(d) + ")"; 
+return "translate(" + arc.centroid(d) + ")";
 })
 
-.attr("text-anchor", "middle") 
-.text(function(d, i) { return data[i].label; }); 
+.attr("text-anchor", "middle")
+.text(function(d, i) { return data[i].label; });
 
 """}
     results={'code':'', 'errors':[]}
-      
+
     def __init__(self, mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue):
         self.mappingInfoDimension=mappingInfoForDimension
         self.mappingInfoMeasure=mappingIngfoForMeasure
         self.mappingInfoValue=mappingInfoForValue
         self.results={'code':'', 'errors': []}
-       
-    def transform(self):                  
+
+    def transform(self):
         try:
             code=""
             d3PieChartGeneratorRowsArray=[]
-           
+
             indexForXAxis = self.getDimensionIndex( "x-Axis")
-            
-            
+
+
             for element in self.mappingInfoValue:
-                xAxisLabel = element['observation']['dimensionlabel%s'% (indexForXAxis)]                              
+                xAxisLabel = element['observation']['dimensionlabel%s'% (indexForXAxis)]
                 yAxisValue = element['observation']['measurevalue']
-               
+
 
                 d3PieChartGeneratorRows=[xAxisLabel, yAxisValue]
-                d3PieChartGeneratorRowsArray.append(d3PieChartGeneratorRows) 
+                d3PieChartGeneratorRowsArray.append(d3PieChartGeneratorRows)
                 d3PieChartGeneratorRowsArray=self.unique(d3PieChartGeneratorRowsArray)
-                
-                
-            addRows=self.transformRows(d3PieChartGeneratorRowsArray)           
+
+
+            addRows=self.transformRows(d3PieChartGeneratorRowsArray)
             code=self.codeObject['code']
 
             code=code.replace("@@@DATA@@@", addRows)
-             
+
             self.results['code']=code
-    
-                
+
+
         except Exception as ex:
-            raise Exception("-PieChartGenerator.transform: %s"%ex)         
-         
+            raise Exception("-PieChartGenerator.transform: %s"%ex)
+
     def unique(self, items):
         found = []
         keep = []
-    
+
         for item in items:
             if item not in found:
                 found.append(item)
                 keep.append(item)
-    
+
         return keep
-                                                   
-    
-        
+
+
+
     def transformRows(self, rowsArray):
         try:
             row=""
             rows=""
-                    
+
             for element in rowsArray:
                 x=element[0]
-                y1=element[1]         
-                
-                
+                y1=element[1]
+
+
                 row="{'label':'"+x+"','value':"+y1+"},"
                 rows=rows+row
-                   
+
             tempList = list(rows)
             tempList[len(tempList)-1]=""
-            
+
             strRows="".join(tempList)
-            addRows="["+strRows+"];"  
-                   
+            addRows="["+strRows+"];"
+
             return(addRows)
         except Exception as ex:
             raise Exception("-PieChartGenerator.transformRows: %s"%ex)
-    
+
     def getDimensionIndex(self, channelName):
         xAxisDimension = ""
-    
+
         mappedDimensionUri = ""
         mappedDimensionLabel = ""
         for clientObj in self.mappingInfoDimension:
-            
+
             cubeComponent = clientObj['cubecomponent']
             if cubeComponent == channelName:
                 mappedDimensionUri = clientObj['dimensionuri']
                 mappedDimensionLabel = clientObj['label']
-                mappedDimensionIndex = clientObj['index']            
+                mappedDimensionIndex = clientObj['index']
                 return mappedDimensionIndex
-                

@@ -24,12 +24,12 @@ from operator import itemgetter, attrgetter
 from ldva.libs.sparql.utils import SPARQLQuery
 from django.utils import simplejson
 class ParallelGeneratorOne(generator.Generator):
-    
+
     #print "Halloooooooooooooooooooooooooooooooo"
     mappingInfoDimension = None
     mappingInfoMeasure = None
     dimensions = None
-    
+
     codeObjectTwo= {'code': """var loc=config.location;function drawParallelCoordinates() {
 window.requestAnimFrame = (function(){
   return window.requestAnimationFrame       ||
@@ -87,40 +87,40 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
 
   // Create a scale for each.
  dimensions.forEach(function(d) {
-    var vals = data.map(function(p) {return p[d];}); 
-    if (vals.every(quant_p) && d !== "Year"){ 
+    var vals = data.map(function(p) {return p[d];});
+    if (vals.every(quant_p) && d !== "Year"){
       y[d] = d3.scale.linear()
           .domain(d3.extent(vals.map(function(p){return +p})))
           .range([h, 0]);}
     else{
-    
+
       y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}))
           .rangePoints([h, 0],1);}
   })
-  
+
   /*dimensions.forEach(function(d) {
-    var vals = data.map(function(p) {return p[d];}); 
+    var vals = data.map(function(p) {return p[d];});
     if ( vals >=2003 && vals <=2008){
     console.log(vals);
         y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}))
           .rangePoints([h, 0],1);}
 
-    else if (vals.every(quant_p)){ 
+    else if (vals.every(quant_p)){
       y[d] = d3.scale.linear()
           .domain(d3.extent(vals.map(function(p){return +p})))
           .range([h, 0]);}
     else{
-    
+
       y[d] = d3.scale.ordinal()
           .domain(vals.filter(function(v, i) {return vals.indexOf(v) == i;}))
           .rangePoints([h, 0],1);}
   })*/
-  
-  
-  
-  
+
+
+
+
   // Render full foreground
   paths(data, foreground, brush_count);
 
@@ -177,7 +177,7 @@ var quant_p = function(v){return (parseFloat(v) == v) || (v == "")};
       data.slice(i,max).forEach(function(d) {
       //console.log(colors(d));
         path(d, foreground, colors(d));
-        
+
       });
       i = max;
     };
@@ -197,50 +197,50 @@ function path(d, ctx, color) {
   dimensions.map(function(p,i) {
     if (i == 0) {
       ctx.moveTo(x(p),y[p](d[p]));
-    } else { 
+    } else {
       ctx.lineTo(x(p),y[p](d[p]));
     }
   });
   ctx.stroke();
-}; 
+};
 }
-drawParallelCoordinates() 
+drawParallelCoordinates()
  """}
 
-   
+
     def __init__(self, mappingInfoForDimension, mappingIngfoForMeasure, mappingInfoForValue, dataset):
         self.mappingInfoDimension = mappingInfoForDimension
-        
+
         #print "------------------------------------------------", self.mappingInfoDimension
         self.mappingInfoMeasure = mappingIngfoForMeasure
-        
+
         self.mappingInfoValue = mappingInfoForValue
         self.dataset = dataset
         self.results = {'code':'', 'errors': [], 'mappinginfo': {}}
-        print "------------------------------------------------", self.mappingInfoValue        
+        print "------------------------------------------------", self.mappingInfoValue
     def transform(self):
-        try:  
+        try:
             self.results =  {}
-            lineArraytwo = []           
+            lineArraytwo = []
             labOfdm = ""
             code = self.codeObjectTwo['code']
-                     
+
             tableForDim = {}
             xEntries = []
             tableForDimArray= []
-            
-            
+
+
             for entry in self.mappingInfoDimension:
                 dim = entry['dimensionuri']
                 dimLabel = entry['label']
                 tableForDim = {'dimension' : '', 'label': ''}
-                
+
                 tableForDim['dimension'] = dim
                 tableForDim['label'] = dimLabel
                 tableForDimArray.append(tableForDim)
-                
-                
-                
+
+
+
             tableForMesArray = []
             for meas in self.mappingInfoMeasure:
                 value = meas ['measureuri']
@@ -248,81 +248,81 @@ drawParallelCoordinates()
                 tableForMeasure = {'measure' : '', 'label': ''}
                 tableForMeasure ['measure'] = value
                 tableForMeasure ['label'] = label
-                
-                tableForMesArray.append (tableForMeasure)   
-             
-             
-             
-            
-            strResult = "[ "   
+
+                tableForMesArray.append (tableForMeasure)
+
+
+
+
+            strResult = "[ "
             xAxisArray = []
             for element in self.mappingInfoValue:
-               
-                    strg = "" 
+
+                    strg = ""
                     strg2 = ""
-                    for i in range(len(tableForDimArray)):                 
+                    for i in range(len(tableForDimArray)):
                         xAxis = element['observation']['dimensionlabel%s'% (i)]
                         labelForValue = tableForMesArray[0]['label']
                         label2 = tableForDimArray[i]['label']
-                        
+
                         strg = strg + '"'+label2+'":"'+xAxis+'",'
-                        
-                    yAxis = element['observation']['measurevalue']    
+
+                    yAxis = element['observation']['measurevalue']
                     #print "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", yAxis
                     strg2 = strg+'"'+labelForValue + '":"'+ yAxis+'"'
-                    
+
                     '''tempList1 = list(strg2)
                     tempList1[len(tempList1)-1]=""
-                    strEndContent1 = "".join(tempList1)''' 
-                    
-                    strValueObject = "{" +strg2+ "}, "             
-                    toDictObject = strValueObject               
+                    strEndContent1 = "".join(tempList1)'''
+
+                    strValueObject = "{" +strg2+ "}, "
+                    toDictObject = strValueObject
                     strResult = strResult + toDictObject
-                    
+
             tempList = list(strResult)
             tempList[len(tempList)-2]=""
             strEndResult = "".join(tempList)
-                    
+
             strResult = strEndResult + "]"
-    
-        
-                
+
+
+
             print "DIMMMMMURIIIII",  strResult
-        
-             
-            code=code.replace("@@@DATA@@@", "".join(strResult)) 
-           
-               
-            #print "CODEEEEEEEEEEEEEEEEEEEEEEEEEE", strResult            
+
+
+            code=code.replace("@@@DATA@@@", "".join(strResult))
+
+
+            #print "CODEEEEEEEEEEEEEEEEEEEEEEEEEE", strResult
             self.results['code']=code
-            #print "CODEEEEEEEEEEEEEEEEEEEEEEEEEE", self.results 
-                                      
-                            
-                            
-                                  
-            #print "ooooooooooooooooooooooooooooooooooooooooo", parallelcoordinatesGeneratorRows      
+            #print "CODEEEEEEEEEEEEEEEEEEEEEEEEEE", self.results
+
+
+
+
+            #print "ooooooooooooooooooooooooooooooooooooooooo", parallelcoordinatesGeneratorRows
         except Exception as ex:
             raise Exception("-ParallelGeneratorOne.transform: %s"%ex)
                 #print "::::: NACHER ", element2['map']
-            
-            
-    
+
+
+
     def unique(self, items):
         found = []
         keep = []
-    
+
         for item in items:
             if item not in found:
                 found.append(item)
                 keep.append(item)
-    
+
         return keep
 
-    
+
     def getDimensionIndex(self, channelName):
         mappedDimensionIndex = ""
         xAxisDimension = ""
-    
+
         mappedDimensionUri = ""
         mappedDimensionLabel = ""
         for clientObj in self.mappingInfoDimension:
@@ -332,6 +332,5 @@ drawParallelCoordinates()
                 mappedDimensionUri = clientObj['dimensionuri']
                 #print "mappedDimensionUri##############################", mappedDimensionUri
                 mappedDimensionLabel = clientObj['label']
-                mappedDimensionIndex = clientObj['index']            
-                return mappedDimensionIndex  
-                
+                mappedDimensionIndex = clientObj['index']
+                return mappedDimensionIndex

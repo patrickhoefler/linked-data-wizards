@@ -25,14 +25,14 @@ import os
 g=rdflib.Graph()
 g.load(os.path.join(os.path.dirname(__file__), 'static/data/chart.rdf'))
 
-  
+
 q="""
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-prefix xs: <http://www.w3.org/2001/XMLSchema#> 
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xs: <http://www.w3.org/2001/XMLSchema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix code: <http://code-research.eu/ontology/visual-analytics>
-prefix sio: <http://semanticscience.org/ontology/sio.owl> 
-prefix va: <http://code-research.eu/ontology/visual-analytics#> 
+prefix sio: <http://semanticscience.org/ontology/sio.owl>
+prefix va: <http://code-research.eu/ontology/visual-analytics#>
 
 
 SELECT distinct  ?name ?vis ?datatype ?persistence ?supportedtype
@@ -43,7 +43,7 @@ WHERE { ?x va:hasChartName ?chart.
         ?vis va:hasDataType ?datatype.
         ?vis va:hasPersistence ?persistence.
         ?vis va:supportsType ?supportedtype
-     
+
       }
 """
 

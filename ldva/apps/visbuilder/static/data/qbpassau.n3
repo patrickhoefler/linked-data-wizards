@@ -1,24 +1,24 @@
 # Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
 # Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
 # office@know-center.at
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX  qb: <http://purl.org/linked-data/cube#> 
-PREFIX  va: <http://www.code-research.eu/ontology/visual-analytics#> 
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  qb: <http://purl.org/linked-data/cube#>
+PREFIX  va: <http://www.code-research.eu/ontology/visual-analytics#>
 PREFIX  code: <http://www.code-research.eu/resource/>
 PREFIX  sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
 PREFIX  interval: <http://reference.data.gov.uk/def/intervals/>
@@ -41,14 +41,14 @@ rdfs:range code:nominal.
 code:measure_947 a rdf:Property , qb:MeasureProperty;
 rdfs:label "Performance measure value"@en;
 rdfs:subPropertyOf sdmx-measure:obsValue;
-rdfs:range xsd:decimal. 
+rdfs:range xsd:decimal.
 
 code:dsdpan_2009_ext a qb:DataStructureDefinition;
 qb:component [ qb:dimension code:dimension_93 ];
 qb:component [ qb:measure code:measure_947 ].
 
 code:datasetpan_2009_ext a qb:DataSet;
-qb:structure code:dsdpan_2009_ext. 
+qb:structure code:dsdpan_2009_ext.
 
 code:obs9 a qb:Observation;
 code:dimension_93 [ rdfs:label "allen" ];
@@ -106,7 +106,7 @@ code:measure_947 [ rdfs:label "0.0649" ];
 qb:dataSet code:datasetpan_2009_ext.
 
 code:datasetpan_2009_ext a qb:DataSet;
-qb:structure code:dsdpan_2009_ext. 
+qb:structure code:dsdpan_2009_ext.
 
 
 }

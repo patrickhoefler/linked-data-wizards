@@ -18,7 +18,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:va="http://code-research.eu/ontology/visual-analytics#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:code="http://code-research.eu/ontology/visual-analytics" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-	
+
 	<va:ColumnChart rdf:about="http://code-research.eu/ontology/visual-analyticsColumnChart">
 		<rdfs:label>barchart</rdfs:label>
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticscolumnchart" />
@@ -38,10 +38,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -79,7 +79,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-	
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsColumnChartXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
@@ -104,7 +104,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsstreamgraph" />
 		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsStreamGraphDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -119,10 +119,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -193,7 +193,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsstreamgraphXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
@@ -226,7 +226,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsgroupedbarchart" />
 		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</va:supportedDimension>
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsGroupedBarChartDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -340,7 +340,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
@@ -353,7 +353,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartBarAxis">
 				<rdfs:label>Bar</rdfs:label>
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />				
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
 				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
@@ -361,8 +361,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsgroupedBarChartYAxis">
 				<rdfs:label>y-Axis</rdfs:label>
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />			
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
 				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
@@ -387,10 +387,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -530,10 +530,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -611,7 +611,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedMeasure>
 		<va:supportedDimensionalt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</va:supportedDimensionalt>
 		<va:supportedMeasurealt rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</va:supportedMeasurealt>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsBubbleChartDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -626,7 +626,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 
@@ -666,8 +666,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
-	
+
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
@@ -692,7 +692,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsbubbleChartSize">
 				<rdfs:label>Size</rdfs:label>
 				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />				
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
 				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
@@ -705,12 +705,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
 		</va:hasVisualChannel>
-	</va:BubbleChart>	
+	</va:BubbleChart>
 
 
 
 
-	
+
 	<va:ScatterPlot rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplot">
 		<rdfs:label>scatterplot</rdfs:label>
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsscatterplot" />
@@ -732,7 +732,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 
@@ -775,13 +775,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
 				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
 				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
 				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
@@ -790,7 +790,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotYAxis">
 				<rdfs:label>y-Axis</rdfs:label>
 				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
-				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />	
+				<va:hasDataType rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
 				<va:hasPersistence rdf:resource="http://code-research.eu/ontology/visual-analytics#Mandatory" />
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
@@ -804,17 +804,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 			</va:Axis>
 		</va:hasVisualChannel>
 	</va:ScatterPlot>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<va:ParallelCoordinates rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinates">
 		<rdfs:label>parallelcoordinates</rdfs:label>
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsparallelcoordinates" />
 		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsParallelCoordinatesDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -829,7 +829,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 
@@ -887,7 +887,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinatesXAxis">
 				<rdfs:label>x-Axis</rdfs:label>
@@ -898,7 +898,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#Multiplicity" />
 			</va:Axis>
 		</va:hasVisualChannel>
-		
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsparallelCoordinatesColor">
 				<rdfs:label>Color</rdfs:label>
@@ -907,15 +907,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
 		</va:hasVisualChannel>
-			
-	
+
+
 	</va:ParallelCoordinates>
 	<va:Scatterplotmatrix rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotmatrix">
 		<rdfs:label>scatterplotmatrix</rdfs:label>
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsscatterplotmatrix" />
 		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsScatterPlotMatrixDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -930,10 +930,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -998,8 +998,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
-		
+
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsscatterplotmatrixAxis">
 				<rdfs:label>axis</rdfs:label>
@@ -1016,7 +1016,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticstable" />
 		<va:supportedDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedDimension>
 		<va:supportedMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9999</va:supportedMeasure>
-		
+
 		<va:hasDescription>
 			<va:ChartDescription rdf:about="http://code-research.eu/ontology/visual-analyticsTableDescription">
 				<rdfs:label>Bar Chart wird benutzt, um vieles zu zeichnen</rdfs:label>
@@ -1031,10 +1031,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -1085,12 +1085,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticstableColumn">
 				<rdfs:label>column</rdfs:label>
@@ -1101,7 +1101,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#Multiplicity" />
 			</va:Axis>
 		</va:hasVisualChannel>
-	</va:Table>	
+	</va:Table>
 	<va:Map rdf:about="http://code-research.eu/ontology/visual-analyticsmap">
 		<rdfs:label>map</rdfs:label>
 		<va:hasChartName rdf:resource="http://code-research.eu/ontology/visual-analyticsmap" />
@@ -1143,10 +1143,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 	</v:documentProperties>
 
 	<style type="text/css">
-	
+
 		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
 		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	
+
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
@@ -1247,17 +1247,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			</va:ChartDescription>
 		</va:hasDescription>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
 		<va:hasVisualChannel>
 			<va:Axis rdf:about="http://code-research.eu/ontology/visual-analyticsmapCountry">
 				<rdfs:label>country</rdfs:label>
@@ -1274,5 +1274,5 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 				<va:hasOccurrence rdf:resource="http://code-research.eu/ontology/visual-analytics#One" />
 			</va:Axis>
 		</va:hasVisualChannel>
-	</va:Map>	
+	</va:Map>
 </rdf:RDF>

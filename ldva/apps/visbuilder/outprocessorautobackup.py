@@ -23,70 +23,70 @@ from ldva.libs.sparql.utils import SPARQLQuery
 
 class OutProcessorForAutomaticallyMapping():
     resultArrayForVis = []
-    
+
     def __init__ (self, dataset, chart, dimension):
         self.dataset=dataset
-        self.selectedChart=chart  
+        self.selectedChart=chart
         self.dimension = dimension
-        
+
     def process(self):
-        try:  
+        try:
             print "OutProcessorForAutomaticallyMapping::start..."
             resultArray = []
             supportedCharts = []
             supportedArray = []
-            
+
             mappingProposalObject=mappingproposal.MappingProposal()
             sparqlqueryObjectD3 = ""
             print "OutProcessorForAutomaticallyMapping::1...",self.dataset
             '''if self.dataset == "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind_iu3":
                 sparqlqueryObjectD3 = SPARQLQuery("http://open-data.europa.eu/en/sparqlep", 'regex')'''
-                
-                
-            st = "http://data.lod2.eu/"    
-            if st in self.dataset:    
+
+
+            st = "http://data.lod2.eu/"
+            if st in self.dataset:
                 sparqlqueryObjectD3 = SPARQLQuery('http://open-data.europa.eu/en/sparqlep', 'regex')
-                
+
             else:
                 sparqlqueryObjectD3 = SPARQLQuery('http://zaire.dimis.fim.uni-passau.de:8890/sparql', 'virtuoso')
-            
-            
-            dimensions = sparqlqueryObjectD3.get_cube_dimensions_for_auto_mapping(self.dataset)    
+
+
+            dimensions = sparqlqueryObjectD3.get_cube_dimensions_for_auto_mapping(self.dataset)
             measure = sparqlqueryObjectD3.get_cube_measure_for_auto_mapping(self.dataset)
 
-            
+
             #valueOfMeasure = sparqlqueryObjectD3.get_value_of_cube_measure(self.dataset, dimensions, measure, 10)
             chartComponentsArray = mappingProposalObject.getChartComponents()
             #print "OLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", chartComponentsArray, "DIMMMMMMMMMMMMMMMMM", dimensions
-            supportedCharts = mappingProposalObject.getSupportedChart(chartComponentsArray, dimensions, measure)   
+            supportedCharts = mappingProposalObject.getSupportedChart(chartComponentsArray, dimensions, measure)
             #print "JETZT: ", len(supportedCharts)
             for element in supportedCharts:
                 ch = element ['chart']
                 chartComponent = { 'chart':'', 'charturi':'', 'visualChannels': []}
-                
+
                 chUri = element ['charturi']
                 chartComponent[ 'chart'] = ch
                 chartComponent[ 'charturi'] = chUri
-             
+
                 supportedArray = mappingProposalObject.getVisChannelsOfSupportedChart(chUri, chartComponentsArray, dimensions, measure)
                 chartComponent['visualChannels'] = supportedArray
                 resultArray.append(chartComponent)
             #print "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT", resultArray
             return resultArray
-    
+
         except Exception as ex:
             raise Exception("-OutProcessorauto.process: %s"%ex)
-            
+
     def getVis(self):
         try:
             resultArrayForVis = []
             sparqlqueryObjectD3 = ""
             '''if self.dataset == "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind_iu3":
                 sparqlqueryObjectD3 = SPARQLQuery("http://open-data.europa.eu/en/sparqlep", 'regex')'''
-                
-                
-            st = "http://data.lod2.eu/"    
-            if st in self.dataset:    
+
+
+            st = "http://data.lod2.eu/"
+            if st in self.dataset:
                 sparqlqueryObjectD3=SPARQLQuery('http://open-data.europa.eu/en/sparqlep', 'regex')
             else:
                 sparqlqueryObjectD3=SPARQLQuery('http://zaire.dimis.fim.uni-passau.de:8890/sparql', 'virtuoso')
@@ -95,22 +95,22 @@ class OutProcessorForAutomaticallyMapping():
 
             #valueOfMeasure=sparqlqueryObjectD3.get_value_of_cube_measure(self.dataset, dimensions, measure, 10)
             valueOfMeasure=sparqlqueryObjectD3.get_value_of_cube_measure(self.dataset, self.dimension, measure, 150)
-            
-            
-            generatorFactoryObjectAuto=generatorfactoryforautomapping.GeneratorFactoryForAutoMapping()    
+
+
+            generatorFactoryObjectAuto=generatorfactoryforautomapping.GeneratorFactoryForAutoMapping()
             generatorauto=generatorFactoryObjectAuto.createFactoryauto(self.selectedChart, self.dimension, measure, valueOfMeasure, self.dataset )
-                
+
             if generatorauto != None:
                 generatorauto.transform()
-                
+
                 transformedResult=generatorauto.results
-    
+
                 resultObject = {'name':self.selectedChart,'start':transformedResult['code']}
                 transformedResult=generatorauto.results;
-               
-    
+
+
                 resultArrayForVis.append(resultObject)
                 #print "ID###########################", resultArrayForVis
-                return resultArrayForVis   
+                return resultArrayForVis
         except Exception as ex:
-                raise Exception("-OutProcessorauto.getVis: %s"%ex)  
+                raise Exception("-OutProcessorauto.getVis: %s"%ex)

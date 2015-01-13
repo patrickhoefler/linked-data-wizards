@@ -1,17 +1,17 @@
 # Copyright (C) 2014 Kompetenzzentrum fuer wissensbasierte Anwendungen und Systeme
 # Forschungs- und Entwicklungs GmbH (Know-Center), Graz, Austria
 # office@know-center.at
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
@@ -46,7 +46,7 @@ qb:component [ qb:dimension code:dimension_349; rdfs:label "Year"@en; ].
 
 code:dimension_349 a rdf:Property , qb:DimensionProperty;
 rdfs:label "Year"@en;
-rdfs:subPropertyOf va:cubeDimensionNominal. 
+rdfs:subPropertyOf va:cubeDimensionNominal.
 
 
 code:dimension_177 a rdf:Property , qb:DimensionProperty;
@@ -81,7 +81,7 @@ code:Oberreuter_177 a code:Entity;
 
 code:Jayapal_177 a code:Entity;
  rdfs:label "jayapal".
- 
+
 
 code:Precision_530 a code:Entity;
     rdfs:label "Precision".
@@ -100,18 +100,18 @@ code:2012_349 a code:Entity;
     rdfs:label "2012".
 
 code:2011_349 a code:Entity;
-    rdfs:label "2011".   
-    
+    rdfs:label "2011".
+
 code:2010_349 a code:Entity;
-    rdfs:label "2010".    
-    
+    rdfs:label "2010".
+
 code:2009_349 a code:Entity;
-    rdfs:label "2009".    
-     
+    rdfs:label "2009".
+
 code:2008_349 a code:Entity;
-    rdfs:label "2008".    
-    
-    
+    rdfs:label "2008".
+
+
 code:obs1 a qb:Observation;
 code:dimension_177 code:Kasprzak_177;
 code:dimension_349 code:2012_349;
@@ -407,7 +407,7 @@ qb:dataSet code:datasetpan_2012_detailed.
 code:obs37 a qb:Observation;
 code:dimension_177 code:Gillam_177;
 code:dimension_349 code:2011_349;
-code:dimension_530 code:Precision_530;  
+code:dimension_530 code:Precision_530;
 code:measure_711 8.0121326;
 qb:dataSet code:datasetpan_2012_detailed.
 

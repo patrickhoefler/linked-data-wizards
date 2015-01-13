@@ -144,7 +144,7 @@ def create_and_save_cube(html_table):
             </tbody>
         </table>
         """
-        
+
         print "******************** html table ************************"
         print html_table
         print "******************** end html table ************************"

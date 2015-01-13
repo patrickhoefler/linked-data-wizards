@@ -84,10 +84,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
      xmlns:internal="http://www.epimorphics.com/vocabularies/cube/internal#"
      xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
      xmlns:pca-population2="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008">
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -108,10 +108,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <AnnotationProperty rdf:about="&qb;dimension"/>
     <AnnotationProperty rdf:about="&qb;measure"/>
     <AnnotationProperty rdf:about="&sw-measure;population"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Datatypes
@@ -119,16 +119,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.w3.org/2001/XMLSchema#date -->
 
     <rdfs:Datatype rdf:about="&xsd;date"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -136,34 +136,34 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://data.ordnancesurvey.co.uk/ontology/admingeo/WelshAssemblyConstituency -->
 
     <Class rdf:about="&admingeo;WelshAssemblyConstituency"/>
-    
+
 
 
     <!-- http://purl.org/linked-data/cube#DataSet -->
 
     <Class rdf:about="&qb;DataSet"/>
-    
+
 
 
     <!-- http://purl.org/linked-data/cube#DataStructureDefinition -->
 
     <Class rdf:about="&qb;DataStructureDefinition"/>
-    
+
 
 
     <!-- http://purl.org/linked-data/cube#Observation -->
 
     <Class rdf:about="&qb;Observation"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -171,7 +171,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://data.ordnancesurvey.co.uk/id/7000000000041303 -->
@@ -182,7 +182,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <skos:prefLabel>Cardiff North</skos:prefLabel>
         <admingeo:gssCode>W09000030</admingeo:gssCode>
     </NamedIndividual>
-    
+
 
 
     <!-- http://data.ordnancesurvey.co.uk/id/7000000000041405 -->
@@ -193,7 +193,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <skos:prefLabel>Cardiff West</skos:prefLabel>
         <admingeo:gssCode>W09000029</admingeo:gssCode>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25 -->
@@ -206,7 +206,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <qb:structure rdf:resource="&dsd;population"/>
         <dcterms:publisher rdf:resource="http://www.wales.gov.uk/"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008NAWAC28 -->
@@ -218,7 +218,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2008"/>
         <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2008NAWAC63 -->
@@ -230,7 +230,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2008"/>
         <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009NAWAC28 -->
@@ -242,7 +242,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2009"/>
         <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25/2009NAWAC63 -->
@@ -254,7 +254,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <sdmx-dimension:refPeriod rdf:resource="http://reference.data.gov.uk/id/year/2009"/>
         <qb:dataSet rdf:resource="http://statistics.data.wales.gov.uk/dataset/pca-population/2011-02-25"/>
     </NamedIndividual>
-    
+
 
 
     <!-- http://statistics.data.wales.gov.uk/dsd/population -->

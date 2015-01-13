@@ -28,79 +28,79 @@ import time
 
 class OutProcessorForAutomaticallyMapping():
     resultArrayForVis = []
-    
+
     def __init__ (self, dataset, chart, dimension, endpoint, deletedMeasure, chartrowindex, datasetFilters):
-        
+
         self.dataset = dataset
-        self.selectedChart = chart  
+        self.selectedChart = chart
         self.dimension = dimension
-       
-        
+
+
         self.endpoint = endpoint
         self.deletedMeasure = deletedMeasure
         self.chartrowIndex = chartrowindex
         self.datasetFilters =  datasetFilters
-    
+
         possibleVisualizations = []
-        
+
     def process(self):
-        try:       
-                   
+        try:
+
             chartComponentsArray = []
-            
+
             mappingProposalObject=mappingproposal.MappingProposal()
             sparqlqueryObjectD3 = ""
-            
-             
+
+
             mappingAlgorithmlObject = mappingalgorithm.MappingAlgorithm()
-            
 
 
-            '''st = "http://data.lod2.eu/"    
-            if st in self.dataset:    
-                sparqlqueryObjectD3 = SPARQLQuery('http://open-data.europa.eu/en/sparqlep', 'regex')              
+
+            '''st = "http://data.lod2.eu/"
+            if st in self.dataset:
+                sparqlqueryObjectD3 = SPARQLQuery('http://open-data.europa.eu/en/sparqlep', 'regex')
             else:
                 sparqlqueryObjectD3 = SPARQLQuery('http://zaire.dimis.fim.uni-passau.de:8890/sparql', 'virtuoso')'''
-            
+
             if not self.endpoint:
                 self.endpoint = \
                     'http://zaire.dimis.fim.uni-passau.de:8890/sparql'
 
             search_type = 'regex'
-            time1 = time.time()   
+            time1 = time.time()
             sparqlqueryObjectD3 = SPARQLQuery(self.endpoint, search_type)
-                    
+
             time1_end = time.time() - time1
-            
+
             time2 = time.time()
             dimensions = sparqlqueryObjectD3.get_cube_dimensions_for_auto_mapping(self.dataset)
             time2_end = time.time() - time2
-            
-            time3 = time.time()    
+
+            time3 = time.time()
             measure = sparqlqueryObjectD3.get_cube_measure_for_auto_mapping(self.dataset, self.deletedMeasure)
             time3_end = time.time() - time3
-            
+
             time4 = time.time()
             valueOfMeasure = sparqlqueryObjectD3.get_value_of_cube_measure(self.dataset, dimensions, measure,  self.datasetFilters)
             time4_end = time.time() - time4
-            
-            
+
+
             time5 = time.time()
             #chartComponentsArray = mappingProposalObject.getChartComponents()
             time5_end = time.time() - time5
-            
+
             time6 = time.time()
-             
+
             mappingQueries = mappingProposalObject.getMappingQueries(dimensions, measure )
-        
+
             time6_end = time.time() - time6
-           
+
             time7 = time.time()
-           
+
             possibleVisualizations = mappingProposalObject.getPossibleVisualizationVariants(mappingQueries, dimensions, measure,valueOfMeasure)
- 
+
             time7_end = time.time() - time7
-            
+
             '''print "TIMES: \n ------------------------------------"
             print "T1: ", time1_end
             print "T2: ", time2_end
@@ -109,22 +109,22 @@ class OutProcessorForAutomaticallyMapping():
             print "T5: ", time5_end
             print "T6: ", time6_end
             print "T7: ", time7_end'''
-            
-            
+
+
             #print "----------------possible vis------------------------------", possibleVisualizations
             return possibleVisualizations
 
         except Exception as ex:
             print ("-OutProcessorauto.process: %s"%ex)
             raise Exception("%s"%ex)
-            
+
     def getVis(self):
         try:
             sparqlqueryObjectD3 = ""
             resultObject = {}
-            
-            '''st = "http://data.lod2.eu/"    
-            if st in self.dataset:    
+
+            '''st = "http://data.lod2.eu/"
+            if st in self.dataset:
                 sparqlqueryObjectD3=SPARQLQuery('http://open-data.europa.eu/en/sparqlep', 'regex')
             else:
                 sparqlqueryObjectD3=SPARQLQuery('http://zaire.dimis.fim.uni-passau.de:8890/sparql', 'virtuoso')'''
@@ -139,12 +139,12 @@ class OutProcessorForAutomaticallyMapping():
 
             measure = sparqlqueryObjectD3.get_cube_measure_for_auto_mapping(self.dataset, self.deletedMeasure)
             valueOfMeasure=sparqlqueryObjectD3.get_value_of_cube_measure(self.dataset, self.dimension, measure,  self.datasetFilters)
-           
-            generatorFactoryObjectAuto=generatorfactoryforautomapping.GeneratorFactoryForAutoMapping()    
+
+            generatorFactoryObjectAuto=generatorfactoryforautomapping.GeneratorFactoryForAutoMapping()
             generatorauto=generatorFactoryObjectAuto.createFactoryauto(self.selectedChart, self.dimension, measure, valueOfMeasure, self.dataset, self.chartrowIndex  )
-             
-               
-                
+
+
+
             if generatorauto != None:
                 generatorauto.transform()
                 columns = ""
@@ -155,14 +155,13 @@ class OutProcessorForAutomaticallyMapping():
                     rows = generatorauto.results['rows']
 
                 resultObject = {'name':self.selectedChart,'start':generatorauto.results['code'], 'rows':rows, 'columns':columns}
-                       
-                
+
+
                 return resultObject
 
         except Exception as ex:
             print ("-OutProcessorauto.getVis: %s"%ex)
-            raise Exception("%s"%ex)  
+            raise Exception("%s"%ex)
 
 
- 
-                     
+
