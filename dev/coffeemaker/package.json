@@ -1,5 +1,5 @@
 {
-  "name": "coffee-maker",
+  "name": "coffeemaker",
   "version": "0.1.0",
   "description": "Watch and compile the Query Wizard coffeescript file",
   "author": "Patrick Hoefler <patrick.hoefler@gmail.com>",

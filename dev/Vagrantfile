@@ -40,13 +40,13 @@ SCRIPT
     # Pin the Docker version
     d.version = "1.4.1"
 
-    # Create the coffee-maker Docker image
-    d.build_image "/vagrant/dev/coffee-maker",
-      args: "--tag=patrickhoefler/linked-data-wizards-coffee-maker"
+    # Create the coffeemaker Docker image
+    d.build_image "/vagrant/dev/coffeemaker",
+      args: "--tag=patrickhoefler/linked-data-wizards-coffeemaker"
     # Watch and compile the Query Wizard coffeescript file
-    d.run "coffee-maker",
-      image: "patrickhoefler/linked-data-wizards-coffee-maker",
-      args: "--name=ldw-coffee-maker -v /vagrant:/vagrant"
+    d.run "coffeemaker",
+      image: "patrickhoefler/linked-data-wizards-coffeemaker",
+      args: "--name=ldw-coffeemaker -v /vagrant:/vagrant"
 
     # Create them main Docker image
     d.build_image "/vagrant",
