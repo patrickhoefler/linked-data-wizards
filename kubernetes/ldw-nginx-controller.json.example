@@ -1,0 +1,23 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "ReplicationController",
+  "id": "ldw-nginx",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": { "name": "ldw-nginx" },
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+          "id": "ldw-nginx",
+          "containers": [{
+            "name": "ldw-nginx",
+            "image": "patrickhoefler/linked-data-wizards-nginx",
+            "ports": [{ "containerPort": 80 }],
+          }]
+        }
+      },
+      "labels": { "name": "ldw-nginx" }
+    }
+  }
+}

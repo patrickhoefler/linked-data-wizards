@@ -1,0 +1,36 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Pod",
+  "id": "ldw-mysql",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "ldw-mysql",
+      "containers": [{
+        "name": "mysql",
+        "image": "mysql:5.6",
+        "command": ["mysqld", "--innodb_buffer_pool_size=16777216"],
+        "volumeMounts": [{
+          "name": "db",
+          "mountPath": "/var/lib/mysql"
+        }],
+        "env": [
+          {"name": "MYSQL_ROOT_PASSWORD", "value": "Change this to something secret!"},
+          {"name": "MYSQL_DATABASE", "value": "ldw"},
+          {"name": "MYSQL_USER", "value": "ldw"},
+          {"name": "MYSQL_PASSWORD", "value": "ldw"}
+        ],
+        "ports": [{ "containerPort": 3306 }]
+      }],
+      "volumes": [{
+        "name": "db",
+        "source": {
+          "hostDir": {
+            "path": "/home/core/data/mysql"
+          }
+        }
+      }]
+    }
+  },
+  "labels": { "name": "ldw-mysql" }
+}

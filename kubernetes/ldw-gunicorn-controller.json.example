@@ -1,0 +1,30 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "ReplicationController",
+  "id": "ldw-gunicorn",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": { "name": "ldw-gunicorn" },
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+          "id": "ldw-gunicorn",
+          "containers": [{
+            "name": "ldw-gunicorn",
+            "image": "patrickhoefler/linked-data-wizards",
+            "env": [
+              {"name": "DB_ENGINE", "value": "django.db.backends.mysql"},
+              {"name": "DB_NAME", "value": "ldw"},
+              {"name": "DB_USER", "value": "ldw"},
+              {"name": "DB_PASSWORD", "value": "ldw"},
+              {"name": "SECRET_KEY", "value": "Change this to something unique! More details: https://docs.djangoproject.com/en/1.7/ref/settings/#secret-key"},
+            ],
+            "ports": [{ "containerPort": 8000 }]
+          }]
+        }
+      },
+      "labels": { "name": "ldw-gunicorn" }
+    }
+  }
+}

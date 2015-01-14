@@ -1,0 +1,8 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Service",
+  "id": "ldw-gunicorn",
+  "port": 8000,
+  "containerPort": 8000,
+  "selector": { "name": "ldw-gunicorn" },
+}

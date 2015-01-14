@@ -1,13 +1,4 @@
 *.pyc
-.project
-.pydevproject
-.settings
 code.sqlite
-_ReSharper.code/*
-VisualStudio/*
-/.idea
-kill.sh
-
-/phantomjs.exe
-Output.txt
 .vagrant
+kubernetes/*.json

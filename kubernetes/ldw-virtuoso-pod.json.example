@@ -1,0 +1,29 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Pod",
+  "id": "ldw-virtuoso",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "ldw-virtuoso",
+      "containers": [{
+        "name": "virtuoso",
+        "image": "patrickhoefler/linked-data-wizards-virtuoso",
+        "volumeMounts": [{
+          "name": "db",
+          "mountPath": "/var/lib/virtuoso-opensource-6.1/db"
+        }],
+        "ports": [{ "containerPort": 8890 }, { "containerPort": 1111 }]
+      }],
+      "volumes": [{
+        "name": "db",
+        "source": {
+          "hostDir": {
+            "path": "/home/core/data/virtuoso"
+          }
+        }
+      }]
+    }
+  },
+  "labels": { "name": "ldw-virtuoso" }
+}

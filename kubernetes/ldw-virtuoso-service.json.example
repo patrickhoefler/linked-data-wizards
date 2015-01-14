@@ -1,0 +1,8 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Service",
+  "id": "ldw-virtuoso",
+  "port": 8890,
+  "containerPort": 8890,
+  "selector": { "name": "ldw-virtuoso" }
+}
