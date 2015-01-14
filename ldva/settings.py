@@ -38,12 +38,14 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', 'code.sqlite'),                     # Or path to database file if using sqlite3.
         'USER': os.environ.get('DB_USER'),                                    # Not used with sqlite3.
         'PASSWORD': os.environ.get('DB_PASSWORD'),                            # Not used with sqlite3.
-        'HOST': os.environ.get('MYSQL_PORT_3306_TCP_ADDR', ''),               # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': os.environ.get('MYSQL_PORT_3306_TCP_PORT', ''),               # Set to empty string for default. Not used with sqlite3.
+        'HOST': os.environ.get('LDW_MYSQL_PORT_3306_TCP_ADDR', ''),           # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': os.environ.get('LDW_MYSQL_PORT_3306_TCP_PORT', ''),           # Set to empty string for default. Not used with sqlite3.
     },
 }
 
-LOCAL_SPARQL_ENDPOINT = os.environ.get('LOCAL_SPARQL_ENDPOINT', '')
+LOCAL_SPARQL_ENDPOINT = 'http://' + \
+    os.environ.get('LDW_VIRTUOSO_PORT_8890_TCP_ADDR') + ':' + \
+    os.environ.get('LDW_VIRTUOSO_PORT_8890_TCP_PORT') + '/sparql'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

@@ -76,7 +76,7 @@ SCRIPT
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
-      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e LOCAL_SPARQL_ENDPOINT=http://192.168.33.10:8890/sparql -e DEBUG=True --restart=always"
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 --link ldw-virtuoso:ldw-virtuoso -e SECRET_KEY='insecure_django_dev_setup' -e DEBUG=True --restart=always"
   end
 
   # Make sure that we can use SPARQL updates in Virtuoso
