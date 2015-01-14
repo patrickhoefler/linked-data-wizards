@@ -54,7 +54,7 @@ SCRIPT
     # Watch and compile the Query Wizard coffeescript file
     d.run "coffeemaker",
       image: "patrickhoefler/linked-data-wizards-coffeemaker",
-      args: "--name=ldw-coffeemaker -v /vagrant:/vagrant"
+      args: "--name=ldw-coffeemaker -v /vagrant:/vagrant --restart=always"
 
     # Create the Virtuoso Docker image
     d.build_image "/vagrant/dev/virtuoso",
@@ -62,7 +62,7 @@ SCRIPT
     # Start Virtuoso
     d.run "virtuoso",
       image: "patrickhoefler/linked-data-wizards-virtuoso",
-      args: "--name=ldw-virtuoso -p 8890:8890 -p 1111:1111"
+      args: "--name=ldw-virtuoso -p 8890:8890 -p 1111:1111 --restart=always"
 
     # Create them main Docker image
     d.build_image "/vagrant",
@@ -76,7 +76,7 @@ SCRIPT
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
-      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e LOCAL_SPARQL_ENDPOINT=http://192.168.33.10:8890/sparql -e DEBUG=True"
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 -e SECRET_KEY='please_change_me_to_make_django_more_secure' -e LOCAL_SPARQL_ENDPOINT=http://192.168.33.10:8890/sparql -e DEBUG=True --restart=always"
   end
 
   # Make sure that we can use SPARQL updates in Virtuoso
