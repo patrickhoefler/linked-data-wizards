@@ -62,7 +62,7 @@ SCRIPT
     # Start Virtuoso
     d.run "virtuoso",
       image: "patrickhoefler/linked-data-wizards-virtuoso",
-      args: "--name=ldw-virtuoso -p 8890:8890 -p 1111:1111 --restart=always"
+      args: "--name=ldw-virtuoso -p 8890:8890 --restart=always"
 
     # Create them main Docker image
     d.build_image "/vagrant",
@@ -81,29 +81,8 @@ SCRIPT
 
   # Make sure that we can use SPARQL updates in Virtuoso
   $script = <<SCRIPT
-# Count how often we have tried to connect to Virtuoso
-TIMEOUT_COUNTER=0
-
-# Check if Virtuoso is ready
-echo 'Granting SPARQL update rights in Virtuoso ...'
-sleep 10
-
-while ! docker exec ldw-virtuoso isql-vt exec='select 1;' &> /dev/null; do
-  if ((TIMEOUT_COUNTER == 0)); then
-    echo 'Waiting for Virtuoso ...'
-  elif ((TIMEOUT_COUNTER == 1)); then
-    echo 'Still waiting for Virtuoso ...'
-  elif ((TIMEOUT_COUNTER == 2)); then
-    echo 'Virtuoso failed to respond, giving up.' >&2
-    exit 1
-  fi
-
-  ((TIMEOUT_COUNTER++))
-  sleep 10
-done
-
 # Grant SPARQL update rights
-docker exec ldw-virtuoso isql-vt exec='grant SPARQL_UPDATE to "SPARQL";' &> /dev/null
+docker exec ldw-virtuoso /grant-sparql-update.sh
 
 # And we're done
 echo 'Finished!'
