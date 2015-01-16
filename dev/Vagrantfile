@@ -76,7 +76,7 @@ SCRIPT
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
       cmd: "python manage.py runserver 0.0.0.0:8000",
-      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 8000:8000 --link ldw-virtuoso:ldw-virtuoso -e SECRET_KEY='insecure_django_dev_setup' -e DEBUG=True --restart=always"
+      args: "--name=ldw-dev -v /vagrant:/usr/src/app -p 80:8000 --link ldw-virtuoso:ldw-virtuoso -e SECRET_KEY='insecure_django_dev_setup' -e DEBUG=True --restart=always"
   end
 
   # Make sure that we can use SPARQL updates in Virtuoso
@@ -112,7 +112,7 @@ echo 'If you just saw any scary red messages about "Executing 3 build triggers"'
 echo 'or claiming that "stdin: is not a tty", please ignore them. All is well.'
 echo ' '
 echo 'Your local instance of the Linked Data Wizards is now ready at'
-echo 'http://192.168.33.10:8000 — have fun! :)'
+echo 'http://192.168.33.10 — have fun! :)'
 SCRIPT
   config.vm.provision "shell", inline: $script
 end
