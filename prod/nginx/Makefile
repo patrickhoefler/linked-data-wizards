@@ -1,5 +1,6 @@
 default: build
 
+.PHONY: build
 build:
 	# Build patrickhoefler/linked-data-wizards
 	docker build --tag=patrickhoefler/linked-data-wizards ../..
@@ -31,10 +32,15 @@ build:
 	# Clean up
 	rm -rf static
 
+.PHONY: test
 test:
 	# List the static files in the built image
 	docker run --rm patrickhoefler/linked-data-wizards-nginx ls /usr/share/nginx/html/static
 
+	# List replace-and-run.sh
+	docker run --rm patrickhoefler/linked-data-wizards-nginx ls -la /replace-and-run.sh
+
+.PHONY: push
 push:
 	# Push the Docker image to the registry
 	docker push patrickhoefler/linked-data-wizards-nginx

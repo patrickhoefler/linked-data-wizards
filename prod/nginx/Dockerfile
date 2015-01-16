@@ -5,5 +5,4 @@ RUN \
 COPY static /usr/share/nginx/html/static
 COPY nginx.conf /etc/nginx/
 COPY replace-and-run.sh /
-RUN chmod 755 /replace-and-run.sh
 CMD /replace-and-run.sh
