@@ -81,9 +81,6 @@ SCRIPT
 
   # Make sure that we can use SPARQL updates in Virtuoso
   $script = <<SCRIPT
-# Grant SPARQL update rights
-docker exec ldw-virtuoso /grant-sparql-update.sh
-
 # And we're done
 echo 'Finished!'
 echo ' '
