@@ -13,7 +13,7 @@
           "name": "db",
           "mountPath": "/var/lib/virtuoso-opensource-6.1/db"
         }],
-        "ports": [{ "containerPort": 8890 }, { "containerPort": 1111 }]
+        "ports": [{ "containerPort": 8890 }]
       }],
       "volumes": [{
         "name": "db",

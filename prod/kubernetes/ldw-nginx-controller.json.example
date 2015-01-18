@@ -12,8 +12,8 @@
           "id": "ldw-nginx",
           "containers": [{
             "name": "ldw-nginx",
-            "image": "patrickhoefler/linked-data-wizards-nginx",
-            "ports": [{ "containerPort": 80 }],
+            "image": "patrickhoefler/linked-data-wizards-nginx:latest",
+            "ports": [{ "containerPort": 80 }]
           }]
         }
       },

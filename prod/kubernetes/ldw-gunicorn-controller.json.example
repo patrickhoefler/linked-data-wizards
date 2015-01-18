@@ -12,7 +12,7 @@
           "id": "ldw-gunicorn",
           "containers": [{
             "name": "ldw-gunicorn",
-            "image": "patrickhoefler/linked-data-wizards",
+            "image": "patrickhoefler/linked-data-wizards:latest",
             "env": [
               {"name": "DB_ENGINE", "value": "django.db.backends.mysql"},
               {"name": "DB_NAME", "value": "ldw"},
