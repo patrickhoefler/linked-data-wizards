@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # VirtualBox settings
   config.vm.provider "virtualbox" do |v|
-    v.name = "linked-data-wizards"
+    v.name = "linked-data-wizards-dev"
     v.memory = 512
   end
 
@@ -70,8 +70,8 @@ SCRIPT
     # Initialize the DB
     d.run "dbinit",
       image: "patrickhoefler/linked-data-wizards",
-      cmd: "./dbinit.sh",
-      args: "--name=ldw-syncdb -v /vagrant:/usr/src/app"
+      cmd: "./init-db.sh",
+      args: "--name=ldw-syncdb -v /vagrant:/usr/src/app --link ldw-virtuoso:ldw-virtuoso"
     # Start the development webserver
     d.run "webserver",
       image: "patrickhoefler/linked-data-wizards",
