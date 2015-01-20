@@ -1,1662 +1,1662 @@
 [
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisorp_ENT_L_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisorp_ENT_L_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 123,
-      "updated": "2015-01-13T16:58:21.939Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 123, 
+      "updated": "2015-01-13T16:58:21.939Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of Large enterprises that share internally electronic information on sales/purchases"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisorp_ENT_SM_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisorp_ENT_SM_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 123,
-      "updated": "2015-01-13T16:58:21.032Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 123, 
+      "updated": "2015-01-13T16:58:21.032Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of SMEs that share internally electronic information on sales/purchases"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_ebuy_ENT_SM_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_ebuy_ENT_SM_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 242,
-      "updated": "2015-01-13T16:58:20.912Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 242, 
+      "updated": "2015-01-13T16:58:20.912Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of SMEs using any computer network for purchases (at least 1%)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_esell_ENT_SM_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_esell_ENT_SM_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 248,
-      "updated": "2015-01-13T16:58:21.877Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 248, 
+      "updated": "2015-01-13T16:58:21.877Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of SMEs using any computer networks for sales (at least 1%)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FOA_cit_Country__of_pub_serv_for_citizen",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FOA_cit_Country__of_pub_serv_for_citizen", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 199,
-      "updated": "2015-01-13T16:58:21.791Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 199, 
+      "updated": "2015-01-13T16:58:21.791Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of basic public services for citizens, which are fully available online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FOA_ent_Country__of_pub_serv_for_ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FOA_ent_Country__of_pub_serv_for_ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 199,
-      "updated": "2015-01-13T16:58:21.042Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 199, 
+      "updated": "2015-01-13T16:58:21.042Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of basic public services for enterprises, which are fully available online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuse_RF_GE1__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuse_RF_GE1__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 89,
-      "updated": "2015-01-13T16:58:21.819Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 89, 
+      "updated": "2015-01-13T16:58:21.819Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of disadvantaged people who are regular internet users (at least once a week)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_newENTRY_All_partners__of_organisations",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_newENTRY_All_partners__of_organisations", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 140,
-      "updated": "2015-01-13T16:58:20.771Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 140, 
+      "updated": "2015-01-13T16:58:20.771Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of distinct organisations participating in FP7-ICT projects for the first time"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_adesucu_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_adesucu_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 93,
-      "updated": "2015-01-13T16:58:20.516Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 93, 
+      "updated": "2015-01-13T16:58:20.516Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises exchanging business documents suitable for automatic processing"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igov_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igov_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 245,
-      "updated": "2015-01-13T16:58:21.084Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 245, 
+      "updated": "2015-01-13T16:58:21.084Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises interacting online with public authorities"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_iacc3g_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_iacc3g_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:20.960Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:20.960Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises providing portable devices to some of their persons employed"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igovrt_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igovrt_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 254,
-      "updated": "2015-01-13T16:58:21.219Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 254, 
+      "updated": "2015-01-13T16:58:21.219Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises returning filled in forms to public authorities, over the internet"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_inv_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_inv_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 123,
-      "updated": "2015-01-13T16:58:20.715Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 123, 
+      "updated": "2015-01-13T16:58:20.715Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises sending or receiving e-invoices in a format suitable for automatic processing"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisc_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_sisc_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 93,
-      "updated": "2015-01-13T16:58:21.342Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 93, 
+      "updated": "2015-01-13T16:58:21.342Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises sharing electronic information on the supply chain"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igov2pr_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_igov2pr_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:21.800Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:21.800Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises submitting a proposal in a public electronic tender system (eProcurement)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_crman_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_crman_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 93,
-      "updated": "2015-01-13T16:58:20.434Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 93, 
+      "updated": "2015-01-13T16:58:20.434Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises using Customer Relationship Management (CRM) software"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_rfid_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_rfid_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 60,
-      "updated": "2015-01-13T16:58:21.355Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 60, 
+      "updated": "2015-01-13T16:58:21.355Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises using Radio Frequency Identification (RFID) technologies"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_ebuy_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_ebuy_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 242,
-      "updated": "2015-01-13T16:58:20.368Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 242, 
+      "updated": "2015-01-13T16:58:20.368Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises using any computer network for purchases (at least 1%)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_esell_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_esell_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 248,
-      "updated": "2015-01-13T16:58:20.624Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 248, 
+      "updated": "2015-01-13T16:58:20.624Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of enterprises using any computer network for sales (at least 1%)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/h_iacc_HH_TOTAL__hh",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/h_iacc_HH_TOTAL__hh", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 277,
-      "updated": "2015-01-13T16:58:21.828Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 277, 
+      "updated": "2015-01-13T16:58:21.828Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of households with access to the Internet at home"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_skedu_y16_24__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_skedu_y16_24__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 112,
-      "updated": "2015-01-13T16:58:21.664Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 112, 
+      "updated": "2015-01-13T16:58:21.664Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals aged 16-24 who have obtained ICT skills through formal educational institutions"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_skedu_y25_54__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_skedu_y25_54__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 112,
-      "updated": "2015-01-13T16:58:21.323Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 112, 
+      "updated": "2015-01-13T16:58:21.323Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals aged 25-54 who have obtained ICT skills through formal educational institutions"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cweb_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cweb_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 183,
-      "updated": "2015-01-13T16:58:20.321Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 183, 
+      "updated": "2015-01-13T16:58:20.321Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals who have created a Web page"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cprg_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cprg_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 182,
-      "updated": "2015-01-13T16:58:20.358Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 182, 
+      "updated": "2015-01-13T16:58:20.358Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals who have written a computer program using a specialised programming language"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_csk_ge_me_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_csk_ge_me_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 147,
-      "updated": "2015-01-13T16:58:21.919Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 147, 
+      "updated": "2015-01-13T16:58:21.919Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals with medium or high computer skills (3 or more of 6 computer activities)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_isk_ge_me_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_isk_ge_me_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 147,
-      "updated": "2015-01-13T16:58:20.671Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 147, 
+      "updated": "2015-01-13T16:58:20.671Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of individuals with medium or high internet skills (3 or more of 6 internet activities)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.506Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.506Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users doing an online course (in any subject)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 222,
-      "updated": "2015-01-13T16:58:20.831Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 222, 
+      "updated": "2015-01-13T16:58:20.831Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users interacting online with public authorities, last 3 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuif_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuif_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 269,
-      "updated": "2015-01-13T16:58:20.682Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 269, 
+      "updated": "2015-01-13T16:58:20.682Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users looking for information about goods and services online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iujob_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iujob_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 239,
-      "updated": "2015-01-13T16:58:20.527Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 239, 
+      "updated": "2015-01-13T16:58:20.527Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users looking online for a job or sending a job application"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iueduif_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iueduif_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.604Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.604Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users looking online for information about education, training or course offers"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bgoodo_IND_TOTAL__ind_ilt12",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bgoodo_IND_TOTAL__ind_ilt12", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 126,
-      "updated": "2015-01-13T16:58:21.396Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 126, 
+      "updated": "2015-01-13T16:58:21.396Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users ordering content or software that were delivered or upgraded online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_blt12_IND_TOTAL__ind_ilt12",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_blt12_IND_TOTAL__ind_ilt12", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 242,
-      "updated": "2015-01-13T16:58:21.072Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 242, 
+      "updated": "2015-01-13T16:58:21.072Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users ordering goods or services online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bfeu_IND_TOTAL__ind_ilt12",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bfeu_IND_TOTAL__ind_ilt12", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 126,
-      "updated": "2015-01-13T16:58:21.021Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 126, 
+      "updated": "2015-01-13T16:58:21.021Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users ordering goods or services online, from sellers from other EU countries"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusnet_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusnet_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:21.889Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:21.889Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users participating in social networks, over the internet, last 3 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugm_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugm_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 206,
-      "updated": "2015-01-13T16:58:21.001Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 206, 
+      "updated": "2015-01-13T16:58:21.001Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users playing or downloading games, images, films or music"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iunw_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iunw_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 266,
-      "updated": "2015-01-13T16:58:20.395Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 266, 
+      "updated": "2015-01-13T16:58:20.395Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users reading / downloading online newspapers / news magazines"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_ihif_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_ihif_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 250,
-      "updated": "2015-01-13T16:58:20.782Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 250, 
+      "updated": "2015-01-13T16:58:20.782Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users seeking online information about health"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusell_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusell_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 253,
-      "updated": "2015-01-13T16:58:20.814Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 253, 
+      "updated": "2015-01-13T16:58:20.814Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users selling goods or services online (e.g. via auctions)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igovrt_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igovrt_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 234,
-      "updated": "2015-01-13T16:58:20.862Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 234, 
+      "updated": "2015-01-13T16:58:20.862Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users sending filled forms to public authorities, last 3 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuvote_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuvote_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:20.693Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:20.693Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users taking part in on-line consultations or voting to define civic or political issues"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuupl_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuupl_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 96,
-      "updated": "2015-01-13T16:58:20.464Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 96, 
+      "updated": "2015-01-13T16:58:20.464Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users uploading self-created content to be shared"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iubk_IND_TOTAL__ind_iu3",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iubk_IND_TOTAL__ind_iu3", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 256,
-      "updated": "2015-01-13T16:58:20.339Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 256, 
+      "updated": "2015-01-13T16:58:20.339Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of internet users using online banking"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuolc_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.727Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.727Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population doing an online course (in any subject)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov12_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov12_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 124,
-      "updated": "2015-01-13T16:58:20.614Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 124, 
+      "updated": "2015-01-13T16:58:20.614Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population interacting online with public authorities, last 12 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugov_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 222,
-      "updated": "2015-01-13T16:58:21.545Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 222, 
+      "updated": "2015-01-13T16:58:21.545Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population interacting online with public authorities, last 3 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuif_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuif_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 269,
-      "updated": "2015-01-13T16:58:20.884Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 269, 
+      "updated": "2015-01-13T16:58:20.884Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population looking for information about goods and services online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iujob_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iujob_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 239,
-      "updated": "2015-01-13T16:58:21.687Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 239, 
+      "updated": "2015-01-13T16:58:21.687Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population looking online for a job or sending a job application"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iueduif_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iueduif_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.738Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.738Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population looking online for information about education, training or course offers"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bgoodo_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bgoodo_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 204,
-      "updated": "2015-01-13T16:58:21.142Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 204, 
+      "updated": "2015-01-13T16:58:21.142Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population ordering content or software that were delivered or upgraded online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_blt12_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_blt12_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 243,
-      "updated": "2015-01-13T16:58:20.871Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 243, 
+      "updated": "2015-01-13T16:58:20.871Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population ordering goods or services online"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bfeu_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_bfeu_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 126,
-      "updated": "2015-01-13T16:58:21.716Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 126, 
+      "updated": "2015-01-13T16:58:21.716Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population ordering goods or services online, from sellers from other EU countries"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusnet_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusnet_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:20.376Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:20.376Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population participating in social networks"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugm_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iugm_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 206,
-      "updated": "2015-01-13T16:58:21.200Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 206, 
+      "updated": "2015-01-13T16:58:21.200Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population playing or downloading games, images, films or music"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iunw_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iunw_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 266,
-      "updated": "2015-01-13T16:58:20.310Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 266, 
+      "updated": "2015-01-13T16:58:20.310Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population reading / downloading online newspapers / news magazines"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_ihif_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_ihif_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 250,
-      "updated": "2015-01-13T16:58:21.636Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 250, 
+      "updated": "2015-01-13T16:58:21.636Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population seeking online information about health"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusell_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iusell_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 253,
-      "updated": "2015-01-13T16:58:20.481Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 253, 
+      "updated": "2015-01-13T16:58:20.481Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population selling goods or services online (e.g. via auctions)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igov12rt_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igov12rt_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 124,
-      "updated": "2015-01-13T16:58:20.940Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 124, 
+      "updated": "2015-01-13T16:58:20.940Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population sending filled forms to public authorities, over the internet, last 12 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igovrt_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_igovrt_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 234,
-      "updated": "2015-01-13T16:58:21.758Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 234, 
+      "updated": "2015-01-13T16:58:21.758Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population sending filled forms to public authorities, over the internet, last 3 months"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuvote_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuvote_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:20.950Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:20.950Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population taking part in on-line consultations or voting to define civic or political issues"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuupl_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuupl_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 96,
-      "updated": "2015-01-13T16:58:21.293Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 96, 
+      "updated": "2015-01-13T16:58:21.293Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population uploading self-created content to be shared"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuport_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuport_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.857Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.857Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population using a laptop to access the internet, away from home or work "
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iubk_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iubk_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 256,
-      "updated": "2015-01-13T16:58:21.386Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 256, 
+      "updated": "2015-01-13T16:58:21.386Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population using online banking"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iday_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iday_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 259,
-      "updated": "2015-01-13T16:58:21.333Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 259, 
+      "updated": "2015-01-13T16:58:21.333Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population who are frequent internet users (every day or almost every day)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuse_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iuse_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 259,
-      "updated": "2015-01-13T16:58:20.971Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 259, 
+      "updated": "2015-01-13T16:58:20.971Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population who are regular internet users (at least once a week)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iux_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iux_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 216,
-      "updated": "2015-01-13T16:58:21.646Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 216, 
+      "updated": "2015-01-13T16:58:21.646Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of population who have never used the internet"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cisk_sfjobx_sal_self_fam__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_cisk_sfjobx_sal_self_fam__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 30,
-      "updated": "2015-01-13T16:58:21.837Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 30, 
+      "updated": "2015-01-13T16:58:21.837Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "% of workers who judge their current ICT skills insufficient for changing job within a year"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2001",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2001", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 34,
-      "updated": "2015-01-13T16:58:21.476Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 34, 
+      "updated": "2015-01-13T16:58:21.476Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2001"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2002",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2002", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 157,
-      "updated": "2015-01-13T16:58:21.485Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 157, 
+      "updated": "2015-01-13T16:58:21.485Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2002"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2003",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2003", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 481,
-      "updated": "2015-01-13T16:58:21.495Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 481, 
+      "updated": "2015-01-13T16:58:21.495Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2003"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2004",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2004", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 1022,
-      "updated": "2015-01-13T16:58:21.425Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 1022, 
+      "updated": "2015-01-13T16:58:21.425Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2004"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2005",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2005", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 1211,
-      "updated": "2015-01-13T16:58:21.434Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 1211, 
+      "updated": "2015-01-13T16:58:21.434Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2005"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2006",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2006", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 1417,
-      "updated": "2015-01-13T16:58:21.445Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 1417, 
+      "updated": "2015-01-13T16:58:21.445Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2006"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2007",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2007", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 2181,
-      "updated": "2015-01-13T16:58:21.454Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 2181, 
+      "updated": "2015-01-13T16:58:21.454Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2007"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2008",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2008", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 2347,
-      "updated": "2015-01-13T16:58:21.405Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 2347, 
+      "updated": "2015-01-13T16:58:21.405Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2008"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2009",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2009", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 2757,
-      "updated": "2015-01-13T16:58:21.415Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 2757, 
+      "updated": "2015-01-13T16:58:21.415Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2009"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2010",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2010", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 2861,
-      "updated": "2015-01-13T16:58:21.249Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 2861, 
+      "updated": "2015-01-13T16:58:21.249Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2010"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2011",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2011", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 2528,
-      "updated": "2015-01-13T16:58:21.240Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 2528, 
+      "updated": "2015-01-13T16:58:21.240Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2011"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/year/2012",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/year/2012", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 28,
-      "updated": "2015-01-13T16:58:21.230Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 28, 
+      "updated": "2015-01-13T16:58:21.230Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "2012"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mbb_3gcov_TOTAL_POP__pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mbb_3gcov_TOTAL_POP__pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 84,
-      "updated": "2015-01-13T16:58:20.349Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 84, 
+      "updated": "2015-01-13T16:58:20.349Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "3G coverage (supply as a % of total population)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Austria",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Austria", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 597,
-      "updated": "2015-01-13T16:58:20.537Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 597, 
+      "updated": "2015-01-13T16:58:20.537Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Austria"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_afxp_SME_partners_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_afxp_SME_partners_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 141,
-      "updated": "2015-01-13T16:58:20.386Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 141, 
+      "updated": "2015-01-13T16:58:20.386Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Average EC funding for SMEs participation in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_afxp_All_partners_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_afxp_All_partners_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.809Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.809Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Average EC funding per participation in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_arpm_TOTAL_MOB_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_arpm_TOTAL_MOB_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 28,
-      "updated": "2015-01-13T16:58:21.706Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 28, 
+      "updated": "2015-01-13T16:58:21.706Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Average Revenue per Minute in Retail Mobile Voice Communications "
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_arpu_TOTAL_MOB_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_arpu_TOTAL_MOB_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 28,
-      "updated": "2015-01-13T16:58:20.591Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 28, 
+      "updated": "2015-01-13T16:58:20.591Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Average Revenue per User (arpu) in the Retail Mobile Market"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Belgium",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Belgium", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 527,
-      "updated": "2015-01-13T16:58:20.981Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 527, 
+      "updated": "2015-01-13T16:58:20.981Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Belgium"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_broad_ENT_ALL_XFIN__ent",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_broad_ENT_ALL_XFIN__ent", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 255,
-      "updated": "2015-01-13T16:58:20.990Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 255, 
+      "updated": "2015-01-13T16:58:20.990Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - % of enterprises having a fixed broadband connection"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/h_broad_HH_TOTAL__hh",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/h_broad_HH_TOTAL__hh", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 254,
-      "updated": "2015-01-13T16:58:20.659Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 254, 
+      "updated": "2015-01-13T16:58:20.659Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - % of households having a broadband connection"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_dsl_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_dsl_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 224,
-      "updated": "2015-01-13T16:58:21.365Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 224, 
+      "updated": "2015-01-13T16:58:21.365Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - DSL lines share in fixed broadband"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_nga_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_nga_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 28,
-      "updated": "2015-01-13T16:58:20.501Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 28, 
+      "updated": "2015-01-13T16:58:20.501Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - NGA lines share in fixed broadband"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_ne_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_ne_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 224,
-      "updated": "2015-01-13T16:58:20.792Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 224, 
+      "updated": "2015-01-13T16:58:20.792Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - New entrants' share in fixed broadband subscriptions"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed10_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed10_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 140,
-      "updated": "2015-01-13T16:58:21.261Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 140, 
+      "updated": "2015-01-13T16:58:21.261Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - Share of fixed broadband lines equal to or above 10 Mbps"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed100_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed100_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 56,
-      "updated": "2015-01-13T16:58:20.823Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 56, 
+      "updated": "2015-01-13T16:58:20.823Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - Share of fixed broadband lines equal to or above 100 Mbps"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed2_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed2_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 140,
-      "updated": "2015-01-13T16:58:21.166Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 140, 
+      "updated": "2015-01-13T16:58:21.166Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - Share of fixed broadband lines equal to or above 2 Mbps"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed30_TOTAL_FBB__lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_speed30_TOTAL_FBB__lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 56,
-      "updated": "2015-01-13T16:58:21.959Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 56, 
+      "updated": "2015-01-13T16:58:21.959Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up - Share of fixed broadband lines equal to or above 30 Mbps"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_lines_TOTAL_FBB_nbr_lines",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_lines_TOTAL_FBB_nbr_lines", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 224,
-      "updated": "2015-01-13T16:58:20.646Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 224, 
+      "updated": "2015-01-13T16:58:20.646Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up: Total number of fixed lines"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_penet_TOTAL_FBB_lines100_pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_penet_TOTAL_FBB_lines100_pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 224,
-      "updated": "2015-01-13T16:58:20.902Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 224, 
+      "updated": "2015-01-13T16:58:20.902Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Broadband take-up: penetration of fixed networks (lines/100 people)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Bulgaria",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Bulgaria", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 504,
-      "updated": "2015-01-13T16:58:21.866Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 504, 
+      "updated": "2015-01-13T16:58:21.866Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Bulgaria"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Croatia",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Croatia", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 285,
-      "updated": "2015-01-13T16:58:21.110Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 285, 
+      "updated": "2015-01-13T16:58:21.110Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Croatia"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Cyprus",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Cyprus", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 552,
-      "updated": "2015-01-13T16:58:20.725Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 552, 
+      "updated": "2015-01-13T16:58:20.725Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Cyprus"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Czech+Republic",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Czech+Republic", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 557,
-      "updated": "2015-01-13T16:58:21.528Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 557, 
+      "updated": "2015-01-13T16:58:21.528Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Czech Republic"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Denmark",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Denmark", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 592,
-      "updated": "2015-01-13T16:58:20.405Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 592, 
+      "updated": "2015-01-13T16:58:20.405Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Denmark"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_cofin_All_partners__of_total_cost",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_cofin_All_partners__of_total_cost", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:20.920Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:20.920Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "EC effective cofinancing rate (all FP7-ICT projects' partners)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_cofin_SME_partners__of_total_cost",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_cofin_SME_partners__of_total_cost", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 141,
-      "updated": "2015-01-13T16:58:21.154Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 141, 
+      "updated": "2015-01-13T16:58:21.154Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "EC effective cofinancing rate for SMEs partner in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Estonia",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Estonia", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 539,
-      "updated": "2015-01-13T16:58:21.899Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 539, 
+      "updated": "2015-01-13T16:58:21.899Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Estonia"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/European+Union+-+27+countries",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/European+Union+-+27+countries", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 542,
-      "updated": "2015-01-13T16:58:21.579Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 542, 
+      "updated": "2015-01-13T16:58:21.579Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "European Union - 27 countries"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Finland",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Finland", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 600,
-      "updated": "2015-01-13T16:58:20.449Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 600, 
+      "updated": "2015-01-13T16:58:20.449Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Finland"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/France",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/France", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 473,
-      "updated": "2015-01-13T16:58:21.675Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 473, 
+      "updated": "2015-01-13T16:58:21.675Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "France"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Germany",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Germany", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 597,
-      "updated": "2015-01-13T16:58:20.760Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 597, 
+      "updated": "2015-01-13T16:58:20.760Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Germany"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Greece",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Greece", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 591,
-      "updated": "2015-01-13T16:58:21.947Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 591, 
+      "updated": "2015-01-13T16:58:21.947Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Greece"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Hungary",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Hungary", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 547,
-      "updated": "2015-01-13T16:58:21.210Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 547, 
+      "updated": "2015-01-13T16:58:21.210Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Hungary"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/AAAA_cov_1M_websites__websites",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/AAAA_cov_1M_websites__websites", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 28,
-      "updated": "2015-01-13T16:58:21.623Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 28, 
+      "updated": "2015-01-13T16:58:21.623Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "IPv6 readiness - websites having a AAAA coverage in DNS records (as % of most visited websites)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Iceland",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Iceland", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 404,
-      "updated": "2015-01-13T16:58:20.331Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 404, 
+      "updated": "2015-01-13T16:58:20.331Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Iceland"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Ireland",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Ireland", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 577,
-      "updated": "2015-01-13T16:58:21.847Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 577, 
+      "updated": "2015-01-13T16:58:21.847Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Ireland"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Italy",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Italy", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 544,
-      "updated": "2015-01-13T16:58:20.747Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 544, 
+      "updated": "2015-01-13T16:58:20.747Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Italy"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Latvia",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Latvia", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 532,
-      "updated": "2015-01-13T16:58:21.655Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 532, 
+      "updated": "2015-01-13T16:58:21.655Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Latvia"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Lithuania",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Lithuania", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 566,
-      "updated": "2015-01-13T16:58:21.010Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 566, 
+      "updated": "2015-01-13T16:58:21.010Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Lithuania"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Luxembourg",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Luxembourg", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 590,
-      "updated": "2015-01-13T16:58:20.581Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 590, 
+      "updated": "2015-01-13T16:58:20.581Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Luxembourg"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Malta",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Malta", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 515,
-      "updated": "2015-01-13T16:58:20.419Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 515, 
+      "updated": "2015-01-13T16:58:20.419Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Malta"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iu3g_IND_TOTAL__ind",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/i_iu3g_IND_TOTAL__ind", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 183,
-      "updated": "2015-01-13T16:58:20.893Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 183, 
+      "updated": "2015-01-13T16:58:20.893Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Mobile broadband take-up - % of population accessing the Internet through a mobile phone via UMTS (3G)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mbb_penet_TOTAL_MBB_lines100_pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mbb_penet_TOTAL_MBB_lines100_pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 112,
-      "updated": "2015-01-13T16:58:21.121Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 112, 
+      "updated": "2015-01-13T16:58:21.121Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Mobile broadband take-up - Penetration of dedicated data service cards/modems/keys only"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_penet_TOTAL_MOB_subs100_pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_penet_TOTAL_MOB_subs100_pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 84,
-      "updated": "2015-01-13T16:58:21.053Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 84, 
+      "updated": "2015-01-13T16:58:21.053Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Mobile take-up - Penetration (active SIM cards/100 people)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_ms_TOTAL_MOB__subs",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_ms_TOTAL_MOB__subs", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 84,
-      "updated": "2015-01-13T16:58:21.697Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 84, 
+      "updated": "2015-01-13T16:58:21.697Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Mobile take-up - market share of leading operator (in % of active SIM cards)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_subs_TOTAL_MOB_nbr_subs",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/mob_subs_TOTAL_MOB_nbr_subs", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 84,
-      "updated": "2015-01-13T16:58:20.547Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 84, 
+      "updated": "2015-01-13T16:58:20.547Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Mobile take-up - total number of lines (SIM cards)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Netherlands",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Netherlands", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 558,
-      "updated": "2015-01-13T16:58:21.311Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 558, 
+      "updated": "2015-01-13T16:58:21.311Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Netherlands"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Norway",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Norway", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 491,
-      "updated": "2015-01-13T16:58:21.270Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 491, 
+      "updated": "2015-01-13T16:58:21.270Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Norway"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_newENTRY_All_partners_nb_of_organisations",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_newENTRY_All_partners_nb_of_organisations", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 137,
-      "updated": "2015-01-13T16:58:21.282Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 137, 
+      "updated": "2015-01-13T16:58:21.282Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Number of distinct organisations participating in FP7-ICT projects for the first time"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Poland",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Poland", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 549,
-      "updated": "2015-01-13T16:58:21.561Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 549, 
+      "updated": "2015-01-13T16:58:21.561Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Poland"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Portugal",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Portugal", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 581,
-      "updated": "2015-01-13T16:58:21.375Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 581, 
+      "updated": "2015-01-13T16:58:21.375Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Portugal"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Romania",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Romania", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 494,
-      "updated": "2015-01-13T16:58:21.062Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 494, 
+      "updated": "2015-01-13T16:58:21.062Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Romania"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_fcov_RURAL_POP__pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_fcov_RURAL_POP__pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 159,
-      "updated": "2015-01-13T16:58:20.568Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 159, 
+      "updated": "2015-01-13T16:58:20.568Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Rural fixed broadband coverage (supply as a % of rural population)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_HESREC_partners__of_EC_funding",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_HESREC_partners__of_EC_funding", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:20.557Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:20.557Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Share of EC funding going to Education&Research organisations participating in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_LE_partners__of_EC_funding",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_LE_partners__of_EC_funding", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:20.852Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:20.852Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Share of EC funding going to Large Enterprises participating in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_NIL_partners__of_EC_funding",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_NIL_partners__of_EC_funding", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.302Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.302Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Share of EC funding going to Other organisations participating in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_SME_partners__of_EC_funding",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_SME_partners__of_EC_funding", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:20.602Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:20.602Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Share of EC funding going to SMEs participating in FP7-ICT projects "
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Slovak+Republic",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Slovak+Republic", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 546,
-      "updated": "2015-01-13T16:58:21.465Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 546, 
+      "updated": "2015-01-13T16:58:21.465Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Slovak Republic"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Slovenia",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Slovenia", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 551,
-      "updated": "2015-01-13T16:58:21.190Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 551, 
+      "updated": "2015-01-13T16:58:21.190Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Slovenia"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Spain",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Spain", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 565,
-      "updated": "2015-01-13T16:58:20.705Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 565, 
+      "updated": "2015-01-13T16:58:20.705Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Spain"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Sweden",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Sweden", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 584,
-      "updated": "2015-01-13T16:58:20.840Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 584, 
+      "updated": "2015-01-13T16:58:20.840Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Sweden"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro_x_million_of_GDP",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro_x_million_of_GDP", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.780Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.780Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total EC funding to participants in FP7-ICT projects (in % of GDP)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro_x_hab",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro_x_hab", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.928Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.928Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total EC funding to participants in FP7-ICT projects (in euro per habitant)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_TOTcost_All_partners_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_TOTcost_All_partners_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.180Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.180Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total cost of FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_eturn_ENT_ALL_XFIN__turn",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/e_eturn_ENT_ALL_XFIN__turn", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 233,
-      "updated": "2015-01-13T16:58:21.131Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 233, 
+      "updated": "2015-01-13T16:58:21.131Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total electronic sales by enterprises, as a % of their total turnover"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_fcov_TOTAL_POP__pop",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/bb_fcov_TOTAL_POP__pop", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 162,
-      "updated": "2015-01-13T16:58:20.803Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 162, 
+      "updated": "2015-01-13T16:58:20.803Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total fixed broadband coverage (supply as a % of total population)"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_invrev_TOTAL_TELECOM__revenue",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_invrev_TOTAL_TELECOM__revenue", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 56,
-      "updated": "2015-01-13T16:58:21.099Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 56, 
+      "updated": "2015-01-13T16:58:21.099Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total investment in networks as a percentage of total revenues"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_inv_TOTAL_TELECOM_million_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_inv_TOTAL_TELECOM_million_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 56,
-      "updated": "2015-01-13T16:58:20.931Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 56, 
+      "updated": "2015-01-13T16:58:20.931Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total investment in networks by the electronic communications sector"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_particip_All_partners_nb_of_participations",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_particip_All_partners_nb_of_participations", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.748Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.748Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total number of participations in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_rev_TOTAL_TELECOM_million_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/tel_rev_TOTAL_TELECOM_million_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 56,
-      "updated": "2015-01-13T16:58:20.635Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 56, 
+      "updated": "2015-01-13T16:58:20.635Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total revenues of the electronic communications sector"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/indicator/FP7ICT_EC_funding_All_partners_euro", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 158,
-      "updated": "2015-01-13T16:58:21.770Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 158, 
+      "updated": "2015-01-13T16:58:21.770Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Total value of EC funding to participants in FP7-ICT projects"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/Turkey",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/Turkey", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 286,
-      "updated": "2015-01-13T16:58:20.737Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 286, 
+      "updated": "2015-01-13T16:58:20.737Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "Turkey"
     }
-  },
+  }, 
   {
-    "pk": "http://data.lod2.eu/scoreboard/ds/country/United+Kingdom",
-    "model": "sparql.dataset",
+    "pk": "http://data.lod2.eu/scoreboard/ds/country/United+Kingdom", 
+    "model": "sparql.dataset", 
     "fields": {
-      "size": 588,
-      "updated": "2015-01-13T16:58:21.910Z",
-      "endpoint": "eu",
-      "description": "",
+      "size": 588, 
+      "updated": "2015-01-13T16:58:21.910Z", 
+      "endpoint": "eu", 
+      "description": "", 
       "label": "United Kingdom"
     }
   }
