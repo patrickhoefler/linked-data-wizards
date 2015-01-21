@@ -1,11 +1,11 @@
 # Development and Production
-Django==1.4.6
-python-social-auth>=0.1.23
-rdflib==3.4.0
-rdfextras>=0.4
-SPARQLWrapper>=1.5.2
-requests>=1.2.3
-beautifulsoup4>=4.3.2
+Django==1.4.18
+python-social-auth==0.2.1
+rdflib==4.1.2
+rdfextras==0.4
+SPARQLWrapper==1.6.4
+requests==2.5.1
+beautifulsoup4==4.3.2
 
 # Production only
 gunicorn==19.1.1
