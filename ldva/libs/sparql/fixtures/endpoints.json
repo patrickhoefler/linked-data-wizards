@@ -60,66 +60,6 @@
     }
   }, 
   {
-    "pk": "270a-ecb", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://ecb.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "European Central Bank (ECB) (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://ecb.270a.info/"
-    }
-  }, 
-  {
-    "pk": "270a-fao", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://fao.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Food and Agriculture Organization (FAO) of the United Nations (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://fao.270a.info/"
-    }
-  }, 
-  {
-    "pk": "270a-oecd", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://oecd.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Organization for Economic Co-operation and Development (OECD) (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://oecd.270a.info/"
-    }
-  }, 
-  {
-    "pk": "270a-bfs", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://bfs.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Swiss Federal Statistical Office (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://bfs.270a.info/"
-    }
-  }, 
-  {
-    "pk": "270a-transparency", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://transparency.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Transparency International (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://transparency.270a.info/"
-    }
-  }, 
-  {
     "pk": "vienna-lod", 
     "model": "sparql.endpoint", 
     "fields": {
@@ -129,30 +69,6 @@
       "search_type": "regex", 
       "sort_order": 999, 
       "website_url": "http://cweiss.net/lod/"
-    }
-  }, 
-  {
-    "pk": "270a-worldbank", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://worldbank.270a.info/sparql", 
-      "default_language": "en", 
-      "label": "Worldbank (270a)", 
-      "search_type": "fuseki", 
-      "sort_order": 999, 
-      "website_url": "http://worldbank.270a.info/"
-    }
-  }, 
-  {
-    "pk": "http://172.17.0.2:8890/sparql", 
-    "model": "sparql.endpoint", 
-    "fields": {
-      "sparql_url": "http://172.17.0.2:8890/sparql", 
-      "default_language": "en", 
-      "label": "http://172.17.0.2:8890/sparql", 
-      "search_type": "regex", 
-      "sort_order": 1000, 
-      "website_url": ""
     }
   }
 ]
