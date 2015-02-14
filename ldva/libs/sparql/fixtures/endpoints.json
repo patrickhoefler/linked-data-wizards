@@ -17,7 +17,7 @@
     "fields": {
       "sparql_url": "http://wikidata.opendatahub.net:8890/sparql", 
       "default_language": "en", 
-      "label": "Wikidata (OpenDataHub Edition, 2015-01-05)", 
+      "label": "Wikidata (OpenDataHub Edition, 2015-01-26)", 
       "search_type": "virtuoso", 
       "sort_order": 10, 
       "website_url": "http://www.wikidata.org/"
